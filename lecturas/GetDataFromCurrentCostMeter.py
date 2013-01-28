@@ -20,6 +20,7 @@ class leeDatos:
     def __init__(self):
         if self.myserialconn.isConnected():
             self.myserialconn.disconnect()
+        trc.EnableTrace(True)
         self.ccdb.InitialiseDB(settings.PROJECT_ROOT+"/datos/datos.ccd")
         self.getDataFromCurrentCostMeter("/dev/ttyUSB0")
 
@@ -76,13 +77,13 @@ class leeDatos:
             hora, min, seg = tiempo.split(":")
             id = ano + mes + dia + tiempo
             if hora != inihora:
-                print "Entra en Hora ................................................."
+                trc.Trace("Entra en Hora .................................................")
                 self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
                 self.ccdb.StoreConsumoHoras(inihora, id, iniano, inimes, inidia,senso)
                 inihora = hora
                 if inidia != dia:
                     time.sleep(5)
-                    print "Entra en dias ............................................."
+                    trc.Trace("Entra en dias .............................................")
                     self.ccdb.StoreConsumoDias(tiempo, id, iniano, inimes, inidia,senso)
                     inidia = dia
                     if inimes != mes:
@@ -100,7 +101,7 @@ class leeDatos:
                 nd = 1
             promedio = energia + promedio
             nd = nd + 1
-        print "Grabando Sensor %s Energia %s" % ( str((promedio / nd)),senso)
+        trc.Trace("Grabando Sensor %s Energia %s" % ( str((promedio / nd)),senso))
         self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
         return []
 
@@ -108,7 +109,7 @@ class leeDatos:
     def getDataFromCurrentCostMeter(self,portdet):
         #Arreglo para 10 sensores reset cada 5 minutos
         aDatos=[[],[],[],[],[],[],[],[],[],[]]
-        print 'Connecting to local CurrentCost meter - using device "' + portdet
+        trc.Trace('Connecting to local CurrentCost meter - using device "' + portdet)
         reuseconnection = self.myserialconn.isConnected()
         if reuseconnection == False:
             self.conecta(portdet)
@@ -117,7 +118,7 @@ class leeDatos:
         updatesremaining = 1
         sincap = 0
         loopMessage = "Waiting for data from CurrentCost meter"
-        print loopMessage
+        trc.Trace(loopMessage)
         inicio = 0
         while updatesremaining > 0:
             #Linea para recibir datos
@@ -127,16 +128,10 @@ class leeDatos:
                 try:
                     line = self.myserialconn.readUpdate()
                 except serial.SerialException, err:
-
-                    print 'Failed to receive data from CurrentCost meter'
-
-                    #Enviar email de error de conexion
+                    trc.Trace('Failed to receive data from CurrentCost meter')
                     return False
                 except Exception, msg:
-
-                    print 'Failed to receive data from CurrentCost meter'
-
-                    #Enviar mail de error de conexion
+                    trc.Trace('Failed to receive data from CurrentCost meter')
                     return False
 
 
@@ -144,10 +139,10 @@ class leeDatos:
             # try to parse the XML
 
             currentcoststruct = self.myparser.parseCurrentCostXML(line)
-            print "--------------------------Lectura---------------------------------------"
-            print currentcoststruct
+            trc.Trace("--------------------------Lectura---------------------------------------")
+            trc.Trace(currentcoststruct)
             #print "Linea cruda %s " % currentcoststruct
-            ##Si linea cruda es demasiada lectura que reinicie la conexion
+            #Si linea cruda es demasiada lectura que reinicie la conexion
             if currentcoststruct is None:
                 sincap = sincap + 1
                 if sincap > 8:
@@ -160,7 +155,6 @@ class leeDatos:
                 sincap = 0
                 #Solucionar problema de cambio de hora cuando sea media noche, en caso
                 tiempo = currentcoststruct['msg']['time']
-
                 hora, minuto, seg = tiempo.split(':')
                 dia = str(datetime.datetime.now().day)
                 mes = str(datetime.datetime.now().month)
@@ -168,7 +162,6 @@ class leeDatos:
                 if inicio == 0:
                     #Sincroniza fecha del Sistema con Envir
                     fecha = ('date -s "%s/%s/%s %s:%s:%s" ') % ( ano, mes, dia, hora, minuto, seg)
-                    #fecha=('date -s "%s/%s/%s %s:%s:%s" ') %( 2012,11,30,19,58,00)
                     os.system(fecha)
                     inicio = time.time()
 
@@ -181,12 +174,12 @@ class leeDatos:
                                        'potencia': potencia, 'temperatura': temperatura,'sensor':sensor})
 
                     except KeyError:
-                        print "Error de lectura de alguna clave"
+                        trc.Trace("Error de lectura de alguna clave")
 
                     fin = time.time()
                     muestreo=300
                     if fin - inicio > muestreo:
-                        print "Graba al %s" % (fin - inicio)
+                        trc.Trace("Graba al minuto %s" % (fin - inicio))
                         nsensor=9
                         for num in range(0,nsensor):
                             if len(list_get_egfp(aDatos,num))!=0:

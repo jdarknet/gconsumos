@@ -21,11 +21,7 @@
 #
 
 import logging
-#import numpy
-#import scipy
-#import matplotlib
-#import platform
-#import wx
+import platform
 from pysqlite2 import dbapi2 as sqlite
 
 from time import strftime
@@ -48,6 +44,7 @@ class CurrentCostTracer():
     def EnableTrace(self, val):
         global enableTrace
         enableTrace = val
+
     def IsTraceEnabled(self):
         global enableTrace
         return enableTrace
@@ -57,20 +54,16 @@ class CurrentCostTracer():
 
         logging.basicConfig(level=logging.DEBUG,
                             format='%(asctime)s %(message)s',
-                            filename='currentcostdiagnostics.log',
+                            filename='weblogger_trazas.log',
                             filemode='w+')
 
         if enableTrace == True:
 #            stackDepth = 0
 #            indentStr  = ""
-            logging.info("CurrentCost software - v 0.9.30")
+            logging.info("WebLogger InfinityLoop - v 1.0")
             logging.info("-------------------------------")
-#            logging.info("python     : version " + repr(platform.python_version()))
-#            logging.info("numpy      : version " + repr(numpy.version.version))
-#            logging.info("scipy      : version " + repr(scipy.version.version))
-#            logging.info("matplotlib : version " + repr(matplotlib.__version__))
-#            logging.info("wxpython   : version " + repr(wx.version()))
-#            logging.info("sqlite     : version " + repr(sqlite.version))
+            logging.info("python     : version " + repr(platform.python_version()))
+            logging.info("sqlite     : version " + repr(sqlite.version))
 
 
     def Trace(self, debuginfo):
