@@ -1,0 +1,25 @@
+{% extends "base/layout.html" %}
+{% block head %}
+
+{% endblock %}
+
+{% block sencondarymenu %}
+<ul class="secondary-nav-menu">
+    <li>
+        <a href="/general/generales">
+            <i class="icon-dashboard"></i> General
+        </a>
+    </li>
+
+    <li>
+        <a href="/general/configuracion" id="modal-link">
+            <i class="icon-wrench"></i> Configuracion
+        </a>
+    </li>
+    <li>
+        <a href="/general/ptsmedidas" id="modal-link">
+            <i class="icon-signal"></i> Puntos Medidas
+        </a>
+    </li>
+</ul>
+{% endblock %}

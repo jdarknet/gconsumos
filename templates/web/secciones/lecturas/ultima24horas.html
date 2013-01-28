@@ -1,0 +1,61 @@
+{% extends "web/secciones/lecturas.html" %}
+{% block head %}
+
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
+
+    <script type='text/javascript'>
+
+
+
+        $(document).ready(function()
+        {
+
+
+            {% autoescape off %}
+            var graf=  ponGraficoDia({{ listgraf }});
+
+            $('#tabla24').dataTable({
+            "aaData":{{ listadatos }}
+                ,
+            "aoColumns":[{"sTitle":"Horas"} , {"sTitle": "Energia en Watts"}  ]
+            });
+            {%  endautoescape %}
+
+        });
+
+
+
+
+
+    </script>
+
+{% endblock %}
+
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box" style="position:relative;">
+                <div class="tab-header" role="grid">
+                    Resumen Dia cada 5 minutos
+                </div>
+                <table id="tabla24" class="table table-striped table-bordered box">
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block derecha %}
+    <div class="box">
+        <div class="tab-header">
+            Grafico Diario
+        </div>
+        <div class="padded">
+            <div id="chart1" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+
+
+{% endblock %}

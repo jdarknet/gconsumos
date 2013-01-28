@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+-Permisos directorio de instalacion gconsumos
+-Asignar www-data al grupo dialout (usermod -G dialout www-data)
+-Instalar pip install pynetlinux
+-Instalar apt-get install libcap2-bin
+
+--Instalar en el cron :
+chmod 755  manage.py
+python manage.py alarmas --estado ( ejecutar cada 15 minutos )
+ptyhon manage.py alarmas --alarmas ( ejecutar cada 5 minutos )

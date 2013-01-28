@@ -1,0 +1,28 @@
+{% extends "base/layout.html" %}
+{% block head %}
+
+{% endblock %}
+
+{% block sencondarymenu %}
+    <ul class="secondary-nav-menu">
+        <li class="active">
+            <a href="/">
+                <i class="icon-dashboard"></i> Estadisticas
+            </a>
+        </li>
+
+        <li>
+            <a href="/panelcontrol/alarmas" id="modal-link">
+                <i class="icon-random"></i> Alarmas
+            </a>
+        </li>
+
+        <li id="notification-full-image">
+            <a href="#">
+                <i class="icon-list-alt"></i>Logs
+            </a>
+        </li>
+
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base/layout.html" %}
+{% block head %}
+
+{% endblock %}
+
+{% block sencondarymenu %}
+    <ul class="secondary-nav-menu">
+        <li class="active">
+            <a href="/lecturas/ultimas/24">
+                <i class="icon-list-alt"></i> Ultimas 24 Horas
+            </a>
+        </li>
+
+        <li>
+            <a href="/lecturas/ultimas/7" id="modal-link">
+                <i class="icon-list-alt"></i> Ultima Semana
+            </a>
+        </li>
+
+        <li>
+            <a href="/lecturas/ultimas/30">
+                <i class="icon-list-alt"></i>Ultimo Mes
+            </a>
+        </li>
+    </ul>
+{% endblock %}

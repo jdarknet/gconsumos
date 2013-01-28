@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="a6107ea1-cb0f-4d7e-b262-a428827c561d">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/u01/home/julian/PycharmProjects/gconsumos/./datos/datos.ccd</jdbc-url>
+    <schema-pattern>*</schema-pattern>
+    <default-dialect>SQLite</default-dialect>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>jar://$USER_HOME$/.PyCharm20/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar!/</url>
+      </library>
+    </libraries>
+    <table name="auth_group" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(80)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="auth_group_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="group_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="permission_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="auth_group_permissions_1e014c8f" unique="true" columns="permission_id" />
+      <index name="auth_group_permissions_bda51c3c" unique="true" columns="group_id" />
+    </table>
+    <table name="auth_permission" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="codename" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <exported-key columns="" />
+      <index name="auth_permission_e4470c6e" unique="true" columns="content_type_id" />
+    </table>
+    <table name="auth_user" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="username" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="first_name" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="last_name" sqlType="VARCHAR(30)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="email" sqlType="VARCHAR(75)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="password" sqlType="VARCHAR(128)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="is_staff" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="is_active" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="is_superuser" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="last_login" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="date_joined" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="auth_user_groups" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="group_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="auth_user_groups_bda51c3c" unique="true" columns="group_id" />
+      <index name="auth_user_groups_fbfc09f1" unique="true" columns="user_id" />
+    </table>
+    <table name="auth_user_user_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="permission_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="auth_user_user_permissions_1e014c8f" unique="true" columns="permission_id" />
+      <index name="auth_user_user_permissions_fbfc09f1" unique="true" columns="user_id" />
+    </table>
+    <table name="django_admin_log" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="action_time" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="user_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="content_type_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="object_id" sqlType="TEXT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="object_repr" sqlType="VARCHAR(200)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="action_flag" sqlType="SMALLINT UNSIGNED" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="change_message" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <foreign-key name="1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <foreign-key name="2" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1" />
+      <index name="django_admin_log_e4470c6e" unique="true" columns="content_type_id" />
+      <index name="django_admin_log_fbfc09f1" unique="true" columns="user_id" />
+    </table>
+    <table name="django_content_type" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="name" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="app_label" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="model" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="django_session" schema="" catalog="" type="TABLE">
+      <column name="session_key" sqlType="VARCHAR(40)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="session_data" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="expire_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="session_key" />
+      <index name="django_session_c25c2c28" unique="true" columns="expire_date" />
+    </table>
+    <table name="django_site" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="domain" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="name" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="lecturas_consumosanos" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ts" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ejer" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="per" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="energia" sqlType="REAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="idcomsumos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="lecturas_consumosanos_c27a5ad3" unique="true" columns="idcomsumos_id" />
+    </table>
+    <table name="lecturas_consumosdias" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ts" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ejer" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="per" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="dia" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="energia" sqlType="REAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="semana" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="idcomsumos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="lecturas_consumosdias_c27a5ad3" unique="true" columns="idcomsumos_id" />
+    </table>
+    <table name="lecturas_consumoshoras" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ts" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ejer" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="per" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="dia" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="hora" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="energia" sqlType="REAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="idcomsumos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="lecturas_consumoshoras_c27a5ad3" unique="true" columns="idcomsumos_id" />
+    </table>
+    <table name="lecturas_consumosmes" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ts" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ejer" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="per" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="energia" sqlType="REAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="idcomsumos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="lecturas_consumosmes_c27a5ad3" unique="true" columns="idcomsumos_id" />
+    </table>
+    <table name="lecturas_consumostmp" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="ts" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ejer" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="per" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="dia" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="hora" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="min" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="seg" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="energia" sqlType="REAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="idcomsumos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="lecturas_consumostmp_c27a5ad3" unique="true" columns="idcomsumos_id" />
+    </table>
+    <table name="maestros_cabperiodoshorarios" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechabaja" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="maestros_codigospostales" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="codpostal" sqlType="VARCHAR(5)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="provincia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="calle" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <index name="maestros_codigospostales_bf663454" unique="true" columns="provincia_id" />
+    </table>
+    <table name="maestros_detallestarifas" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="punta" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="llano" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="valle" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="tfacceso_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+    </table>
+    <table name="maestros_detperiodoshorarios" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="cabperhorario_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="temporada" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="codigoper" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="denoperiodo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="intinicial" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="intfinal" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <index name="maestros_detperiodoshorarios_7b958f66" unique="true" columns="cabperhorario_id" />
+    </table>
+    <table name="maestros_paises" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="codpais" sqlType="VARCHAR(3)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="nombre" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="maestros_provincias" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="codprovincia" sqlType="VARCHAR(3)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="nombre" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tipo" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="pais_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="maestros_provincias_29e88ed" unique="true" columns="pais_id" />
+    </table>
+    <table name="maestros_tarifasdeacceso" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechapublica" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="maestros_terceros" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="tipotercero_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="denominacion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cif" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="direccion1" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="direccion2" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="telefono" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="email" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="paginaweb" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="pais_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="provincia_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="codpostal_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="maestros_terceros_83fd15de" unique="true" columns="codpostal_id" />
+      <index name="maestros_terceros_bf663454" unique="true" columns="provincia_id" />
+      <index name="maestros_terceros_29e88ed" unique="true" columns="pais_id" />
+      <index name="maestros_terceros_cc86167b" unique="true" columns="tipotercero_id" />
+    </table>
+    <table name="maestros_tiposcurvas" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="minutos" sqlType="BIGINT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="maestros_tiposinstalacion" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="maestros_tiposterceros" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="accion" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="fechaalta" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="settings" schema="" catalog="" type="TABLE">
+      <column name="settingkey" sqlType="TEXT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="settingvalue" sqlType="TEXT" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+    </table>
+    <table name="south_migrationhistory" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="app_name" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="migration" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="applied" sqlType="DATETIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="web_alarmas" schema="" catalog="" type="TABLE">
+      <column name="tiempofin" sqlType="TIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tipo" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="consigna" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="habilitar" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tiempoinicio" sqlType="TIME" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="idcomsumos_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <primary-key columns="id" />
+      <index name="web_alarmas_c27a5ad3" unique="true" columns="idcomsumos_id" />
+    </table>
+    <table name="web_configuracion" schema="" catalog="" type="TABLE">
+      <column name="w_ip" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="serialmodulo" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="w_gw" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="w_mask" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="fecha" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="uservolcado" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="protvolcado" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="essid" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="passvolcado" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="emailvolcado" sqlType="VARCHAR(75)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="password" sqlType="VARCHAR(8)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="ipvolcado" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="w_dhcp" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="frecuencia" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+    <table name="web_contrato" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="empresaelectrica_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="actividadeco" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cups" sqlType="VARCHAR(25)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="potencia" sqlType="DECIMAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tfacceso_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="numcontador" sqlType="VARCHAR(25)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <index name="web_contrato_cef3f520" unique="true" columns="tfacceso_id" />
+      <index name="web_contrato_306eb1cf" unique="true" columns="empresaelectrica_id" />
+    </table>
+    <table name="web_generales" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="nombpropietario_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="mediaconsumo" sqlType="DECIMAL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="tipousuario" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="diasfestivos" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="calefaccion" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="aireacondicionado" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="calentadoragua" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="vitroceramica" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="congelador" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <index name="web_generales_afca8f39" unique="true" columns="nombpropietario_id" />
+    </table>
+    <table name="web_mensajes" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="alarma_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="cuerpomensaje" sqlType="TEXT" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="email_destino1" sqlType="VARCHAR(75)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+      <index name="web_mensajes_dacc1ece" unique="true" columns="alarma_id" />
+    </table>
+    <table name="web_ptdmedida" schema="" catalog="" type="TABLE">
+      <column name="descripcion" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="ubicacion" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="totaliza" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="canal" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <primary-key columns="id" />
+    </table>
+  </data-source>
+  <data-source source="LOCAL" name="Data Source" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="d479a4f1-c782-42d9-ac3e-22b15f817550">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:/u01/home/julian/PycharmsProjects/gconsumos/datos/datos.ccd</jdbc-url>
+    <libraries>
+      <library>
+        <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/xerial-sqlite-license.txt</url>
+      </library>
+      <library>
+        <url>jar://$USER_HOME$/.PyCharm20/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar!/</url>
+      </library>
+    </libraries>
+  </data-source>
+</component>

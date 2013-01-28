@@ -1,0 +1,67 @@
+{% extends "web/secciones/lecturas.html" %}
+{% block head %}
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
+
+{% endblock %}
+{% block scripthead %}
+    $(function()
+    {
+
+    {% autoescape off %}
+
+        ponGraficoSemana({{ listgraf }});
+
+    {%  endautoescape %}
+
+
+    });
+
+{% endblock %}
+
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                    Ultima Semana
+                </div>
+                <table class="table table-striped table-bordered box"
+                <thead>
+                <th>
+                   Dia
+                </th>
+                <th>
+                    Energia
+                </th>
+                </thead>
+                {%  for obj in listadatos %}
+                    <tr>
+                        <td>
+                            {{ obj.dia }}
+                        </td>
+                        <td>
+                            {{ obj.energia }}
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block derecha %}
+    <div class="box">
+        <div class="tab-header">
+            Grafico Semana
+        </div>
+        <div class="padded">
+            <div id="chart1" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+
+
+{% endblock %}

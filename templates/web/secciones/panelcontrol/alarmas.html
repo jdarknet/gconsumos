@@ -1,0 +1,165 @@
+{% extends "web/secciones/panelcontrol.html" %}
+{% block head %}
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        $('#id_mensajes tbody tr').formset({
+                    prefix: 'mensajes'
+                });
+
+
+        new Notifications({
+                container: $("body"),
+                bootstrapPositionClass: "span6 offset3"
+            });
+
+    });
+
+    </script>
+ <style type="text/css">
+        .add-row {
+            padding-left:18px;
+            background:url({{ STATIC_URL }}images/add.png) no-repeat left center;
+        }
+        .delete-row {
+            display:block;
+            margin:6px 0 0 0;
+            padding-left:18px;
+            background:url({{ STATIC_URL }}images/delete.png) no-repeat left center;
+        }
+        .dynamic-form {
+            margin-bottom:6px;
+            padding-bottom:6px;
+            border-bottom:1px dotted #ccc;
+        }
+ </style>
+{% endblock %}
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                    Alarmas
+                </div>
+                <div class="padded">
+                    <form method="post" class="fill-up">{% csrf_token %}
+                        <table class="table table-bordered box">
+                        {% for obj in listalarm %}
+                            <tr>
+                                <td><a href="{{obj.get_absolute_url}}">{{ obj.descripcion }}</a></td>
+                                <td>{{ obj.consigna }}</td>
+                                <td>{{ obj.tipo }}</td>
+                            </tr>
+                        {% endfor %}
+
+                        </table>
+                        <div class="form-actions">
+                            <button type="submit" name="envia_nuevo" class="button blue">Nueva Alarma</button>
+                            <div class="pull-right"> </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block derecha %}
+
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                    Mensajes de Alarma
+                </div>
+                <div class="padded">
+                    <form method="post" class="fill-up">{% csrf_token %}
+                        {{ form_detail.management_form }}
+                        <div class="append-transparent">
+                            {{ form_cab.descripcion.label }}
+                            {{ form_cab.descripcion }}
+                        </div>
+
+                        <table class="table table-bordered box">
+                            <thead>
+                                <th>
+                                    {{ form_cab.consigna.label }}
+                                </th>
+                                <th>
+                                    {{ form_cab.tipo.label}}
+                                </th>
+                                <th>
+                                   {{ form_cab.idcomsumos.label }}
+                                </th>
+                            </thead>
+                            <tbody>
+
+                            <tr id="{{ form.prefix }}-row" >
+                            <td class="hide">{{ form_cab.id }}</td>
+                                    <td>{{ form_cab.consigna }}</td>
+                                    <td>{{ form_cab.tipo }}</td>
+                                    <td>{{ form_cab.idcomsumos }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered box">
+                            <thead>
+                            <th>
+                                {{ form_cab.tiempoinicio.label}} (h/m/s)
+                            </th>
+                            <th>
+                                {{ form_cab.tiempofin.label }} (h/m/s)
+                            </th>
+                            <th>
+                                {{ form_cab.habilitar.label}}
+                            </th>
+
+                            </thead>
+                            <tbody>
+                            <tr >
+                                <td>{{ form_cab.tiempoinicio }}</td>
+                                <td>{{ form_cab.tiempofin }}</td>
+                                <td>{{ form_cab.habilitar }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table id="id_mensajes" class="table table-bordered box">
+                            <thead>
+                            <th>
+                               Email de Aviso
+                            </th>
+                            <th>
+                               Cuerpo del Mensaje
+                            </th>
+                            <th>
+                                Eliminar
+                            </th>
+                            </thead>
+                            {% for obj in form_detail %}
+                                <tr id="{{ obj.prefix }}-row">
+                                    <td class="hide">{{ obj.id }}</td>
+                                    <td>{{ obj.email_destino1 }}
+                                        {{ obj.email_destino1.error }}</td>
+                                    <td>{{ obj.cuerpomensaje }}</td>
+                                    <td>{{ obj.DELETE }}</td>
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+                                            <div class="form-actions">
+                                                    <button type="submit" name="envia_actualiza" class="button blue">Guardar Cambios</button>
+                                                    <button id="#eliminar" type="submit" name="envia_elimina" class="button">Eliminar</button>
+                                                    <div class="pull-right"> </div>
+                                             </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

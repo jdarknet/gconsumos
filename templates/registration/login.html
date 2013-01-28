@@ -1,0 +1,92 @@
+<!doctype html>
+<head xmlns="http://www.w3.org/1999/html">
+    <title>Gestion Consumos</title>
+    <link rel=stylesheet type=text/css href="{{ STATIC_URL }}stylesheets/application.css">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+</head>
+<body class="login">
+<div class="container">
+    <div class="row" id="notifications-wrapper">
+        <div id="notifications" class="span6 offset3 notifications animated">
+            <div id="dismiss-all" class="dismiss-all button blue">No autentificado</div>
+            <div id="content">
+                <div id="notes"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="login-wrapper" style="margin-top: 120px">
+        <div style="text-align: center">
+            <i class="icon-magic logo-icon"></i>
+        </div>
+
+        <div id="login-manager">
+            <div id="login" class="login-wrapper animated" style="display: block; ">
+                {% if error %}
+                    <p class="error">
+                    <strong>Error:</strong> {{ from.error }}
+                {% endif %}
+                <form action="." method=post>{% csrf_token %}
+                    <div class="input-group">
+                        {#                        <input type="text" placeholder="usuario" class="input-transparent" id="usuario" name="username">#}
+                        {#                       <input type="password" placeholder="password" class="input-transparent" name="password">#}
+                            <div class="label label-inverse">{{ form.username.label_tag }}</div>
+                            {{ form.username }}
+                            <div class="label label-inverse">{{ form.password.label_tag }}</div>
+                            {{ form.password }}
+
+                    <input id="login-submit" type="submit" class="login-button" value="login" Entrar/>
+                    </div>
+                    {% if next %}
+                        <input  type="hidden" name="next" value="/" />
+                    {% else %}
+                        <input  type="hidden" name="next" value="/inicio/" />
+                    {% endif %}
+
+                </form>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="footer">
+                <div>2012 © InfinityLoop Sistemas S.L</div>
+                <div>Creado por <a href="http://wwww.infinityloop.es">InfinityLoop</a></div>
+             </div>
+    </div>
+</div>
+{#<script type="text/html" id="template-notification">#}
+{#    <div class="notification animated fadeInLeftMiddle fast{{ item.itemClass }}">#}
+{#        <div class="left">#}
+{#            <div style="background-image: url({{ item.imagePath }})" class="{{ item.imageClass }}"></div>#}
+{#        </div>#}
+{#        <div class="right">#}
+{#            <div class="inner">{{ item.text }}</div>#}
+{#            <div class="time">{{ item.time }}</div>#}
+{#        </div>#}
+{##}
+{#        <i class="icon-remove-sign hide"></i>#}
+{#    </div>#}
+{#</script>#}
+<script type="text/html" id="template-notifications">
+    <div class="container">
+        <div class="row" id="notifications-wrapper">
+            <div id="notifications" class="{{ bootstrapPositionClass }} notifications animated">
+                <div id="dismiss-all" class="dismiss-all button blue">No autentificado</div>
+                <div id="content">
+                    <div id="notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="{{ STATIC_URL }}javascripts/application.js"></script>
+
+</body>
+

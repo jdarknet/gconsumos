@@ -1,0 +1,119 @@
+{% extends "web/secciones/lecturas.html" %}
+{% block head %}
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
+
+ {% endblock %}
+{% block scripthead %}
+
+
+    $(function()
+    {
+
+
+
+    {% autoescape off %}
+
+
+
+        $('#tabla30').dataTable({
+        "aaData":{{ listadatos }}
+        ,
+        "aoColumns":[{"sTitle":"Dia"} , {"sTitle": "Energia en Watts"}  ]
+        });
+
+        var avalores =  ({{ listgraf }});
+        ponGrafico(avalores);
+
+    {%  endautoescape %}
+
+
+
+    });
+
+{% endblock %}
+
+
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box" style="position:relative;">
+                <div class="tab-header" role="grid">
+                    Resumen Mensual
+                </div>
+                <table id="tabla30" class="table table-striped table-bordered box">
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block derecha %}
+    <div class="box">
+        <div class="tab-header">
+            Grafico Mes
+        </div>
+        <div class="padded">
+            <div id="chart1" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block scriptfoot %}
+
+    function ponGrafico(data)
+    {
+
+        var valores=[];
+        var arreglo =[];
+        var intvalores =[];
+        var xy =[];
+        var ax =[];
+        var ay =[];
+        var x, y,a;
+        valores = data;
+
+        for( i=0 ; i < valores.length ; i++)
+        {
+            a=valores[i].toString()
+            xy =a.split(",").map(function(x){return parseInt(x)})
+            ax.push(xy[0]);
+            ay.push(xy[1]);
+            intvalores.push(xy);
+        }
+        ;
+
+        var maximoy = Math.max.apply(Math,ay);
+        var maximox = Math.max.apply(Math,ax)
+        var options = {
+
+        yaxis: { min: 0, max: maximoy+100 },
+    xaxis: { mode:"time", minTickSize: [1,"day"] ,
+    TickSize:[1,"day"], timeformat:"%d"
+        },
+    colors: ["#EDC240", "#222", "#666", "#BBB"],
+    series: {
+    lines: {
+    lineWidth: 2,
+    fill: true,
+    fillColor: { colors: [ { opacity: 0.3 }, { opacity: 0.03 } ] },
+    steps: false
+    }
+
+    }
+    };
+
+    fecthed ={label:"Watts" , data: intvalores}
+    arreglo.push(fecthed)
+    var plot = $.plot($("#chart1"),arreglo  , options)
+
+
+    };
+
+
+
+
+
+{% endblock %}

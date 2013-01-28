@@ -1,0 +1,241 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!--[if lt IE 9]>
+<script src="/javascripts/html5shiv.js" type="text/javascript"></script><script src="/javascripts/excanvas.js" type="text/javascript"></script><script src="/javascripts/iefix.js" type="text/javascript"></script><link href="/stylesheets/iefix.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+<title>WebLogger InfinityLoop</title>
+<link rel=stylesheet type=text/css media=screen  href='{{STATIC_URL }}stylesheets/application.css'>
+<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+
+{% block head %}
+
+
+
+{% endblock %}
+
+</head>
+<script type='text/javascript'>
+    {% block scripthead %}
+
+
+    {% endblock %}
+</script>
+ <body>
+    <div class="container">
+        <div class="row" id="notifications-wrapper">
+            <div id="notifications" class="span8 offset2 notifications animated">
+                <div id="dismiss-all" class="dismiss-all button blue">Dismiss all</div>
+                <div id="content">
+                    <div id="notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="modal" class="black-box modal hide fade">
+            <div class="modal-header tab-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <span></span>
+            </div>
+            <div class="modal-body separator">
+
+            </div>
+            <div class="modal-footer">
+                <div class="inner-well">
+                    <a class="button mini rounded light-gray" data-dismiss="modal">Close</a>
+                    <a class="button mini rounded blue">Save changes</a>
+                </div>
+            </div>
+        </div>
+        <div id="modal-gallery" class="black-box modal modal-gallery hide fade">
+            <div class="modal-header tab-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <span class="modal-title"></span>
+            </div>
+            <div class="modal-body"><div class="modal-image"></div></div>
+            <div class="modal-footer">
+                <div class="pull-left">
+
+                </div>
+                <div class="pull-right">
+                    <a class="button blue modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
+                    <a class="button gray modal-prev"><i class="icon-arrow-left icon-white"></i> Previous</a>
+                    <a class="button green modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> Slideshow</a>
+                    <a class="button black" target="_blank"><i class="icon-download"></i> Download</a>
+                </div>
+            </div>
+        </div>
+        <nav id="primary" class="main-nav">
+            <ul>
+
+                <li class="active">
+                    <a href="/inicio">
+                        <i class="icon-dashboard"></i> P. Control
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="/general/generales">
+                        <i class="icon-list-alt"></i> General
+                    </a>
+                </li>
+
+{#                <li class="">#}
+{#                    <a href="../user_interface/buttons_dropdowns.html">#}
+{#                        <i class="icon-beaker"></i> Ptos. de Medida#}
+{#                    </a>#}
+{#                </li>#}
+
+                <li class="">
+                    <a href="../lecturas/ultimas/24">
+                        <i class="icon-plus-sign"></i> Lectura
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="../charts/charts.html">
+                        <i class="icon-bar-chart"></i> Historico
+                    </a>
+                </li>
+
+{#                <li class="dropdown">#}
+{#                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-share-alt"></i>Otros <span class="caret"></span></a>#}
+{##}
+{#                    <ul class="dropdown-menu">#}
+{#                        <li>#}
+{#                            <a href="../error_404.html">#}
+{#                                <i class="icon-warning-sign"></i> Error 404#}
+{#                            </a>#}
+{#                        </li>#}
+{##}
+{##}
+{##}
+{#                        <li>#}
+{#                            <a href="../docs/docs.html">#}
+{#                                <i class="icon-book"></i> Documentation#}
+{#                            </a>#}
+{#                        </li>#}
+{##}
+{##}
+{#                        <li class="divider"></li>#}
+{#                        <li>#}
+{#                            <a href="../login/login.html">#}
+{#                                <i class="icon-off"></i> Log out (login page)#}
+{#                            </a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </li>#}
+
+            </ul>
+        </nav>
+
+
+        <nav id="secondary" class="main-nav">
+
+            <div class="profile-menu">
+
+                <div class="pull-left">
+                    <div class="avatar">
+                        <img src="{{ STATIC_URL }}/images/avatar.png">
+                    </div>
+                </div>
+
+                <div class="pull-left">
+                    <div class="title">
+                        WebLogger
+                    </div>
+                    <div class="btn-group">
+                        <button class="button mini inset black"><i class="icon-search"></i></button>
+                        <button class="button mini inset black">Administrar</button>
+                        <button class="button mini inset black dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i></button>
+                        <ul class="dropdown-menu black-box-dropdown">
+                            <li><a href="/admin/">Administrador</a></li>
+                            <li><a href="/admin/auth/user//">Usuarios</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/admin/maestros/terceros/">Terceros</a></li>
+                            <li><a href="/admin/maestros/tarifasdeacceso/">Tarifas de Acceso</a></li>
+                            <li class="divider"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pull-right profile-menu-nav-collapse">
+                    <button class="button black"><i class="icon-reorder"></i></button>
+                </div>
+
+            </div>
+            {% block sencondarymenu %}
+            {% endblock %}
+
+
+        </nav>
+
+        <section id="main">
+            <div class="top-nav">
+                {% comment %}<div class="container-fluid">
+                    <div class="row-fluid search-button-bar-container">
+                        <div class="span12">
+                            <ul class="breadcrumb">
+                                <li><a href="#"><i class="icon-home"></i> Some</a></li>
+                                <li><a href="#">Nice</a></li>
+                                <li><a href="#">Breadcrumbs</a></li>
+                                <li class="active"><a href="#">Here</a></li>
+                            </ul>
+                            <a class="search-button-trigger" href="#"><i class="icon-search"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid search-bar-nav">
+                        <div class="span12">
+                            <form>
+                                <input type="text" class="search" placeholder="Search...">
+                            </form>
+                        </div>
+                    </div>
+                </div>{% endcomment %}
+            </div>
+            <div class="container-fluid">
+
+                    {% block central %}
+                    {% endblock %}
+
+            </div>
+
+             <div class="container-fluid">
+
+                <div class="row-fluid">
+                        <div class="span6">
+                            {% block izquierda %} {% endblock %}
+                        </div>
+                        <div class="span6">
+                            {% block derecha %} {% endblock %}
+                        </div>
+
+                </div>
+                <div class="row-fluid">
+                     <div class="span12">
+                         <div class="footer">
+                             <div>2012 © InfinityLoop Sistemas S.L</div>
+                             <div>Creado por <a href="http://wwww.infinityloop.es">InfinityLoop</a></div>
+                         </div>
+                     </div>
+                </div>
+
+             </div>
+        </section>
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/application.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/prettify.js"></script>
+    <link rel=stylesheet type=text/css media=screen  href="{{ STATIC_URL }}stylesheets/prettify.css">
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.formset.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/grafico_estadistica.js"></script>
+    <script type="text/javascript">
+
+        {% block scriptfoot %}
+        {% endblock %}
+        prettyPrint()
+    </script>
+
+
+</body>
+

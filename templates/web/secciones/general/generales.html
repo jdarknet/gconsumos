@@ -1,0 +1,134 @@
+{% extends "web/secciones/general.html" %}
+{% block head %}
+
+{% endblock %}
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                    Datos Generales
+                </div>
+                <div class="padded">
+                    <form method="post" class="fill-up">{% csrf_token %}
+                        <div class="hidden">
+                            {{ general.id }}
+                        </div>
+                        <div class="input">
+                                <div>{{ general.nombpropietario.label }}</div>
+                                <div class="append-transparent">
+                                    {{ general.nombpropietario}}
+                                </div>
+                        </div>
+                        <div class="input">
+                                <div>{{ general.tipousuario.label }}</div>
+
+                                <div class="append-transparent">
+                                    {{ general.tipousuario }}
+
+                                </div>
+
+                        </div>
+                        <div class="input">
+                                <div>{{ general.mediaconsumo.label }}</div>
+                                <div class="note pull-left">{{ general.mediaconsumo.help_text }}</div>
+                                <div class="append-transparent">
+                                    {{ general.mediaconsumo }}
+
+                                </div>
+
+                        </div>
+                        <div class="row-fluid">
+                        <div class="span6">
+                                   <div class="input">
+                                        {{ general.diasfestivos }}
+                                        <label for="id_general-diasfestivos" >{{ general.diasfestivos.label }}</label>
+                                    </div>
+                                    <div class="input">
+                                       {{ general.calefaccion }}
+                                        <label for="id_general-calefaccion">{{ general.calefaccion.label }}</label>
+                                    </div>
+                                    <div class="input">
+                                        {{ general.aireacondicionado }}
+                                        <label for="id_general-aireacondicionado">{{ general.aireacondicionado.label }}</label>
+                                    </div>
+
+                         </div>
+                         <div class="span6">
+                                   <div class="input">
+                                        {{ general.calentadoragua }}
+                                        <label for="id_general-calentadoragua">{{ general.calentadoragua.label }}</label>
+                                    </div>
+                                    <div class="input">
+                                    {{ general.vitroceramica }}
+                                    <label for="id_general-vitroceramica">{{ general.vitroceramica.label }}</label>
+                                    </div>
+                                    <div class="input">
+                                        {{ general.congelador }}
+                                        <label for="id_general-congelador">{{ general.congelador.label }}</label>
+                                    </div>
+
+                        </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" name="envia_general" class="button blue">Guardar Cambios</button>
+                            <button type="button" class="button">Cancelar</button>
+                            <div class="pull-right"> </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block derecha %}
+
+
+    <div class="box">
+        <div class="tab-header">
+            Datos Contrato Energia
+        </div>
+        <div class="padded">
+            <form method="post" class="fill-up">{% csrf_token %}
+                <div class="hidden">
+                    {{ contrato.id }}
+                </div>
+                {{ contrato.empresaelectrica.label }}
+                <div class="append-transparent">
+                    {{ contrato.empresaelectrica }}
+                </div>
+                {{ contrato.actividadeco.label }}
+                <div class="append-transparent">
+                    {{ contrato.actividadeco }}
+                </div>
+                {{ contrato.cups.label }}
+                <div class="append-transparent">
+                    {{ contrato.cups }}
+                </div>
+                {{ contrato.potencia.label }} (Kw)
+                <div class="append-transparent">
+                    {{ contrato.potencia }}
+                </div>
+                <div>{{ contrato.tfacceso.label }}</div>
+                <div class="append-transparent">
+                    {{ contrato.tfacceso }}
+                </div>
+                {{ contrato.numcontador.label }}
+                <div class="append-transparent">
+                    {{ contrato.numcontador }}
+                </div>
+
+
+                <div class="form-actions">
+                    <button type="submit"  name="envia_contrato" class="button blue">Guardar Cambios</button>
+                    <button type="button" class="button">Cancelar</button>
+                    <div class="pull-right">
+                 </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

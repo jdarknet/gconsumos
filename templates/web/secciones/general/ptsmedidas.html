@@ -1,0 +1,108 @@
+{% extends "web/secciones/general.html" %}
+{% block head %}
+
+{% endblock %}
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                   Puntos de Medidas
+                </div>
+                <div class="padded">
+                    <form method="post" class="fill-up">{% csrf_token %}
+                        <table class="table table-bordered box">
+                            <thead>
+                            <th>
+                                Sensor
+                            </th>
+                            <th>
+                               Ubicación
+                            </th>
+                            <th>
+                                Totaliza
+                            </th>
+                            <th>
+                                Canal
+                            </th>
+                            </thead>
+                        {% for obj in listaptsmedidas %}
+                            <tr>
+                                <td><a href="{{obj.get_absolute_url}}">{{ obj.descripcion }}</a></td>
+                                <td>{{ obj.ubicacion }}</td>
+                                <td>
+                                {% if obj.totaliza   %}
+                                    <span class="badge badge-inverse">Si</span>
+                                {% else %}
+                                    <span class="badge badge-inverse">No</span>
+                                {% endif %}
+                                </td>
+                                <td>{{ obj.canal }}</td>
+                            </tr>
+                        {% endfor %}
+
+                        </table>
+                        <div class="form-actions">
+                            <button type="submit" name="envia_nuevo" class="button blue">Nuevo Punto</button>
+                            <div class="pull-right"> </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block derecha %}
+
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                   Edición Puntos de Medidas
+                </div>
+                <div class="padded">
+                    <form method="post" class="fill-up">{% csrf_token %}
+                        {{ form_detail.management_form }}
+                        <table class="table table-bordered box">
+                            <thead>
+                                <th>
+                                    {{ form_cab.descripcion.label }}
+                                </th>
+                                <th>
+                                    {{ form_cab.ubicacion.label }}
+                                </th>
+                                <th>
+                                    {{ form_cab.totaliza.label }}
+                                </th>
+                                <th>
+                                    {{ form_cab.canal.label}}
+                                </th>
+                            </thead>
+                            <tbody>
+
+                            <tr id="{{ form.prefix }}-row" >
+                            <td class="hide">{{ form_cab.id }}</td>
+                                    <td>{{ form_cab.descripcion }}</td>
+                                    <td>{{ form_cab.ubicacion }}</td>
+                                    <td>{{ form_cab.totaliza }}</td>
+                                    <td>{{ form_cab.canal }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                                            <div class="form-actions">
+                                                    <button type="submit" name="envia_actualiza" class="button blue">Guardar Cambios</button>
+                                                    <button id="#eliminar" type="submit" name="envia_elimina" class="button">Eliminar</button>
+                                                    <div class="pull-right"> </div>
+                                             </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

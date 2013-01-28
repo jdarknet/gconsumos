@@ -1,0 +1,311 @@
+{% extends "web/secciones/panelcontrol.html" %}
+{% load dajaxice_templatetags %}
+{% block head %}
+    <script type="text/javascript" src="{{ STATIC_URL }}dajax/jquery.dajax.core.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
+    {% dajaxice_js_import %}
+{% endblock %}
+
+{%  block scripthead %}
+
+
+
+        function comprobarLectura(data)
+        {
+            if(data == 1)
+            {
+{#                $("#lecturaonoff").click()#}
+            }
+        }
+
+
+        $(document).ready(function()
+        {
+            Dajaxice.web.grafico_dia(ponGraficoDia);
+            Dajaxice.web.grafico_mes(ponGraficoMesActual);
+            Dajaxice.web.comprobarLectura(comprobarLectura);
+
+
+
+      $("#lecturaonoff").click(function(){
+            $("#lecturaonoff").append($('<a href="#" id="modal-link"> <i class="icon-random"></i> Va a proceder reiniciar la conexion</a>'))
+            Dajaxice.web.conectarLectura(comprobarLectura);
+            }) ;
+
+      $("#collapse1").click(function(){
+            if($('#tdia > tbody >tr').length ==0)
+            {
+                Dajaxice.web.calcula_costes(Dajax.process, {"tipo":"D"});
+            }
+      }) ;
+      $("#collapse2").click(function(){
+            if($('#tmes > tbody >tr').length ==0)
+            {
+                Dajaxice.web.calcula_costes(Dajax.process,{"tipo":"M"});
+            }
+        }) ;
+      $("#collapse3").click(function(){
+            if($('#tano > tbody >tr').length ==0)
+            {
+                Dajaxice.web.calcula_costes(Dajax.process,{"tipo":"A"});
+            }
+        }) ;
+
+    });
+
+
+{% endblock %}
+
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box">
+                <div class="tab-header">
+                    Resumen Consumo
+                </div>
+                <table class="table table-striped table-bordered box"
+                <thead>
+                <th>
+
+                </th>
+                <th>
+                    Diario
+                </th>
+                <th>
+                    Semana
+                </th>
+                <th>
+                    Mes
+                </th>
+                <th>
+                    Año
+                </th>
+                </thead>
+                <tr>
+                    <td>
+                        Energia(Watts)
+                    </td>
+                    <td>
+                        {{ energia.diaria }}
+                    </td>
+                    <td>
+                        {{ energia.semanal }}
+                    </td>
+                    <td>
+                        {{ energia.mensual }}
+                    </td>
+                    <td>
+                        {{ energia.anual }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Coste € (0.15 €/kw)
+                    </td>
+                    <td>
+                        {{ coste.diaria }}
+                    </td>
+                    <td>
+                        {{ coste.semanal }}
+                    </td>
+                    <td>
+                        {{ coste.mensual }}
+                    </td>
+                    <td>
+                        {{ coste.anual }}
+                    </td>
+                </tr>
+                </table>
+            </div>
+            <div class="box">
+                <div class="tab-header">
+                    Consumos Maximos
+                </div>
+                <table class="table table-striped table-bordered box">
+                <thead>
+                <th>
+
+                </th>
+                <th>
+                    Hora de Hoy
+                </th>
+                <th>
+                    Semana del Mes
+                </th>
+                <th>
+                    Dia del Mes
+                </th>
+                <th>
+                    Mes de Año
+                </th>
+                </thead>
+                <tr>
+                    <td>
+                        Fecha
+                    </td>
+                    <td>
+                        {{ momento.horamax }}
+                    </td>
+                    <td>
+                        {{ momento.semanamax }}
+                    </td>
+                    <td>
+                        {{ momento.diamax }}
+                    </td>
+                    <td>
+                        {{ momento.mesmax }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Energia (Watts)
+                    </td>
+                    <td>
+                        {{ maximos.ehoramax }}
+                    </td>
+                    <td>
+                        {{ maximos.esemanamax }}
+                    </td>
+                    <td>
+                        {{ maximos.ediamax }}
+                    </td>
+                    <td>
+                        {{ maximos.emensmax }}
+                    </td>
+                </tr>
+                </table>
+            </div>
+            <div class="box">
+                <div class="tab-header">
+                    Costes por Horarios contratación
+                </div>
+                <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseUno" id="collapse1">
+                                Diario
+                            </a>
+                        </div>
+                        <div id="collapseUno" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <table class="table table-striped table-bordered box" id="tdia">
+                                    <thead>
+                                    <th>
+                                        Franja Horaria
+                                    </th>
+                                    <th>
+                                        Kws
+                                    </th>
+                                    <th>
+                                        Coste €
+                                    </th>
+                                    </thead>
+                                    <tbody id="dia">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseDos" id="collapse2">
+                                Mes
+                            </a>
+                        </div>
+                        <div id="collapseDos" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <table class="table table-striped table-bordered box" id="tmes">
+                                    <thead>
+                                        <th>
+                                            Franja Horaria
+                                        </th>
+                                        <th>
+                                            Kws
+                                        </th>
+                                        <th>
+                                            Coste €
+                                        </th>
+                                    </thead>
+                                    <tbody id="mes">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTres" id="collapse3">
+                                  Año
+                                </a>
+                            </div>
+                            <div id="collapseTres" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <table class="table table-striped table-bordered box" id="tano">
+                                        <thead>
+                                        <th>
+                                            Franja Horaria
+                                        </th>
+                                        <th>
+                                            Kws
+                                        </th>
+                                        <th>
+                                            Coste €
+                                        </th>
+                                        </thead>
+                                        <tbody id="ano">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="black-box tex">
+                <div class="tab-header">
+                    Estado de Lectura EnviR
+                </div>
+                <div class="padded">
+                    <div class="inner-well clearfix">
+
+                        <b>Click para detener o reiniciar conexión ENVIR </b>
+                        <div class="pull-right">
+                            <input rel="confirm-check" type="checkbox" id="lecturaonoff" class="checky">
+                            <label for="lecturaonoff" class="checky"><span></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block derecha %}
+    <div class="box">
+        <div class="tab-header">
+            Grafico Diario
+        </div>
+        <div class="padded">
+            <div id="chart1" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="tab-header">
+            Grafico Mes Actual
+        </div>
+        <div class="padded">
+            <div id="chart2" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+
+{% endblock %}
