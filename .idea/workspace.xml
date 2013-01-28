@@ -2,375 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf697543-8b8d-4f72-8d24-76d8588fdef7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/changelist-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/changelist-bg_rtl.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/chooser-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/chooser_stacked-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/default-bg-reverse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/default-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/deleted-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon-no.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon-yes.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_addlink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_alert.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_calendar.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_changelink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_clock.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_deletelink.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_searchbox.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/icon_success.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-delete-8bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-restore-8bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-restore.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/inline-splitter-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg-grabber.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg-reverse.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg-selected.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/nav-bg.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/selector-icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/selector-search.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/sorting-icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-left.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-left_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-right.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tool-right_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright_over.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/lib/JsTestDriver-1.3.3c.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/arrow.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/screenshot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/dollar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/drawing/cursor-eraser.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/drawing/cursor-pencil.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/drawing/tool-palette.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/thumbnail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/yuicompressor-2.4.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/julian.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gconsumos.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sass_stdlib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/testrunner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comunicacion/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comunicacion/management/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comunicacion/management/commands/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comunicacion/management/commands/alarmas.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/datos/datos.ccd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/error_creacion.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gconsumos/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gconsumos/settings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gconsumos/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gconsumos/wsgi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/GetDataFromCurrentCostMeter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/currentcostdataconvert.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/currentcostdb.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/currentcostparser.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/serialconn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lecturas/tracer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/lookups.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/migrations/0002_auto__chg_field_detallestarifas_llano__chg_field_detallestarifas_punta.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/migrations/0003_auto__add_field_tarifasdeacceso_cabperiodo__del_field_detallestarifas_.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maestros/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requerimientos.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/base.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/forms.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/LICENSE-JQUERY.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/actions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/actions.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/admin/ordering.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/collapse.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/compress.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/getElementsBySelector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/inlines.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/timeparse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/css/bootswatch.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/css/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/NOTES" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/lib/Asserts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/lib/jquery-1.4.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/misc/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/misc/fake-jstestdriver.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/misc/local.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/misc/new-test.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/CanvasAssertions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/DygraphOps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/PixelSampler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/Proxy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/annotations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/axis_labels.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/callback.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/custom_bars.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/date_formats.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/error_bars.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/formats.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/interaction_model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/missing_points.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/multi_csv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/multiple_axes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/no_hours.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/pathological_cases.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/per_series.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/range_selector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/range_tests.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/rolling_average.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/sanity.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/scientific_notation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/scrolling_div.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/selection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/simple_drawing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/stacked.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/tickers.disabled-js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/to_dom_coords.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/update_options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/update_while_panning.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/auto_tests/tests/utils_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/common/textarea.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/common/textarea.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dashed-canvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/annotations.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/changes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/dow.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/ny-vs-sf.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/per-axis.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/suzuki-mariners.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/temperature-notes.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/temperatures.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/temperatures.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/docs/twonormals.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-dev.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-gviz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-layout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-options-reference.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-range-selector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-tickers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph-utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/dygraph.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/excanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/palette.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/palette.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/samples.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/experimental/palette/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/gadget.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/generate-combined.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/generate-documentation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jsTestDriver.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/CHANGELOG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/README.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/build/jshint-rhino.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/env/jsc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/env/jsc.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/env/rhino.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/env/wsh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/jshint/jshint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/lint.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/phantom-driver.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/phantom-perf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/annotations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/axes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/chart-labels.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/install.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/plugins/legend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/push-to-web.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/annotation-gviz.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/annotation-native.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/annotation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/avoidMinZero.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/border.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/century-scale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/charting-combinations.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/color-cycle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/color-visibility.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/connect-separated.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/crosshair.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/custom-bars.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/custom-circles.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/customLabel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/customLabelCss3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/dashed-canvas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/dateWindow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/daylight-savings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/draw-points.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/drawing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/dygraph-many-points-benchmark.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/dygraph.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/dynamic-update.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/fillGraph.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/fractions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/grid_dot.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/gviz-infinity.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/gviz-selection.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/gviz.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/highlighted-region.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/hourly.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/iframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/independent-series.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/interaction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/interaction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/is-zoomed-ignore-programmatic-zoom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/is-zoomed.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/isolated-points.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/label-div.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/labelsKMB.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/layout-options.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/linear-regression-addseries.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/linear-regression-fractions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/linear-regression.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/link-interaction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/logscale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/missing-data.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/multi-scale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/native-format.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/negative.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/no-range.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/no-visibility.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/number-format.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/numeric-axis.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/numeric-gviz.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/out-of-order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/per-series.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/plotter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/plotters.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/range-selector.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/resize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/reverse-y-axis.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/series-highlight.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/small-range-zero.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/spacing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/stacked.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/steps.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/stock.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/styled-chart-labels.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/synchronize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/temperature-sf-ny.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/two-axes-vr.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/two-axes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/unboxed-spark.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/underlay-callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/value-axis-formatters.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/visibility.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/x-axis-formatter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/zero-series.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/dygraphs-master/tests/zoom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/registration/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/general.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/general/configuracion.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/general/generales.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/general/ptsmedidas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/lecturas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/lecturas/ultima24horas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/lecturas/ultimomes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/lecturas/ultimos7dias.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/panelcontrol.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/panelcontrol/alarmas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/panelcontrol/estadisticas.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/panelcontrol/logs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ajax.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/iwlist.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/librerias.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0002_auto__add_field_configuracion_protvocaldo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0003_auto__del_field_configuracion_protvocaldo__add_field_configuracion_pro.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0004_auto__add_field_configuracion_essid.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0005_auto__add_unique_ptdmedida_canal.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0006_auto__chg_field_alarmas_tiempofin__chg_field_alarmas_tiempoinicio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0007_auto__chg_field_configuracion_password.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0008_auto__chg_field_configuracion_serialmodulo__chg_field_configuracion_e_.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0009_auto__del_field_configuracion_e_gw__del_field_configuracion_e_mask__de.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0010_auto__add_field_ptdmedida_totaliza.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0011_auto__add_field_configuracion_w_dhcp.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0012_auto__add_field_alarmas_idcomsumos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/0013_auto__chg_field_configuracion_essid.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/wificonnect.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gconsumos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -429,7 +61,7 @@
           <file leaf-file-name="alarmas.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/comunicacion/management/commands/alarmas.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="133" column="40" selection-start="5291" selection-end="5291" vertical-scroll-proportion="0.479927">
+                <state line="147" column="10" selection-start="6091" selection-end="6091" vertical-scroll-proportion="0.8631387">
                   <folding />
                 </state>
               </provider>
@@ -898,6 +530,11 @@
       <created>1354386320585</created>
       <updated>1354386320585</updated>
     </task>
+    <task id="LOCAL-00001" summary="Inicio estructura">
+      <created>1359402628114</created>
+      <updated>1359402628114</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -933,9 +570,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23678415" sideWeight="0.060832445" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14887941" sideWeight="0.6703418" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14887941" sideWeight="0.6703418" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.93543226" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -981,7 +619,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inicio estructura" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -994,6 +632,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Inicio estructura" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1112,7 +751,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/comunicacion/management/commands/alarmas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="40" selection-start="5291" selection-end="5291" vertical-scroll-proportion="0.479927">
+        <state line="147" column="10" selection-start="6091" selection-end="6091" vertical-scroll-proportion="0.8631387">
           <folding />
         </state>
       </provider>
