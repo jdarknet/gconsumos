@@ -129,3 +129,8 @@ def calculoTotalEnergia(tipo,dia,mes,ano):
                 gastos.append([deno,round(totenergia,2),round(totimporte,2)])
 
     return gastos
+
+
+def list_get_egfp(L,i,v=None):
+    try: return[i]
+    except IndexError: return v

@@ -7,6 +7,7 @@ from lecturas.currentcostdb import CurrentCostDB
 from gconsumos import settings
 from tracer import CurrentCostTracer
 from serialconn import CurrentCostConnection
+from web.utils import list_get_egfp
 
 trc = CurrentCostTracer()
 
@@ -186,9 +187,10 @@ class leeDatos:
                     muestreo=300
                     if fin - inicio > muestreo:
                         print "Graba al %s" % (fin - inicio)
-                        nsensor=self.numberEmptyArray(aDatos)
+                        nsensor=9
                         for num in range(0,nsensor):
-                            aDatos[num] = self.grabarConsumos(aDatos[num])
+                            if len(list_get_egfp(aDatos,num))!=0:
+                                aDatos[num] = self.grabarConsumos(aDatos[num])
 
                         inicio = 0
 
