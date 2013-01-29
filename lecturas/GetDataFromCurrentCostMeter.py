@@ -8,11 +8,13 @@ from gconsumos import settings
 from tracer import CurrentCostTracer
 from serialconn import CurrentCostConnection
 from web.utils import list_get_egfp
+import logging
 
-trc = CurrentCostTracer()
+trc =logging.getLogger('lecturas.GetDataFromCurrentCostMeter')
+
 
 class leeDatos:
-    trc          = CurrentCostTracer()
+
     myserialconn = CurrentCostConnection()
     myparser     = CurrentCostDataParser()
     ccdb         = CurrentCostDB()
@@ -21,7 +23,6 @@ class leeDatos:
         if self.myserialconn.isConnected():
             self.myserialconn.disconnect()
         trc.EnableTrace(True)
-        trc.InitialiseTraceFile()
         self.ccdb.InitialiseDB(settings.PROJECT_ROOT+"/datos/datos.ccd")
         self.getDataFromCurrentCostMeter("/dev/ttyUSB0")
 
@@ -39,7 +40,7 @@ class leeDatos:
             #  in the event of an error, so we do not need to do this explicitly)
             self.myserialconn.connect(portdet)
         except serial.SerialException, msg:
-            trc.Error("Fallo al conectar al CurrentCost meter")
+            trc.error("Fallo al conectar al CurrentCost meter")
             return False
         except:
             trc.Error("Fallo al conectar al CurrentCost meter")
@@ -78,13 +79,13 @@ class leeDatos:
             hora, min, seg = tiempo.split(":")
             id = ano + mes + dia + tiempo
             if hora != inihora:
-                trc.Trace("Entra en Hora .................................................")
+                trc.info("Entra en Hora .................................................")
                 self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
                 self.ccdb.StoreConsumoHoras(inihora, id, iniano, inimes, inidia,senso)
                 inihora = hora
                 if inidia != dia:
                     time.sleep(5)
-                    trc.Trace("Entra en dias .............................................")
+                    trc.info("Entra en dias .............................................")
                     self.ccdb.StoreConsumoDias(tiempo, id, iniano, inimes, inidia,senso)
                     inidia = dia
                     if inimes != mes:
@@ -102,7 +103,7 @@ class leeDatos:
                 nd = 1
             promedio = energia + promedio
             nd = nd + 1
-        trc.Trace("Grabando Sensor %s Energia %s" % ( str((promedio / nd)),senso))
+        trc.info("Grabando Sensor %s Energia %s" % ( str((promedio / nd)),senso))
         self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
         return []
 
@@ -110,7 +111,7 @@ class leeDatos:
     def getDataFromCurrentCostMeter(self,portdet):
         #Arreglo para 10 sensores reset cada 5 minutos
         aDatos=[[],[],[],[],[],[],[],[],[],[]]
-        trc.Trace('Connecting to local CurrentCost meter - using device "' + portdet)
+        trc.info('Connecting to local CurrentCost meter - using device "' + portdet)
         reuseconnection = self.myserialconn.isConnected()
         if reuseconnection == False:
             self.conecta(portdet)
@@ -119,7 +120,7 @@ class leeDatos:
         updatesremaining = 1
         sincap = 0
         loopMessage = "Waiting for data from CurrentCost meter"
-        trc.Trace(loopMessage)
+        trc.info(loopMessage)
         inicio = 0
         while updatesremaining > 0:
             #Linea para recibir datos
@@ -129,10 +130,10 @@ class leeDatos:
                 try:
                     line = self.myserialconn.readUpdate()
                 except serial.SerialException, err:
-                    trc.Trace('Failed to receive data from CurrentCost meter')
+                    trc.error('Failed to receive data from CurrentCost meter')
                     return False
                 except Exception, msg:
-                    trc.Trace('Failed to receive data from CurrentCost meter')
+                    trc.error('Failed to receive data from CurrentCost meter')
                     return False
 
 
@@ -140,19 +141,20 @@ class leeDatos:
             # try to parse the XML
 
             currentcoststruct = self.myparser.parseCurrentCostXML(line)
-            trc.Trace("--------------------------Lectura---------------------------------------")
+            trc.info("--------------------------Lectura---------------------------------------")
+
+            #print "Linea cruda %s " % currentcoststruct
+            #Si linea cruda es demasiada lectura que reinicie la conexion
             if currentcoststruct is None:
                 sincap = sincap + 1
-                trc.Trace("Sin  conexion  No. %s" % sincap)
                 if sincap > 8:
-                    trc.Trace("Intentando Conexion %s" % sincap)
                     self.myserialconn.disconnect()
                     reuseconnection = self.myserialconn.isConnected()
                     if reuseconnection == False:
                         self.conecta(portdet)
                     sincap = 0
             if currentcoststruct is not None:
-                trc.Trace("Tiempo: %s  Consumo: %s" % (currentcoststruct['msg']['time'],currentcoststruct['msg']['ch1']['watts']))
+                trc.info(currentcoststruct)
                 sincap = 0
                 #Solucionar problema de cambio de hora cuando sea media noche, en caso
                 tiempo = currentcoststruct['msg']['time']
@@ -175,7 +177,7 @@ class leeDatos:
                                        'potencia': potencia, 'temperatura': temperatura,'sensor':sensor})
 
                     except KeyError:
-                        trc.Trace("Error de lectura de alguna clave")
+                        trc.error("Error de lectura de alguna clave")
 
                     fin = time.time()
                     muestreo=300

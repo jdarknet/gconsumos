@@ -145,32 +145,71 @@ INSTALLED_APPS = (
 
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
+    'disable_existing_loggers': True,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+        },
+#    'filters': {
+#        'special': {
+#            '()': 'project.logging.SpecialFilter',
+#            'GetDataFromCurrentCostMeter': 'bar',
+#            }
+#    },
     'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'django.utils.log.NullHandler',
+            },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
         'mail_admins': {
             'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
+            'class': 'django.utils.log.AdminEmailHandler',
         },
+            # I always add this handler to facilitate separating loggings
+        'log_file':{
+                'level': 'DEBUG',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(PROJECT_ROOT, 'logs/django.log'),
+                'maxBytes': '16777216', # 16megabytes
+                'formatter': 'verbose'
+            },
+        'error_log_file':{
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(PROJECT_ROOT, 'logs/error_django.log'),
+            'maxBytes': '16777216', # 16megabytes
+            'formatter': 'verbose'
+        },
+
+        },
+
+    'loggers': {
+        'django': {
+            'handlers': ['null'],
+            'propagate': True,
+            'level': 'INFO',
+            },
+        'lecturas.GetDataFromCurrentCostMeter': {
+            'handlers': ['error_log_file'],
+            'level': 'ERROR',
+            'propagate': False,
+            },
+        'lecturas.GetDataFromCurrentCostMeter': {
+            'handlers': ['log_file'],
+            'level': 'INFO',
+            'propagate': False,
+        }
     }
 }
 
