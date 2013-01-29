@@ -21,6 +21,7 @@ class leeDatos:
         if self.myserialconn.isConnected():
             self.myserialconn.disconnect()
         trc.EnableTrace(True)
+        trc.InitialiseTraceFile()
         self.ccdb.InitialiseDB(settings.PROJECT_ROOT+"/datos/datos.ccd")
         self.getDataFromCurrentCostMeter("/dev/ttyUSB0")
 
@@ -140,18 +141,18 @@ class leeDatos:
 
             currentcoststruct = self.myparser.parseCurrentCostXML(line)
             trc.Trace("--------------------------Lectura---------------------------------------")
-            trc.Trace(currentcoststruct)
-            #print "Linea cruda %s " % currentcoststruct
-            #Si linea cruda es demasiada lectura que reinicie la conexion
             if currentcoststruct is None:
                 sincap = sincap + 1
+                trc.Trace("Sin  conexion  No. %s" % sincap)
                 if sincap > 8:
+                    trc.Trace("Intentando Conexion %s" % sincap)
                     self.myserialconn.disconnect()
                     reuseconnection = self.myserialconn.isConnected()
                     if reuseconnection == False:
                         self.conecta(portdet)
                     sincap = 0
             if currentcoststruct is not None:
+                trc.Trace("Tiempo: %s  Consumo: %s" % (currentcoststruct['msg']['time'],currentcoststruct['msg']['ch1']['watts']))
                 sincap = 0
                 #Solucionar problema de cambio de hora cuando sea media noche, en caso
                 tiempo = currentcoststruct['msg']['time']

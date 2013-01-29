@@ -31,7 +31,8 @@ from time import strftime
 #
 #
 #  Dale Lane (http://dalelane.co.uk/blog)
-# 
+#
+from gconsumos import settings
 
 enableTrace = True
 
@@ -54,12 +55,12 @@ class CurrentCostTracer():
 
         logging.basicConfig(level=logging.DEBUG,
                             format='%(asctime)s %(message)s',
-                            filename='weblogger_trazas.log',
+                            filename=settings.PROJECT_ROOT+'/weblogger_trazas.log',
                             filemode='w+')
 
         if enableTrace == True:
-#            stackDepth = 0
-#            indentStr  = ""
+            stackDepth = 0
+            indentStr  = ""
             logging.info("WebLogger InfinityLoop - v 1.0")
             logging.info("-------------------------------")
             logging.info("python     : version " + repr(platform.python_version()))
@@ -69,7 +70,8 @@ class CurrentCostTracer():
     def Trace(self, debuginfo):
         global enableTrace, indentStr
         if enableTrace == True:
-            logging.debug("DEBUG " + indentStr + " " + debuginfo)
+            if debuginfo is not None:
+                logging.debug("DEBUG " + indentStr + " " + debuginfo)
 
     def Error(self, errorinfo):
         global enableTrace, indentStr        
@@ -82,7 +84,7 @@ class CurrentCostTracer():
         if enableTrace == True:
             stackDepth += 1
     
-            logging.info("ENTRY " + indentStr + " " + functionname)
+            logging.info("ENTRAR " + indentStr + " " + functionname)
     
             self.prepareIndentString()
 
@@ -92,7 +94,7 @@ class CurrentCostTracer():
             stackDepth -= 1
             self.prepareIndentString()
     
-            logging.info("EXIT  " + indentStr + " " + functionname)
+            logging.info("SALIR  " + indentStr + " " + functionname)
 
 
     def prepareIndentString(self):
