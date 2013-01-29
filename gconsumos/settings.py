@@ -3,7 +3,9 @@ import os,sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-
+ADMINS = (
+    ('info', 'info@infinityloop.es'),
+    )
 
 PROJECT_DIR = os.path.dirname(__file__)
 BUILDOUT_DIR  = PROJECT_DIR
@@ -11,10 +13,10 @@ PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+EMAIL_HOST='localhost'
+EMAIL_PORT =25
+MANAGERS = ADMINS
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
 
 MANAGERS = ADMINS
 DATABASE = PROJECT_ROOT+'/datos/datos.ccd'
@@ -156,12 +158,7 @@ LOGGING = {
             'format': '%(levelname)s %(message)s'
         },
         },
-#    'filters': {
-#        'special': {
-#            '()': 'project.logging.SpecialFilter',
-#            'GetDataFromCurrentCostMeter': 'bar',
-#            }
-#    },
+
     'handlers': {
         'null': {
             'level': 'DEBUG',
@@ -175,22 +172,16 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
+            'include_html' :True,
         },
-            # I always add this handler to facilitate separating loggings
+
         'log_file':{
                 'level': 'DEBUG',
                 'class': 'logging.handlers.RotatingFileHandler',
-                'filename': os.path.join(PROJECT_ROOT, 'logs/django.log'),
+                'filename': os.path.join(PROJECT_ROOT, 'logs/weblogger.log'),
                 'maxBytes': '16777216', # 16megabytes
-                'formatter': 'verbose'
+                'formatter': 'verbose',
             },
-        'error_log_file':{
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(PROJECT_ROOT, 'logs/error_django.log'),
-            'maxBytes': '16777216', # 16megabytes
-            'formatter': 'verbose'
-        },
 
         },
 
@@ -199,11 +190,6 @@ LOGGING = {
             'handlers': ['null'],
             'propagate': True,
             'level': 'INFO',
-            },
-        'lecturas.GetDataFromCurrentCostMeter': {
-            'handlers': ['error_log_file'],
-            'level': 'ERROR',
-            'propagate': False,
             },
         'lecturas.GetDataFromCurrentCostMeter': {
             'handlers': ['log_file'],

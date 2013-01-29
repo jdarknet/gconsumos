@@ -8,6 +8,7 @@ from email.mime.text import  MIMEText
 from pysqlite2 import dbapi2 as sqlite
 from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
+from maestros.models import Terceros
 from web.ajax import testLectura
 
 
@@ -164,14 +165,12 @@ class Command(BaseCommand):
         )
 
 
-
     def handle(self, *args, **options):
 
         if options['comunica']:
             if testLectura() != 1:
-                self.envio("Perdida de comunicacion con el ENVIR",'info@infinityloop.es','Sin comunicación EnviR, se intenta reconectar, si recibe algún mensaje mas en los proximos 15  minutos contacte con soporte')
-                #Intenta hacer reconexion en automatico
-                leer = leeDatos()
-
+                email= Terceros.objects.filter(tipotecero_id=1)[0].email
+                self.envio("Perdida de comunicacion con el ENVIR",email,'Sin comunicación EnviR, intente reconectar el Envir')
+                lee = leeDatos()
         if options['alarmas']:
             self.verificar()

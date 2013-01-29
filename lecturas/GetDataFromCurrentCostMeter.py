@@ -22,7 +22,6 @@ class leeDatos:
     def __init__(self):
         if self.myserialconn.isConnected():
             self.myserialconn.disconnect()
-        trc.EnableTrace(True)
         self.ccdb.InitialiseDB(settings.PROJECT_ROOT+"/datos/datos.ccd")
         self.getDataFromCurrentCostMeter("/dev/ttyUSB0")
 
@@ -43,7 +42,7 @@ class leeDatos:
             trc.error("Fallo al conectar al CurrentCost meter")
             return False
         except:
-            trc.Error("Fallo al conectar al CurrentCost meter")
+            trc.error("Fallo al conectar al CurrentCost meter")
             return False
 
     def numberEmptyArray(self,array):
@@ -141,20 +140,23 @@ class leeDatos:
             # try to parse the XML
 
             currentcoststruct = self.myparser.parseCurrentCostXML(line)
-            trc.info("--------------------------Lectura---------------------------------------")
+
 
             #print "Linea cruda %s " % currentcoststruct
             #Si linea cruda es demasiada lectura que reinicie la conexion
             if currentcoststruct is None:
                 sincap = sincap + 1
+                trc.info("Esperando conexion No. %s" % sincap)
                 if sincap > 8:
                     self.myserialconn.disconnect()
+                    time.sleep(2)
                     reuseconnection = self.myserialconn.isConnected()
                     if reuseconnection == False:
+                        trc.info("Intentando conectar...")
                         self.conecta(portdet)
                     sincap = 0
             if currentcoststruct is not None:
-                trc.info(currentcoststruct)
+
                 sincap = 0
                 #Solucionar problema de cambio de hora cuando sea media noche, en caso
                 tiempo = currentcoststruct['msg']['time']
@@ -170,6 +172,7 @@ class leeDatos:
 
                 if 'hist' not in currentcoststruct['msg']:
                     try:
+                        trc.info("Consumos Watts %s  Sensor : %s " % (currentcoststruct['msg']['ch1']['watts'], int(str(currentcoststruct['msg']['sensor']))) )
                         potencia    = currentcoststruct['msg']['ch1']['watts']
                         sensor      = int(str(currentcoststruct['msg']['sensor']))
                         temperatura = currentcoststruct['msg']['tmpr']
@@ -182,11 +185,12 @@ class leeDatos:
                     fin = time.time()
                     muestreo=300
                     if fin - inicio > muestreo:
-                        trc.Trace("Graba al minuto %s" % (fin - inicio))
+                        trc.info("Graba al minuto %s" % (fin - inicio))
                         nsensor=9
                         for num in range(0,nsensor):
                             if len(list_get_egfp(aDatos,num))!=0:
                                 aDatos[num] = self.grabarConsumos(aDatos[num])
+                        trc.info("Finaliza Grabacion %s" % (fin - inicio))
 
                         inicio = 0
 

@@ -24,10 +24,9 @@ urlpatterns = patterns('',
     url(r'panelcontrol/alarmas/$','web.views.alarmas',name='alarmas'),
     url(r'panelcontrol/alarmas/del/(?P<pk>\d+)/$','web.views.alarmasDelete',name='alarmasDelete'),
     url(r'panelcontrol/alarmas/add/$','web.views.alarmasNuevo',name='alarmasNuevo'),
+    url(r'panelcontrol/logs/$','web.views.verLogs',name='leerlogs'),
     url(r'lecturas/ultimas/(?P<tipo>\d+)/$','web.views.lecturas',name='lecturas'),
-    # url(r'^gconsumos/', include('gconsumos.foo.urls')),
     (r'^test/','web.views.test'),
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
 

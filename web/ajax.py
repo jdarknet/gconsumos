@@ -58,13 +58,8 @@ def updatewifis(request):
     return dajax.json()
 
 def testLectura():
-    hoy    = datetime.datetime.now()
-    dia  = hoy.day
-    mes  = hoy.month
-    ano  = hoy.year
-    min  = hoy.minute
-    horas = str(hoy.hour)
-    sql  = ('select 1 from lecturas_consumostmp where dia=%s and per=%s and ejer=%s and hora=%s and  min<= %s and (min+5)>=%s' % (dia,mes,ano,horas,min,min) )
+    valor=0
+    sql  = """select 1 valor from lecturas_consumostmp where datetime(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))||' '||substr('0'||hora,length(hora))||':'||substr('0'||min,length(min))) between datetime('now','-4 minutes') and datetime('now') """
     cur  = connection.cursor()
     cur.execute(sql)
     entries = cur.fetchall()

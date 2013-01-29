@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+{% extends "web/secciones/panelcontrol.html" %}
+{% block central %}
+<div class="box">
+    <form method="post" class="fill-up">{% csrf_token %}
+    <div class="input">
+        <textarea placeholder="logs" rows="20">
+            {% autoescape off %}
+                {{ textologs }}
+            {%  endautoescape %}
 
-</body>
-</html>
+        </textarea>
+    </div>
+    <div class="form-actions">
+            <button type="submit" name="leer_logs" class="button blue">Traer Logs</button>
+            <div class="pull-right"> </div>
+    </div>
+    </form>
+</div>
+{% endblock %}

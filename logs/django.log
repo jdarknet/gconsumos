@@ -1,0 +1,286 @@
+INFO 2013-01-29 09:54:38,077 GetDataFromCurrentCostMeter 13047 1155331136 Connecting to local CurrentCost meter - using device "/dev/ttyUSB0
+INFO 2013-01-29 09:54:47,861 GetDataFromCurrentCostMeter 13047 1155331136 Waiting for data from CurrentCost meter
+INFO 2013-01-29 09:54:53,734 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:54:59,836 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:05,711 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:11,812 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:17,914 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:24,016 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:30,117 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:36,221 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:42,094 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:47,972 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:54,075 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:55:59,948 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:06,053 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:11,927 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:18,030 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:24,132 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:30,234 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:42,215 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:49,226 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:49,229 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00692'}, 'time': u'09:59:35', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:56:55,098 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:56:55,102 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00694'}, 'time': u'09:59:41', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:57:01,200 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:01,204 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00696'}, 'time': u'09:59:47', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:57:07,073 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:07,077 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00690'}, 'time': u'09:59:53', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:57:12,947 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:12,950 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00699'}, 'time': u'09:59:59', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:57:24,695 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:24,698 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00696'}, 'time': u'10:00:11', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:57:30,799 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:30,802 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00696'}, 'time': u'10:00:17', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:57:36,899 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:36,903 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00687'}, 'time': u'10:00:23', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:57:43,003 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:43,006 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00689'}, 'time': u'10:00:29', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:57:48,876 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:48,879 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00647'}, 'time': u'10:00:35', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:57:54,979 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:57:54,982 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00685'}, 'time': u'10:00:41', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:58:01,081 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:01,085 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00687'}, 'time': u'10:00:47', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:58:06,955 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:06,958 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00688'}, 'time': u'10:00:53', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:58:13,059 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:13,062 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00693'}, 'time': u'10:00:59', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:58:18,937 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:18,940 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00686'}, 'time': u'10:01:05', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:58:25,038 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:25,041 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00663'}, 'time': u'10:01:11', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:58:31,140 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:31,143 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00685'}, 'time': u'10:01:17', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:58:37,245 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:37,248 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00687'}, 'time': u'10:01:23', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:58:43,345 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:43,349 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00694'}, 'time': u'10:01:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:58:49,447 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:49,450 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00689'}, 'time': u'10:01:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:58:55,547 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:58:55,550 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00676'}, 'time': u'10:01:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:01,649 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:01,652 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00658'}, 'time': u'10:01:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:07,522 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:07,526 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00691'}, 'time': u'10:01:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:13,397 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:13,401 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00692'}, 'time': u'10:02:00', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:19,498 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:19,501 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00692'}, 'time': u'10:02:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:25,601 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:25,604 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00677'}, 'time': u'10:02:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:31,701 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:31,704 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00671'}, 'time': u'10:02:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:37,576 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:37,580 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00688'}, 'time': u'10:02:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:43,677 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:43,680 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00681'}, 'time': u'10:02:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 09:59:49,550 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:49,554 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00691'}, 'time': u'10:02:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 09:59:55,425 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 09:59:55,428 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00703'}, 'time': u'10:02:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:00:01,297 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:00:01,300 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00696'}, 'time': u'10:02:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:00:07,290 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:00:07,314 GetDataFromCurrentCostMeter 13047 1155331136 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00695'}, 'time': u'10:02:53', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:00:13,951 GetDataFromCurrentCostMeter 13174 1075474432 Connecting to local CurrentCost meter - using device "/dev/ttyUSB0
+INFO 2013-01-29 10:00:18,968 GetDataFromCurrentCostMeter 13174 1075474432 Waiting for data from CurrentCost meter
+INFO 2013-01-29 10:00:19,142 GetDataFromCurrentCostMeter 13047 1155331136 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:00:22,146 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+ERROR 2013-01-29 10:00:25,018 GetDataFromCurrentCostMeter 13047 1155331136 Failed to receive data from CurrentCost meter
+INFO 2013-01-29 10:00:25,022 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:00:30,879 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:00:30,882 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00684'}, 'time': u'10:03:17', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:03:23,072 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:03:23,076 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00676'}, 'time': u'10:03:23', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:03:29,172 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:03:29,175 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00675'}, 'time': u'10:03:29', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:03:41,148 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:03:41,151 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00671'}, 'time': u'10:03:41', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:03:47,246 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:03:47,249 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00682'}, 'time': u'10:03:47', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:03:53,122 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:03:53,125 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00685'}, 'time': u'10:03:53', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:03:59,223 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:03:59,226 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00681'}, 'time': u'10:03:59', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:04:05,327 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:05,329 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00629'}, 'time': u'10:04:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:04:11,201 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:11,204 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00679'}, 'time': u'10:04:11', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:04:17,073 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:17,076 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00702'}, 'time': u'10:04:17', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:04:22,947 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:22,950 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00698'}, 'time': u'10:04:23', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:04:29,048 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:29,051 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00704'}, 'time': u'10:04:29', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:04:35,147 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:35,150 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00679'}, 'time': u'10:04:35', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:04:47,353 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:47,356 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00680'}, 'time': u'10:04:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:04:53,223 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:53,226 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00683'}, 'time': u'10:04:53', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:04:59,325 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:04:59,328 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00679'}, 'time': u'10:05:00', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:05,424 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:05,427 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00682'}, 'time': u'10:05:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:05:11,300 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:11,302 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00673'}, 'time': u'10:05:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:17,402 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:17,405 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00677'}, 'time': u'10:05:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:23,273 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:23,276 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00664'}, 'time': u'10:05:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:29,375 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:29,378 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00672'}, 'time': u'10:05:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:35,247 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:35,249 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00672'}, 'time': u'10:05:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:41,349 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:41,352 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00691'}, 'time': u'10:05:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:05:47,450 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:47,452 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00689'}, 'time': u'10:05:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:05:53,558 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:53,560 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00674'}, 'time': u'10:05:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:05:59,656 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:05:59,659 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00675'}, 'time': u'10:06:00', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:06:05,531 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:05,534 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00673'}, 'time': u'10:06:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:06:11,402 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:11,405 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00657'}, 'time': u'10:06:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:06:17,510 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:17,512 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00683'}, 'time': u'10:06:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:06:23,381 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:23,383 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00692'}, 'time': u'10:06:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:06:29,254 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:29,257 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00682'}, 'time': u'10:06:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:06:35,127 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:35,130 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00697'}, 'time': u'10:06:35', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:06:41,229 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:41,232 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00685'}, 'time': u'10:06:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:06:47,330 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:47,333 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00692'}, 'time': u'10:06:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:06:53,202 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:53,205 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00688'}, 'time': u'10:06:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:06:59,306 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:06:59,308 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00689'}, 'time': u'10:07:00', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:07:05,405 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:05,407 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00677'}, 'time': u'10:07:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:07:11,280 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:11,283 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00671'}, 'time': u'10:07:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:07:17,381 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:17,386 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00675'}, 'time': u'10:07:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:07:23,251 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:23,253 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00689'}, 'time': u'10:07:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:07:29,356 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:29,358 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00695'}, 'time': u'10:07:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:07:35,453 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:35,456 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00692'}, 'time': u'10:07:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:07:41,553 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:41,556 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00687'}, 'time': u'10:07:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:07:47,655 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:47,657 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00694'}, 'time': u'10:07:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:07:53,756 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:07:53,759 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00687'}, 'time': u'10:07:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:08:05,502 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:08:05,505 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00688'}, 'time': u'10:08:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.4'}}
+INFO 2013-01-29 10:08:11,602 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:08:11,605 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00683'}, 'time': u'10:08:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:08:17,476 GetDataFromCurrentCostMeter 13174 1075474432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:08:17,478 GetDataFromCurrentCostMeter 13174 1075474432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00678'}, 'time': u'10:08:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:15:06,091 GetDataFromCurrentCostMeter 13218 1074450432 Connecting to local CurrentCost meter - using device "/dev/ttyUSB0
+INFO 2013-01-29 10:15:16,067 GetDataFromCurrentCostMeter 13218 1074450432 Waiting for data from CurrentCost meter
+INFO 2013-01-29 10:15:16,919 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:16,922 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00650'}, 'time': u'10:15:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:15:24,068 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:24,071 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00672'}, 'time': u'10:15:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:15:29,945 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:29,948 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00657'}, 'time': u'10:15:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:15:36,034 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:36,037 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00627'}, 'time': u'10:15:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:15:48,004 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:48,007 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00646'}, 'time': u'10:15:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:15:53,882 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:53,885 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00648'}, 'time': u'10:15:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:15:59,745 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:15:59,748 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00668'}, 'time': u'10:15:59', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:05,842 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:05,845 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00637'}, 'time': u'10:16:05', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:11,947 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:11,950 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00682'}, 'time': u'10:16:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:17,819 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:17,829 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00680'}, 'time': u'10:16:17', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:23,918 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:23,920 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00628'}, 'time': u'10:16:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:30,016 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:30,019 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00641'}, 'time': u'10:16:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:35,895 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:35,898 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00657'}, 'time': u'10:16:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:41,986 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:41,989 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00648'}, 'time': u'10:16:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:16:48,080 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:48,083 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00643'}, 'time': u'10:16:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:16:53,951 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:53,954 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00633'}, 'time': u'10:16:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:16:59,819 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:16:59,829 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00628'}, 'time': u'10:16:59', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:05,690 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:05,696 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00639'}, 'time': u'10:17:05', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:17:11,561 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:11,564 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00680'}, 'time': u'10:17:11', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:17,662 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:17,665 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00630'}, 'time': u'10:17:17', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:23,758 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:23,761 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00643'}, 'time': u'10:17:23', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:29,629 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:29,632 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00629'}, 'time': u'10:17:29', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:35,726 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:35,729 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00634'}, 'time': u'10:17:35', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:47,918 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:47,921 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00632'}, 'time': u'10:17:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:17:53,787 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:17:53,796 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00633'}, 'time': u'10:17:53', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:18:05,982 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:05,985 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00626'}, 'time': u'10:18:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:18:11,856 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:11,865 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00636'}, 'time': u'10:18:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:18:17,953 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:17,956 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00631'}, 'time': u'10:18:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:18:24,097 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:24,100 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00639'}, 'time': u'10:18:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:18:29,931 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:29,933 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00638'}, 'time': u'10:18:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:18:36,017 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:36,020 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00640'}, 'time': u'10:18:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:18:42,116 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:42,119 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00628'}, 'time': u'10:18:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:18:48,218 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:48,221 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00641'}, 'time': u'10:18:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:18:54,086 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:18:54,089 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00641'}, 'time': u'10:18:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:00,184 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:00,187 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00647'}, 'time': u'10:19:00', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:12,380 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:12,383 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00638'}, 'time': u'10:19:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:18,476 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:18,479 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00634'}, 'time': u'10:19:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:24,346 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:24,349 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00630'}, 'time': u'10:19:24', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:30,442 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:30,445 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00627'}, 'time': u'10:19:30', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:36,539 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:36,542 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00634'}, 'time': u'10:19:36', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:42,637 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:42,640 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00638'}, 'time': u'10:19:42', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:48,511 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:48,513 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00633'}, 'time': u'10:19:48', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:19:54,613 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:19:54,616 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00633'}, 'time': u'10:19:54', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:20:00,482 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:20:00,485 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00632'}, 'time': u'10:20:00', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.5'}}
+INFO 2013-01-29 10:20:06,408 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:20:06,411 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00650'}, 'time': u'10:20:06', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:20:12,219 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:20:12,221 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00638'}, 'time': u'10:20:12', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:20:18,089 GetDataFromCurrentCostMeter 13218 1074450432 --------------------------Lectura---------------------------------------
+INFO 2013-01-29 10:20:18,092 GetDataFromCurrentCostMeter 13218 1074450432 {'msg': {'src': u'CC128-v1.35', 'type': u'1', 'dsb': u'00102', 'ch1': {'watts': u'00637'}, 'time': u'10:20:18', 'sensor': u'0', 'id': u'03069', 'tmpr': u'26.6'}}
+INFO 2013-01-29 10:30:10,442 GetDataFromCurrentCostMeter 14047 1074536448 Connecting to local CurrentCost meter - using device "/dev/ttyUSB0
+INFO 2013-01-29 10:30:18,522 GetDataFromCurrentCostMeter 14047 1074536448 Waiting for data from CurrentCost meter

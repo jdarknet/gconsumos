@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import datetime
+import os
 from django import template
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
+from django.core.files import File
 from django.core.urlresolvers import reverse
 from django.db import connection, IntegrityError
 from django.forms.models import formset_factory, modelformset_factory, inlineformset_factory
@@ -11,6 +13,7 @@ from django.http import Http404
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext, Context
 from django.utils import simplejson
+from gconsumos.settings import PROJECT_ROOT, LOGGING
 from utils import ponCero, validaEnergia, avalidaEnergia, consultaTablas, tiempoenMil, sentenciaSensores
 from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms
 from web.models import Configuracion, Contrato, Generales, Alarmas, Mensajes, PtdMedida
@@ -368,3 +371,16 @@ def ptsmedidasEdita(request,pk):
     formset_ptsmedidas      = PtdMedida.objects.all()
 
     return render_to_response("web/secciones/general/ptsmedidas.html", {'listaptsmedidas' : formset_ptsmedidas,'form_cab' :form_cab },context_instance=RequestContext(request) )
+
+
+@login_required(login_url='/')
+def verLogs(request):
+    textologs =""
+    if 'leer_logs' in request.POST:
+        file = open(LOGGING['handlers']['log_file']['filename'])
+        lineas = File(file).readlines()
+        file.close()
+        for lin in lineas:
+            textologs=lin.replace("\n", "&#10")+textologs
+
+    return render_to_response("web/secciones/panelcontrol/logs.html", {'textologs' : textologs },context_instance=RequestContext(request) )
