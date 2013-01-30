@@ -176,23 +176,21 @@
       <index name="maestros_codigospostales_bf663454" unique="true" columns="provincia_id" />
     </table>
     <table name="maestros_detallestarifas" schema="" catalog="" type="TABLE">
+      <column name="detperiodo_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="precio" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
-      <column name="punta" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="llano" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="valle" sqlType="DECIMAL" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="tfacceso_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
       <primary-key columns="id" />
+      <index name="maestros_detallestarifas_7f8ada55" unique="true" columns="detperiodo_id" />
     </table>
     <table name="maestros_detperiodoshorarios" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
-      <column name="cabperhorario_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
-      <column name="temporada" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
-      <column name="codigoper" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
-      <column name="denoperiodo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
       <column name="intinicial" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
       <column name="intfinal" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cabperhorario_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
+      <column name="denoperiodo" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="temporada" sqlType="VARCHAR(1)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
       <primary-key columns="id" />
-      <index name="maestros_detperiodoshorarios_7b958f66" unique="true" columns="cabperhorario_id" />
     </table>
     <table name="maestros_paises" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
@@ -210,10 +208,12 @@
       <index name="maestros_provincias_29e88ed" unique="true" columns="pais_id" />
     </table>
     <table name="maestros_tarifasdeacceso" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
       <column name="descripcion" sqlType="VARCHAR(100)" length="2000000000" precision="10" nullable="false" jdbcType="12" />
+      <column name="cabperiodo_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
       <column name="fechapublica" sqlType="DATE" length="2000000000" precision="10" nullable="false" jdbcType="12" />
       <primary-key columns="id" />
+      <index name="maestros_tarifasdeacceso_2beb3616" unique="true" columns="cabperiodo_id" />
     </table>
     <table name="maestros_terceros" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4" />
@@ -280,19 +280,19 @@
     <table name="web_configuracion" schema="" catalog="" type="TABLE">
       <column name="w_ip" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="serialmodulo" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="frecuencia" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="w_gw" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="w_mask" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="fecha" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="uservolcado" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="fecha" sqlType="DATE" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="w_mask" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="protvolcado" sqlType="VARCHAR(10)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
-      <column name="essid" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
+      <column name="essid" sqlType="VARCHAR(50)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="passvolcado" sqlType="VARCHAR(20)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="emailvolcado" sqlType="VARCHAR(75)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="password" sqlType="VARCHAR(8)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="ipvolcado" sqlType="CHAR(15)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4" />
       <column name="w_dhcp" sqlType="BOOL" length="2000000000" precision="10" nullable="false" jdbcType="12" />
-      <column name="frecuencia" sqlType="VARCHAR(2)" length="2000000000" precision="10" nullable="true" jdbcType="12" />
       <primary-key columns="id" />
     </table>
     <table name="web_contrato" schema="" catalog="" type="TABLE">
