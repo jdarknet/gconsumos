@@ -77,6 +77,7 @@ class leeDatos:
             senso   = datos['sensor']
             hora, min, seg = tiempo.split(":")
             id = ano + mes + dia + tiempo
+            trc.info("Hora Inicio: %s Hora: %s" % (inihora,hora))
             if hora != inihora:
                 trc.info("Entra en Hora .................................................")
                 self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)

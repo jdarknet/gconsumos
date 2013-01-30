@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
   <data-source source="LOCAL" name="Django default" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="a6107ea1-cb0f-4d7e-b262-a428827c561d">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-    <jdbc-url>jdbc:sqlite:/u01/home/julian/PycharmProjects/gconsumos/./datos/datos.ccd</jdbc-url>
+    <jdbc-url>jdbc:sqlite:/home/julian/PycharmProjects/gconsumos/./datos/datos.ccd</jdbc-url>
     <schema-pattern>*</schema-pattern>
     <default-dialect>SQLite</default-dialect>
     <libraries>
       <library>
-        <url>file://$USER_HOME$/.PyCharm20/config/jdbc-drivers/xerial-sqlite-license.txt</url>
-      </library>
-      <library>
-        <url>jar://$USER_HOME$/.PyCharm20/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar!/</url>
+        <url>file://$USER_HOME$/Dropbox/gconsumos/sqlite-jdbc-3.7.2.jar</url>
       </library>
     </libraries>
     <table name="auth_group" schema="" catalog="" type="TABLE">
