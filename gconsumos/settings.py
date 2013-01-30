@@ -179,7 +179,7 @@ LOGGING = {
                 'level': 'DEBUG',
                 'class': 'logging.handlers.RotatingFileHandler',
                 'filename': os.path.join(PROJECT_ROOT, 'logs/weblogger.log'),
-                'maxBytes': '16777216', # 16megabytes
+                'maxBytes': '1024000', # 1megabytes
                 'formatter': 'verbose',
             },
 
