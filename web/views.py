@@ -15,7 +15,7 @@ from django.template import RequestContext, Context
 from django.utils import simplejson
 from gconsumos.settings import PROJECT_ROOT, LOGGING
 from utils import ponCero, validaEnergia, avalidaEnergia, consultaTablas, tiempoenMil, sentenciaSensores
-from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms
+from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms, HistoricoForms
 from web.models import Configuracion, Contrato, Generales, Alarmas, Mensajes, PtdMedida
 
 
@@ -269,7 +269,8 @@ def lecturas(request,tipo):
         if datos!=[]:
             listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],row[3],row[4])  , ponCero(row[5]) ]] ) for row in datos ]
             for dat in datos:
-                listadatos.append([str(dat[3])+":"+str(dat[4]),ponCero(dat[5])])
+                #listadatos.append([str(dat[3])+":"+str(dat[4]),ponCero(dat[5])])
+                listadatos.append( [str(dat[6]).split(' ')[1],ponCero(dat[5])])
     if tipo=="7":
         template = "web/secciones/lecturas/ultimos7dias.html"
         datos=consultaTablas('semana')
@@ -384,3 +385,10 @@ def verLogs(request):
             textologs=lin.replace("\n", "&#10")+textologs
 
     return render_to_response("web/secciones/panelcontrol/logs.html", {'textologs' : textologs },context_instance=RequestContext(request) )
+
+
+@login_required(login_url='/')
+def verDiario(request):
+    formconsulta = HistoricoForms()
+
+    return render_to_response("web/secciones/historico/diario.html", {'formconsulta' :formconsulta} ,context_instance=RequestContext(request) )

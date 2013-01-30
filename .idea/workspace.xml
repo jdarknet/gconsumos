@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf697543-8b8d-4f72-8d24-76d8588fdef7" name="Default" comment="Modificacion cuando no existe sensor">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/error_creacion.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+    <list default="true" id="bf697543-8b8d-4f72-8d24-76d8588fdef7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/historico.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/web/secciones/historico/diario.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comunicacion/management/commands/alarmas.py" afterPath="$PROJECT_DIR$/comunicacion/management/commands/alarmas.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datos/datos.ccd" afterPath="$PROJECT_DIR$/datos/datos.ccd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gconsumos/settings.py" afterPath="$PROJECT_DIR$/gconsumos/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gconsumos/urls.py" afterPath="$PROJECT_DIR$/gconsumos/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/django.log" afterPath="$PROJECT_DIR$/logs/django.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/error_django.log" afterPath="$PROJECT_DIR$/logs/error_django.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base/layout.html" afterPath="$PROJECT_DIR$/templates/base/layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/web/secciones/lecturas/ultima24horas.html" afterPath="$PROJECT_DIR$/templates/web/secciones/lecturas/ultima24horas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ajax.py" afterPath="$PROJECT_DIR$/web/ajax.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/forms.py" afterPath="$PROJECT_DIR$/web/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/utils.py" afterPath="$PROJECT_DIR$/web/utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views.py" afterPath="$PROJECT_DIR$/web/views.py" />
     </list>
     <ignored path="gconsumos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,22 +40,63 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4789098">
+    <splitter split-orientation="horizontal" split-proportion="0.5103627">
       <split-first>
         <leaf>
-          <file leaf-file-name="logs.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/logs.html">
+          <file leaf-file-name="panelcontrol.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="10" selection-start="521" selection-end="521" vertical-scroll-proportion="-9.375">
+                <state line="0" column="0" selection-start="0" selection-end="624" vertical-scroll-proportion="-0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="panelcontrol.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol.html">
+          <file leaf-file-name="historico.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/web/secciones/historico.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="35" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0">
+                <state line="21" column="50" selection-start="589" selection-end="589" vertical-scroll-proportion="-13.125">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gconsumos/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="56" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="e#0#64#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="diario.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/web/secciones/historico/diario.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.2601156">
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="alarmas.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/alarmas.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="17" column="7" selection-start="197" selection-end="485" vertical-scroll-proportion="-10.625">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/forms.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="89" column="0" selection-start="5510" selection-end="5510" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -53,41 +105,7 @@
           <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="368" column="0" selection-start="16603" selection-end="16603" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GetDataFromCurrentCostMeter.py" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lecturas/GetDataFromCurrentCostMeter.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="191" column="67" selection-start="7889" selection-end="7889" vertical-scroll-proportion="0.7571157">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="currentcostdb.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lecturas/currentcostdb.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="maestros_terceros" pinned="false" current="false" current-in-tab="false">
-            <entry file="dbDummy://dbtable:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/..maestros_terceros">
-              <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="estadisticas.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/estadisticas.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="47" vertical-scroll-proportion="0.0">
+                <state line="393" column="78" selection-start="17655" selection-end="17655" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -96,7 +114,7 @@
           <file leaf-file-name="ultima24horas.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/web/secciones/lecturas/ultima24horas.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="0" selection-start="531" selection-end="554" vertical-scroll-proportion="0.0">
+                <state line="0" column="0" selection-start="0" selection-end="1334" vertical-scroll-proportion="-0.0">
                   <folding />
                 </state>
               </provider>
@@ -105,7 +123,7 @@
           <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gconsumos/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="184" column="0" selection-start="5800" selection-end="5800" vertical-scroll-proportion="0.0">
+                <state line="158" column="10" selection-start="5056" selection-end="5056" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -133,35 +151,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Django default" pinned="true" current="false" current-in-tab="false">
-            <entry file="dbDummy://db-console:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/">
+          <file leaf-file-name="layout.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/base/layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="175" selection-start="0" selection-end="255" vertical-scroll-proportion="-0.0">
-                  <folding />
+                <state line="257" column="21" selection-start="10465" selection-end="10465" vertical-scroll-proportion="7.427746">
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#script#0;n#body#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="lecturas_consumostmp" pinned="false" current="false" current-in-tab="false">
-            <entry file="dbDummy://dbtable:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/..lecturas_consumostmp">
-              <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="utils.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/utils.py">
+          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="128" column="28" selection-start="4657" selection-end="4657" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="alarmas.py" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/comunicacion/management/commands/alarmas.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="168" column="0" selection-start="6818" selection-end="6818" vertical-scroll-proportion="0.76642334">
+                <state line="58" column="0" selection-start="3985" selection-end="3985" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -176,19 +180,28 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lecturas/models.py">
+          <file leaf-file-name="alarmas.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/comunicacion/management/commands/alarmas.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                <state line="165" column="0" selection-start="6776" selection-end="6776" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/models.py">
+          <file leaf-file-name="utils.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="0" selection-start="3985" selection-end="3985" vertical-scroll-proportion="0.0">
+                <state line="65" column="20" selection-start="1659" selection-end="1659" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ajax.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/ajax.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="61" column="212" selection-start="1813" selection-end="1970" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -209,22 +222,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/web/secciones/general/configuracion.html" />
-        <option value="$PROJECT_DIR$/templates/base/layout.html" />
-        <option value="$PROJECT_DIR$/web/models.py" />
-        <option value="$PROJECT_DIR$/web/iwlist.sh" />
-        <option value="$PROJECT_DIR$/web/wificonnect.sh" />
         <option value="$PROJECT_DIR$/lecturas/tracer.py" />
-        <option value="$PROJECT_DIR$/gconsumos/urls.py" />
         <option value="$PROJECT_DIR$/templates/web/secciones/panelcontrol.html" />
         <option value="$PROJECT_DIR$/templates/web/secciones/panelcontrol/logs.html" />
-        <option value="$PROJECT_DIR$/gconsumos/settings.py" />
-        <option value="$PROJECT_DIR$/web/views.py" />
-        <option value="db-console:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/" />
-        <option value="$PROJECT_DIR$/web/ajax.py" />
-        <option value="$PROJECT_DIR$/web/utils.py" />
         <option value="$PROJECT_DIR$/lecturas/GetDataFromCurrentCostMeter.py" />
         <option value="$PROJECT_DIR$/comunicacion/management/commands/alarmas.py" />
+        <option value="$PROJECT_DIR$/gconsumos/settings.py" />
+        <option value="$PROJECT_DIR$/web/ajax.py" />
+        <option value="db-console:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/" />
+        <option value="$PROJECT_DIR$/web/utils.py" />
+        <option value="$PROJECT_DIR$/templates/web/secciones/lecturas/ultima24horas.html" />
+        <option value="$PROJECT_DIR$/gconsumos/urls.py" />
+        <option value="$PROJECT_DIR$/templates/web/secciones/historico.html" />
+        <option value="$PROJECT_DIR$/templates/base/layout.html" />
+        <option value="$PROJECT_DIR$/web/forms.py" />
+        <option value="$PROJECT_DIR$/web/views.py" />
+        <option value="$PROJECT_DIR$/templates/web/secciones/historico/diario.html" />
       </list>
     </option>
   </component>
@@ -240,7 +253,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -259,7 +272,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,6 +389,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lecturas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gconsumos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gconsumos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="secciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="historico" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,6 +560,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -538,9 +577,9 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -638,6 +677,25 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="gconsumos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -657,25 +715,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="gconsumos" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -794,7 +833,11 @@
       <created>1359485705412</created>
       <updated>1359485705412</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modificacion cuando no existe sensor">
+      <created>1359535320620</created>
+      <updated>1359535320620</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -821,24 +864,24 @@
     <frame x="-3" y="0" width="1926" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31422272" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.49359658" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296582" sideWeight="0.49359658" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09178229" sideWeight="0.55898565" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22358592" sideWeight="0.55898565" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.323043" sideWeight="0.5010672" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.4914621" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.4914621" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20704375" sideWeight="0.676957" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22358592" sideWeight="0.6714443" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296582" sideWeight="0.5026681" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3351709" sideWeight="0.40608326" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31863284" sideWeight="0.49359658" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31863284" sideWeight="0.4914621" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.49359658" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17395945" sideWeight="0.6703418" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.6008538" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17609392" sideWeight="0.66482913" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3351709" sideWeight="0.5901814" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -901,82 +944,44 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/..web_configuracion">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lecturas/models.py">
+    <entry file="file://$PROJECT_DIR$/web/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="65" column="20" selection-start="1659" selection-end="1659" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gconsumos/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="0" selection-start="5800" selection-end="5800" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="368" column="0" selection-start="16603" selection-end="16603" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="624" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/logs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="10" selection-start="521" selection-end="521" vertical-scroll-proportion="-9.375">
+        <state line="15" column="10" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web/secciones/lecturas/ultima24horas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="1334" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecturas/GetDataFromCurrentCostMeter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="59" selection-start="7656" selection-end="7656" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://db-console:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="175" selection-start="0" selection-end="255" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/..maestros_terceros">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/cc80a59b/a6107ea1-cb0f-4d7e-b262-a428827c561d/..lecturas_consumostmp">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/ajax.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="244" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-0.23489933">
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/alarmas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="34" selection-start="1843" selection-end="2071" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lecturas/currentcostdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="70" selection-start="70" selection-end="70" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
@@ -988,24 +993,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/utils.py">
+    <entry file="file://$PROJECT_DIR$/gconsumos/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="28" selection-start="4657" selection-end="4657" vertical-scroll-proportion="0.0">
+        <state line="19" column="56" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web/secciones/historico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="50" selection-start="589" selection-end="589" vertical-scroll-proportion="-13.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lecturas/GetDataFromCurrentCostMeter.py">
+    <entry file="file://$PROJECT_DIR$/templates/base/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="67" selection-start="7889" selection-end="7889" vertical-scroll-proportion="0.7571157">
+        <state line="257" column="21" selection-start="10465" selection-end="10465" vertical-scroll-proportion="7.427746">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#script#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecturas/currentcostdb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comunicacion/management/commands/alarmas.py">
+    <entry file="file://$PROJECT_DIR$/web/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="0" selection-start="6818" selection-end="6818" vertical-scroll-proportion="0.76642334">
+        <state line="89" column="0" selection-start="5510" selection-end="5510" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="393" column="78" selection-start="17655" selection-end="17655" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/estadisticas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="47" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web/secciones/panelcontrol/alarmas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="7" selection-start="197" selection-end="485" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/web/secciones/historico/diario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.2601156">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

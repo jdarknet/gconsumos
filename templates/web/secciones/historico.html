@@ -1,0 +1,28 @@
+{% extends "base/layout.html" %}
+{% block head %}
+
+{% endblock %}
+
+{% block sencondarymenu %}
+    <ul class="secondary-nav-menu">
+        <li class="active">
+            <a href="/historico/diario" id="modal-link">
+                <i class="icon-calendar"></i> Diario
+            </a>
+        </li>
+
+        <li>
+            <a href="/historico/mensual" id="modal-link">
+                <i class="icon-calendar"></i> Mensual
+            </a>
+        </li>
+
+        <li id="notification-full-image">
+            <a href="/historico/anual">
+                <i class="icon-calendar"></i>Anual
+            </a>
+        </li>
+
+
+    </ul>
+{% endblock %}

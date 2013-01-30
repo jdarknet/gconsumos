@@ -88,3 +88,8 @@ class AlarmasForms(models.ModelForm):
 
 MensajesFormsSet    = inlineformset_factory(Alarmas,Mensajes,extra=1,can_delete=True)
 
+
+
+class HistoricoForms(forms.Form):
+    sensores = forms.ModelChoiceField( queryset=PtdMedida.objects.all(), label="Selecciona Sensores")
+    fecha    = forms.DateField(label="Fecha")

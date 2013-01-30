@@ -64,8 +64,9 @@ def consultaTablas(tipo):
     ano  = hoy.year
     min  = hoy.minute
     horas = hoy.hour
-    nsemana = noSemana(dia,mes,ano)
+    nsemana   = noSemana(dia,mes,ano)
     sentencia = sentenciaSensores()
+    convfecha = " datetime(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))||' '||substr('0'||hora,length(hora))||':'||substr('0'||min,length(min))) "
     if nsemana !="1":
         nsemana = int(nsemana)-1
     if mes==1:
@@ -76,7 +77,7 @@ def consultaTablas(tipo):
         nano=ano
 
     if tipo=='24':
-        sql  = ('select dia,per,ejer,hora,min, avg(energia) energia from lecturas_consumostmp where dia=%s and per=%s and ejer=%s %s  group by dia,per,ejer,hora,min ' % (dia,mes,ano,sentencia) )
+        sql  = ('select dia,per,ejer,hora,min, avg(energia) energia, %s tiempo from lecturas_consumostmp where dia=%s and per=%s and ejer=%s %s  group by dia,per,ejer,hora,min,%s ' % (convfecha, dia,mes,ano,sentencia,convfecha) )
     if tipo=='semana':
         sql  = ('select dia,per,ejer, sum(energia) energia from lecturas_consumosdias where semana=%s and ejer=%s %s  group by dia,per,ejer' % (nsemana,ano,sentencia) )
     if tipo=='mes':

@@ -169,7 +169,7 @@ class Command(BaseCommand):
 
         if options['comunica']:
             if testLectura() != 1:
-                email= Terceros.objects.filter(tipotecero_id=1)[0].email
+                email= Terceros.objects.filter(tipotercero_id=1)[0].email
                 self.envio("Perdida de comunicacion con el ENVIR",email,'Sin comunicación EnviR, intente reconectar el Envir')
                 lee = leeDatos()
         if options['alarmas']:

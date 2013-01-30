@@ -1,0 +1,74 @@
+{% extends "web/secciones/historico.html" %}
+{% block head %}
+
+
+{% endblock %}
+{% block scripthead %}
+    $(document).ready(function()
+    {
+        $('#id_fecha').clikc(function(e){
+
+
+    });
+
+
+{% endblock %}
+
+{% block central %}
+    <div class="row-fluid">
+        <div class=span12>
+
+            <div class="black-box padded">
+                <form method="post" class="fill-up">{% csrf_token %}
+                <div class="span4">
+                    <div class="label">
+                        {{ formconsulta.sensores.label }}
+                    </div>
+                    <div class="input-medium">
+                        {{ formconsulta.sensores }}
+                    </div>
+                </div>
+                <div class="span4">
+                        <div class="label">
+                        {{ formconsulta.fecha.label }}
+                    </div>
+                    <div class="input-medium">
+                        {{ formconsulta.fecha }}
+                    </div>
+                </div>
+                 <div class="span4">
+                      <button type="submit" name="consulta" class="btn btn-large btn-primary">Consultar</button>
+                </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+{% block izquierda %}
+    <div class="row-fluid">
+        <div class=span12>
+            <div class="box" style="position:relative;">
+                <div class="tab-header" role="grid">
+                    Resumen Dia cada 5 minutos
+                </div>
+                <table id="tabla24" class="table table-striped table-bordered box">
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+{% block derecha %}
+    <div class="box">
+        <div class="tab-header">
+            Grafico Diario
+        </div>
+        <div class="padded">
+            <div id="chart1" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+
+
+{% endblock %}

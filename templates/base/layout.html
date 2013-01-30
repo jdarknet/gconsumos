@@ -94,8 +94,8 @@
                 </li>
 
                 <li class="">
-                    <a href="../charts/charts.html">
-                        <i class="icon-bar-chart"></i> Historico
+                    <a href="../historico/diario">
+                        <i class="icon-bar-chart"></i> Historicos
                     </a>
                 </li>
 
@@ -224,16 +224,40 @@
 
              </div>
         </section>
+    <script type="text/html" id="template-notification">
+        <div class="notification animated fadeInLeftMiddle fast{{ item.itemClass }}">
+            <div class="left">
+                <div style="background-image: url({{ item.imagePath }})" class="{{ item.imageClass }}"></div>
+            </div>
+            <div class="right">
+                <div class="inner">{{ item.text }}</div>
+                <div class="time">{{ item.time }}</div>
+            </div>
+
+            <i class="icon-remove-sign hide"></i>
+        </div>
+    </script>
+    <script type="text/html" id="template-notifications">
+        <div class="container">
+            <div class="row" id="notifications-wrapper">
+                <div id="notifications" class="{{ bootstrapPositionClass }} notifications animated">
+                    <div id="dismiss-all" class="dismiss-all button blue">Dismiss all</div>
+                    <div id="content">
+                        <div id="notes"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
     <script type="text/javascript" src="{{ STATIC_URL }}javascripts/application.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}javascripts/prettify.js"></script>
     <link rel=stylesheet type=text/css media=screen  href="{{ STATIC_URL }}stylesheets/prettify.css">
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.formset.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/grafico_estadistica.js"></script>
     <script type="text/javascript">
-
+        prettyPrint()
         {% block scriptfoot %}
         {% endblock %}
-        prettyPrint()
     </script>
 
 

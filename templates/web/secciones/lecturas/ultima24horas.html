@@ -17,6 +17,7 @@
             $('#tabla24').dataTable({
             "aaData":{{ listadatos }}
                 ,
+            "aaSorting": [[ 0, "desc" ]],
             "aoColumns":[{"sTitle":"Horas"} , {"sTitle": "Energia en Watts"}  ]
             });
             {%  endautoescape %}

@@ -59,7 +59,7 @@ def updatewifis(request):
 
 def testLectura():
     valor=0
-    sql  = """select 1 valor from lecturas_consumostmp where datetime(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))||' '||substr('0'||hora,length(hora))||':'||substr('0'||min,length(min))) between datetime('now','-4 minutes') and datetime('now') """
+    sql  = """select 1 valor from lecturas_consumostmp where datetime(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))||' '||substr('0'||hora,length(hora))||':'||substr('0'||min,length(min))) between datetime('now','-10 minutes') and datetime('now') """
     cur  = connection.cursor()
     cur.execute(sql)
     entries = cur.fetchall()
