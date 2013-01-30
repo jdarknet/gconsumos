@@ -18,43 +18,56 @@
 
     $("#id_fecha").datepicker(pickerOpts);
 
+
+    {% autoescape off %}
+        var graf=  ponGraficoDia({{ listgraf }});
+
+        $('#tabla24').dataTable({
+        "aaData":{{ listadatos }}
+        ,
+        "aaSorting": [[ 0, "desc" ]],
+        "aoColumns":[{"sTitle":"Horas"} , {"sTitle": "Energia en Watts"}  ]
+        });
+    {%  endautoescape %}
+
+
     });
 
 
 {% endblock %}
 
-{% block central %}
+{% block izquierda %}
     <div class="row-fluid">
         <div class=span12>
 
             <div class="black-box padded">
                 <form method="post" class="fill-up">{% csrf_token %}
-                <div class="span4">
-                    <div class="label">
-                        {{ formconsulta.sensores.label }}
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{ formconsulta.sensores.label }}
+                        </div>
+                        <div class="controls">
+                            {{ formconsulta.sensores }}
+                        </div>
                     </div>
-                    <div class="input-medium">
-                        {{ formconsulta.sensores }}
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{ formconsulta.fecha.label }}
+                        </div>
+                        <div class="controls">
+                            {{ formconsulta.fecha }}
+                        </div>
                     </div>
-                </div>
-                <div class="span4">
-                        <div class="label">
-                        {{ formconsulta.fecha.label }}
-                    </div>
-                    <div class="input-medium">
-                        {{ formconsulta.fecha }}
-                    </div>
-                </div>
-                 <div class="span4">
+                    <div class="control-group">
                       <button type="submit" name="consulta" class="btn btn-large btn-primary">Consultar</button>
-                </div>
+                    </div>
                 </form>
             </div>
 
         </div>
     </div>
 {% endblock %}
-{% block izquierda %}
+{% block derecha %}
     <div class="row-fluid">
         <div class=span12>
             <div class="box" style="position:relative;">
@@ -68,8 +81,6 @@
 
         </div>
     </div>
-{% endblock %}
-{% block derecha %}
     <div class="box">
         <div class="tab-header">
             Grafico Diario

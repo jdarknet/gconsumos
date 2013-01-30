@@ -389,6 +389,15 @@ def verLogs(request):
 
 @login_required(login_url='/')
 def verDiario(request):
-    formconsulta = HistoricoForms()
 
-    return render_to_response("web/secciones/historico/diario.html", {'formconsulta' :formconsulta} ,context_instance=RequestContext(request) )
+    if 'consulta' in request.POST:
+        formconsulta = HistoricoForms(request.POST)
+        if formconsulta.is_valid():
+            vsensor = formconsulta.cleaned_data['sensor']
+            vfecha  = formconsulta.cleaned_data['fecha']
+
+    else:
+        formconsulta = HistoricoForms()
+
+
+    return render_to_response("web/secciones/historico/diario.html", {'formconsulta' :formconsulta',listadatos' : listadatos,'listgraf':listgrafico,} ,context_instance=RequestContext(request) )
