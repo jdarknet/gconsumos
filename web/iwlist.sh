@@ -17,7 +17,7 @@ do
         b=$((b + 1))
         ;;
    esac
-done < <(/sbin/iwlist scan 2>/dev/null)
+done < <(sudo /sbin/iwlist scan 2>/dev/null)
 
 while [ $x -lt ${#essid[@]} ];do
   echo ${essid[$x]} --- ${address[$x]}

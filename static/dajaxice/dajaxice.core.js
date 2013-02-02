@@ -41,6 +41,10 @@ var Dajaxice = {
         Dajaxice.call('web.llenaPeriodos', 'POST', callback_function, argv, custom_settings);
     },
 
+    conectarwifi: function(callback_function, argv, custom_settings){
+        Dajaxice.call('web.conectarwifi', 'POST', callback_function, argv, custom_settings);
+    },
+
     grafico_ano: function(callback_function, argv, custom_settings){
         Dajaxice.call('web.grafico_ano', 'POST', callback_function, argv, custom_settings);
     }

@@ -3,7 +3,7 @@
 -Asignar www-data al grupo dialout (usermod -G dialout www-data)
 -Instalar pip install pynetlinux
 -Instalar apt-get install libcap2-bin
-
+-Modificar /etc/sudoers  con:  www-data ALL=(ALL) NOPASSWD:ALL
 --Instalar en el cron :
 chmod 755  manage.py
 python manage.py alarmas --estado ( ejecutar cada 15 minutos )

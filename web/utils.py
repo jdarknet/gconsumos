@@ -57,16 +57,18 @@ def tiempoenMil(dia,mes,ano,hora,min):
     return str(calendar.timegm(tiempo.timetuple())*1000)
 
 
-def consultaTablas(tipo):
-    hoy    = datetime.datetime.now()
+def consultaTablas(tipo,hoy,sensores):
     dia  = hoy.day
     mes  = hoy.month
     ano  = hoy.year
     min  = hoy.minute
     horas = hoy.hour
     nsemana   = noSemana(dia,mes,ano)
-    sentencia = sentenciaSensores()
-    convfecha = " datetime(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))||' '||substr('0'||hora,length(hora))||':'||substr('0'||min,length(min))) "
+    if  sensores is None:
+        sentencia = sentenciaSensores()
+    else:
+        sentencia = "and idcomsumos_id = %s" % sensores
+
     if nsemana !="1":
         nsemana = int(nsemana)-1
     if mes==1:
@@ -75,13 +77,15 @@ def consultaTablas(tipo):
     else:
         nmes=mes
         nano=ano
-
     if tipo=='24':
+        convfecha   = " datetime(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))||' '||substr('0'||hora,length(hora))||':'||substr('0'||min,length(min))) "
         sql  = ('select dia,per,ejer,hora,min, avg(energia) energia, %s tiempo from lecturas_consumostmp where dia=%s and per=%s and ejer=%s %s  group by dia,per,ejer,hora,min,%s ' % (convfecha, dia,mes,ano,sentencia,convfecha) )
     if tipo=='semana':
         sql  = ('select dia,per,ejer, sum(energia) energia from lecturas_consumosdias where semana=%s and ejer=%s %s  group by dia,per,ejer' % (nsemana,ano,sentencia) )
     if tipo=='mes':
         sql  = ('select dia,per,ejer, sum(energia) energia from lecturas_consumosdias where per=%s and ejer=%s %s group by dia,per,ejer ' % (nmes,nano,sentencia) )
+    if tipo=="ano":
+        sql  = ('select per,ejer, sum(energia) energia from lecturas_consumosdias where ejer=%s %s group by per,ejer ' % (nano,sentencia) )
     cur  = connection.cursor()
     cur.execute(sql)
     entries = cur.fetchall()

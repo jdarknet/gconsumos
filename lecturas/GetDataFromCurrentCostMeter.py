@@ -83,18 +83,16 @@ class leeDatos:
                 self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
                 self.ccdb.StoreConsumoHoras(inihora, id, iniano, inimes, inidia,senso)
                 inihora = hora
+                trc.info("Dia cambio .. Incial %s Fnal %s ") % (inidia,dia)
                 if inidia != dia:
-                    time.sleep(5)
                     trc.info("Entra en dias .............................................")
                     self.ccdb.StoreConsumoDias(tiempo, id, iniano, inimes, inidia,senso)
                     inidia = dia
                     if inimes != mes:
-                        time.sleep(5)
                         self.ccdb.StoreConsumoMes(tiempo, id, iniano, inimes,senso)
                         inimes = mes
                         ##Llam a Insertar Mes
                         if iniano != ano:
-                            time.sleep(5)
                             self.ccdb.StoreConsumoAno(tiempo, id, iniano,senso)
                             iniano = ano
                             ##Llama a Inserta Ano
@@ -167,7 +165,7 @@ class leeDatos:
                 ano = str(datetime.datetime.now().year)
                 if inicio == 0:
                     #Sincroniza fecha del Sistema con Envir
-                    fecha = ('date -s "%s/%s/%s %s:%s:%s" ') % ( ano, mes, dia, hora, minuto, seg)
+                    fecha = ('sudo date -s "%s/%s/%s %s:%s:%s" ') % ( ano, mes, dia, hora, minuto, seg)
                     os.system(fecha)
                     inicio = time.time()
 
@@ -192,7 +190,6 @@ class leeDatos:
                             if len(list_get_egfp(aDatos,num))!=0:
                                 aDatos[num] = self.grabarConsumos(aDatos[num])
                         trc.info("Finaliza Grabacion %s" % (fin - inicio))
-
                         inicio = 0
 
         return True

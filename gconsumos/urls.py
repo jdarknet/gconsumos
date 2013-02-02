@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     url(r'panelcontrol/alarmas/add/$','web.views.alarmasNuevo',name='alarmasNuevo'),
     url(r'panelcontrol/logs/$','web.views.verLogs',name='leerlogs'),
     url(r'lecturas/ultimas/(?P<tipo>\d+)/$','web.views.lecturas',name='lecturas'),
-    url(r'historico/diario/$','web.views.verDiario',name='historico'),
+    url(r'historico/historicos/(?P<tipo>\d+)/$','web.views.verHistoricos',name='historico'),
     url(r'^admin/', include(admin.site.urls)),
 )
 

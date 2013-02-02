@@ -12,6 +12,8 @@
 
    $(document).ready(function()
    {
+
+
     var opts = {
         lines: 13, // The number of lines to draw
         length: 7, // The length of each line
@@ -71,27 +73,30 @@
         }) ;
 
     $('#conectar_wifi').click( function(e){
-        $('#essid').spin(opts);
-        var ip     = $('#id_configura-w_ip').val();
-        var mask   = $('#id_configura-w_mask').val();
-        var gw     = $('#id_configura-w_gw').val();
-        var essid  = $('#id_configura-essid').val();
-        var passwd = $('#id_configura-password').val();
-        var dhcp   = $('#id_configura-w_dhcp').val();
+
+
+            $('#essid').spin(opts);
+            var ip     = $('#id_configura-w_ip').val();
+            var mask   = $('#id_configura-w_mask').val();
+            var gw     = $('#id_configura-w_gw').val();
+            var essid  = $('#id_configura-essid').val();
+            var passwd = $('#id_configura-password').val();
+            var dhcp   = $('#id_configura-w_dhcp').val();
+            Dajaxice.web.conectarwifi(Dajax.process,{'ip':ip,'mask':mask,'gw':gw,'essid':essid,'passwd':passwd,'dhcp':dhcp});
 
 
         if (dhcp == 0 )
         {
             alert(dhcp);
         }
-        Dajaxice.web.conectarwifi(Dajax.process,{'ip':ip,'mask':mask,'gw':gw,'essid':essid,'passwd':passwd,'dhcp':dhcp});
+
         }) ;
     });
 
 {% endblock %}
 
 {% block central %}
-    <form method="post" class="fill-up">{% csrf_token %}
+    <form id="configuracion" method="post" class="fill-up">{% csrf_token %}
     <div class="row-fluid">
 
         <div class=span6>
@@ -179,8 +184,17 @@
                     </div>
                     </div>
                     <div class="span6">
-                        <label class="checkbox" >DHCP{{ configura.w_dhcp }}</label>
-
+                        <div class="black-box tex">
+                        <div class="padded">
+                        <div class="inner-well clearfix">
+                            <b>DHCP</b>
+                            <div class="pull-right">
+                                {{ configura.w_dhcp }}
+                                <label for="id_configura-w_dhcp" class="checky"><span></span></label>
+                            </div>
+                        </div>
+                        </div>
+                       </div>
                     </div>
                  </div>
                 <div>{{ configura.password.label }}</div>
@@ -202,4 +216,5 @@
 
   </div>
     </form>
+
 {% endblock %}

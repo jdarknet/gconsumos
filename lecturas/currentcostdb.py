@@ -139,7 +139,7 @@ class CurrentCostDB():
         if energia > 0:
             diasemana ="%s-%s-%s" % (dia,per,ejer)
             semana = datetime.datetime.strptime(diasemana,"%d-%m-%Y").strftime("%W")
-            self.connection.execute('INSERT OR REPLACE INTO lecturas_consumosdias(ts, ejer, per, dia,energia, semana,idcomsumos_id) values(?, ?, ?, ?, ?, ?,?)',
+            self.connection.execute('INSERT OR REPLACE INTO lecturas_consumosdias(ts, ejer, per, dia, energia, semana, idcomsumos_id) values(?, ?, ?, ?, ?, ?, ? )',
                 (primary,ejer,per,dia,energia,semana,sensor) )
             self.connection.commit()
 

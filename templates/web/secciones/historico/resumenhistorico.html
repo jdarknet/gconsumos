@@ -20,13 +20,23 @@
 
 
     {% autoescape off %}
-        var graf=  ponGraficoDia({{ listgraf }});
+        {%  if etiquetas.titcol1 == "Horas" %}
+            var graf=  ponGraficoDia({{ listgraf }});
+        {% endif %}
+        {%  if etiquetas.titcol1 == "Dia Semana" %}
+            var graf=  ponGraficoSemana({{ listgraf }});
+        {% endif %}
+        {%  if etiquetas.titcol1 == "Dias" %}
+            var graf=  ponGraficoMesActual({{ listgraf }},"#chart1");
+        {% endif %}
+        {%  if etiquetas.titcol1 == "Mes" %}
+            var graf=  ponGraficoAno({{ listgraf }});
+        {% endif %}
 
         $('#tabla24').dataTable({
-        "aaData":{{ listadatos }}
-        ,
+        "aaData":{{ listadatos }},
         "aaSorting": [[ 0, "desc" ]],
-        "aoColumns":[{"sTitle":"Horas"} , {"sTitle": "Energia en Watts"}  ]
+        "aoColumns":[{"sTitle" : "{{ etiquetas.titcol1 }}" } , {"sTitle": "Energia en Watts"}  ]
         });
     {%  endautoescape %}
 
@@ -59,7 +69,7 @@
                         </div>
                     </div>
                     <div class="control-group">
-                      <button type="submit" name="consulta" class="btn btn-large btn-primary">Consultar</button>
+                        <button type="submit" name="consulta" class="btn btn-large btn-primary">Consultar</button>
                     </div>
                 </form>
             </div>
@@ -72,7 +82,7 @@
         <div class=span12>
             <div class="box" style="position:relative;">
                 <div class="tab-header" role="grid">
-                    Lista de Datos
+                    {{ etiquetas.titulotab }}
                 </div>
                 <table id="tabla24" class="table table-striped table-bordered box">
                 </table>
@@ -83,7 +93,7 @@
     </div>
     <div class="box">
         <div class="tab-header">
-            Grafico Diario
+            {{ etiquetas.titulograf }}
         </div>
         <div class="padded">
             <div id="chart1" style="width: 100%; height: 250px;"></div>

@@ -1,18 +1,14 @@
 # -*- coding: utf-8 -*-
 import datetime
 import os
-from django import template
 from django.contrib import messages
-from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
-from django.core.files import File
 from django.core.urlresolvers import reverse
 from django.db import connection, IntegrityError
-from django.forms.models import formset_factory, modelformset_factory, inlineformset_factory
-from django.http import Http404
+from django.core.servers.basehttp import FileWrapper
+from django.http import Http404, HttpResponse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext, Context
-from django.utils import simplejson
 from gconsumos.settings import PROJECT_ROOT, LOGGING
 from utils import ponCero, validaEnergia, avalidaEnergia, consultaTablas, tiempoenMil, sentenciaSensores
 from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms, HistoricoForms
@@ -262,10 +258,10 @@ def lecturas(request,tipo):
     listadatos=[]
     listgrafico=[]
     tipo=str(tipo)
-    print tipo
+    hoy    = datetime.datetime.now()
     if tipo=="24":
         template = "web/secciones/lecturas/ultima24horas.html"
-        datos=consultaTablas('24')
+        datos=consultaTablas('24',hoy,sensores=None)
         if datos!=[]:
             listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],row[3],row[4])  , ponCero(row[5]) ]] ) for row in datos ]
             for dat in datos:
@@ -273,14 +269,14 @@ def lecturas(request,tipo):
                 listadatos.append( [str(dat[6]).split(' ')[1],ponCero(dat[5])])
     if tipo=="7":
         template = "web/secciones/lecturas/ultimos7dias.html"
-        datos=consultaTablas('semana')
+        datos=consultaTablas('semana', hoy,sensores=None)
         if datos!=[]:
             listgrafico =[([[ tiempoenMil(row[0],row[1],row[2],0,0), ponCero(row[3]) ]] ) for row in datos ]
             for dat in datos:
                 listadatos.append(dict(dia=dat[0],energia=ponCero(dat[3])))
     if tipo=="30":
         template = "web/secciones/lecturas/ultimomes.html"
-        datos=consultaTablas('mes')
+        datos=consultaTablas('mes',hoy,sensores=None)
         if datos!=[]:
             listgrafico =[([[ tiempoenMil(row[0],row[1],row[2],0,0), ponCero(row[3]) ]] ) for row in datos ]
             for dat in datos:
@@ -377,27 +373,76 @@ def ptsmedidasEdita(request,pk):
 @login_required(login_url='/')
 def verLogs(request):
     textologs =""
+    response=""
     if 'leer_logs' in request.POST:
-        file = open(LOGGING['handlers']['log_file']['filename'])
-        lineas = File(file).readlines()
-        file.close()
-        for lin in lineas:
-            textologs=lin.replace("\n", "&#10")+textologs
-
-    return render_to_response("web/secciones/panelcontrol/logs.html", {'textologs' : textologs },context_instance=RequestContext(request) )
+         filename =LOGGING['handlers']['log_file']['filename']
+#        file = open(LOGGING['handlers']['log_file']['filename'])
+#        lineas = File(file).readlines()
+#        file.close()
+#        for lin in lineas:
+#            textologs=lin.replace("\n", "&#10")+textologs
+         wrapper = FileWrapper(file(filename))
+         response = HttpResponse(wrapper, content_type='text/plain')
+         response['Content-Length'] = os.path.getsize(filename)
+    return render_to_response("web/secciones/panelcontrol/logs.html", {'textologs' : response },context_instance=RequestContext(request) )
 
 
 @login_required(login_url='/')
-def verDiario(request):
-
+def verHistoricos(request,tipo):
+    listadatos=[]
+    listgrafico=[]
+    datos=[]
+    template="web/secciones/historico/resumenhistorico.html"
     if 'consulta' in request.POST:
         formconsulta = HistoricoForms(request.POST)
         if formconsulta.is_valid():
-            vsensor = formconsulta.cleaned_data['sensor']
+            vsensor = formconsulta.cleaned_data['sensores']
             vfecha  = formconsulta.cleaned_data['fecha']
-
+            vfecha  =  datetime.datetime(*(vfecha.timetuple()[:6]))
+            if tipo==u'1': #Diario
+                etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
+                datos= consultaTablas('24',vfecha,int(vsensor.id))
+                if datos!=[]:
+                    listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],row[3],row[4])  , ponCero(row[5]) ]] ) for row in datos ]
+                    for dat in datos:
+                        listadatos.append( [str(dat[6]).split(' ')[1],ponCero(dat[5])])
+            elif tipo==u'2': #Semana
+                etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Dia Semana', 'titulograf' : 'Grafico Semanal'}
+                datos= consultaTablas('semana',vfecha,int(vsensor.id))
+                if datos!=[]:
+                    listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],0,0)  , ponCero(row[3]) ]] ) for row in datos ]
+                    print listgrafico
+                    for dat in datos:
+                        listadatos.append([dat[0],ponCero(dat[3])])
+            elif tipo==u'3': #Mes
+                etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
+                datos= consultaTablas('mes',vfecha,int(vsensor.id))
+                print datos
+                if datos!=[]:
+                    listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],0,0)  , ponCero(row[3]) ]] ) for row in datos ]
+                    for dat in datos:
+                        listadatos.append([str(dat[0]),ponCero(dat[3])] )
+            elif tipo==u'4': #Ano
+                etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Grafico Anual'}
+                datos= consultaTablas('ano',vfecha,int(vsensor.id))
+                if datos!=[]:
+                    listgrafico =[([  [  tiempoenMil(1,row[0],row[1],0,0)  , ponCero(row[2]) ]] ) for row in datos ]
+                    for dat in datos:
+                        listadatos.append( [str(dat[0]),ponCero(dat[2])])
+        else:
+            print  messages.error(request, "%s " % formconsulta.errors.as_text)
+            print "Error"
     else:
+        if tipo==u'1':
+            etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
+        elif tipo==u'2':
+            etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Dia Semana', 'titulograf' : 'Grafico Semanal'}
+        elif tipo==u'3':
+            etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
+        elif tipo==u'4':
+            etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Grafico Anual'}
         formconsulta = HistoricoForms()
 
 
-    return render_to_response("web/secciones/historico/diario.html", {'formconsulta' :formconsulta',listadatos' : listadatos,'listgraf':listgrafico,} ,context_instance=RequestContext(request) )
+
+    return render_to_response(template, {'formconsulta' :formconsulta,'listadatos' : listadatos,'listgraf':listgrafico, 'etiquetas' : etiquetas } ,context_instance=RequestContext(request) )

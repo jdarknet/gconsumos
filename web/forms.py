@@ -5,7 +5,7 @@ from web.librerias import SelectTimeWidget
 
 __author__ = 'julian'
 from django import forms
-from django.forms import models, TextInput
+from django.forms import models, TextInput, CheckboxInput
 from django.forms.models import  inlineformset_factory, ModelChoiceField
 from web.models import Configuracion, Contrato, Generales, Alarmas, Mensajes, PtdMedida
 
@@ -37,6 +37,8 @@ class ConfiguracionForms(models.ModelForm):
     w_gw           = forms.IPAddressField(required=False,label="Puerta de enlace",widget=TextInput(attrs={'type':'text','placeholder':'Puerta de Enlace'}))
     password       = forms.CharField(required=False,max_length=8, widget=TextInput(attrs={'type':'password','class':'error','placeholder':'Password'}))
     essid          = forms.ChoiceField(required=False, choices=(("",""),))
+    w_dhcp         = forms.Field(widget=CheckboxInput(attrs={'type':'checkbox','class':'checky','rel':'confirm-check','checked' : 'checked'}))
+
 class ContratosForms(models.ModelForm):
     class Meta:
         model = Contrato
@@ -91,5 +93,11 @@ MensajesFormsSet    = inlineformset_factory(Alarmas,Mensajes,extra=1,can_delete=
 
 
 class HistoricoForms(forms.Form):
-    sensores = forms.ModelChoiceField( queryset=PtdMedida.objects.all(), label="Selecciona Sensores")
-    fecha    = forms.DateField(label="Fecha")
+
+    def __init__(self, *args, **kwargs):
+        super(forms.Form, self).__init__(*args, **kwargs)
+        self.fields['fecha'].widget.format = '%d-%m-%Y'
+        self.fields['fecha'].input_formats = ['%d-%m-%Y']
+
+    sensores = forms.ModelChoiceField( required=True,queryset=PtdMedida.objects.all(), label="Selecciona Sensores")
+    fecha    = forms.DateField(required=True,label="Fecha")

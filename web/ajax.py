@@ -18,16 +18,24 @@ __author__ = 'julian'
 def conectarwifi(request,ip,mask,gw,essid,dhcp,passwd):
     dajax = Dajax()
     con =0
-    cfgfile=open("/etc/wpa_supplicant/wpa_supplicant.conf","w")
-    cfgfile.write("ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n")
-    cfgfile.write("update_config=1\n")
-    cfgfile.write("network={\n")
-    cfgfile.write('ssid="%s"\n' % essid.rstrip() )
-    cfgfile.write('psk="%s"\n' % passwd)
-    cfgfile.write("}")
-    cfgfile.close()
-    #lineas = os.popen(settings.PROJECT_ROOT+'/web/wificonnect.sh',"r")
-
+    if len(passwd)==0:
+        dajax.alert("Introduzca el password, para realizar la conexion")
+    elif len(essid)==0:
+        dajax.alert("Introduzca el nombre de la red inalambrica")
+    else:
+        cfgfile=open("/etc/wpa_supplicant/wpa_supplicant.conf","w")
+        cfgfile.write("ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n")
+        cfgfile.write("update_config=1\n")
+        cfgfile.write("network={\n")
+        cfgfile.write('ssid="%s"\n' % essid.rstrip() )
+        cfgfile.write('psk="%s"\n' % passwd)
+        cfgfile.write("}")
+        cfgfile.close()
+        sleep(2)
+        dajax.alert(dhcp)
+        if len(dhcp)==0:
+            dajax.alert("Grabamos la ip")
+        #lineas = os.popen(settings.PROJECT_ROOT+'/web/wificonnect.sh',"r")
     dajax.script("$('#essid').spin(false);")
     return dajax.json()
 
