@@ -32,6 +32,7 @@ import datetime, time
 # 
 # 
 #  Dale Lane (http://dalelane.co.uk/blog)
+from lecturas.models import ConsumosAnos, ConsumosMes, ConsumosDias, ConsumosHoras
 
 class CurrentCostDB():
 
@@ -127,13 +128,12 @@ class CurrentCostDB():
     def StoreConsumoHoras(self, hora, primary, ejer,per,dia,sensor):
         cursor =self.connection.execute(" " " select avg(energia) energia from lecturas_consumostmp  where dia=%s and per=%s and ejer=%s and hora=%s  and idcomsumos_id=%s group by hora,dia,per,ejer" " " % (dia,per,ejer,hora,sensor))
         energia = self.validaEnergia(cursor)
-        print "Energia promedio en hora %s   Watts: %s" %(hora,energia)
         if energia > 0:
             self.connection.execute('INSERT OR REPLACE INTO lecturas_consumoshoras(ts, ejer, per, dia, hora, energia,idcomsumos_id) values(?, ?, ?, ?, ?, ?,?)',
                 (primary,ejer,per,dia, hora,energia,sensor) )
             self.connection.commit()
 
-    def StoreConsumoDias(self, timestamp, primary, ejer,per,dia,sensor):
+    def StoreConsumoDias(self,  primary, ejer,per,dia,sensor):
         cursor =self.connection.execute(" " " select sum(energia) energia from lecturas_consumoshoras  where dia=%s and per=%s and ejer=%s and idcomsumos_id=%s" " " % (dia,per,ejer,sensor))
         energia = self.validaEnergia(cursor)
         if energia > 0:
@@ -143,7 +143,7 @@ class CurrentCostDB():
                 (primary,ejer,per,dia,energia,semana,sensor) )
             self.connection.commit()
 
-    def StoreConsumoMes(self, timestamp, primary, ejer,per,sensor):
+    def StoreConsumoMes(self,  primary, ejer,per,sensor):
         cursor =self.connection.execute(" " " select sum(energia) energia from lecturas_consumosdias  where per=%s and ejer=%s and idcomsumos_id=%s" " " % (per,ejer,sensor))
         energia = self.validaEnergia(cursor)
         if energia > 0:
@@ -151,11 +151,11 @@ class CurrentCostDB():
                 (primary,ejer,per,energia,sensor) )
             self.connection.commit()
 
-    def StoreConsumoAno(self, timestamp, primary, ejer ,sensor):
+    def StoreConsumoAno(self,  primary, ejer ,sensor):
         cursor =self.connection.execute(" " " select sum(energia) energia from lecturas_consumosmes  where  ejer=%s and idcomsumos_id=%s " " " % (ejer,sensor) )
         energia = self.validaEnergia(cursor)
         if energia > 0:
-            self.connection.execute('INSERT OR REPLACE INTO lecturas_consumosanos(ts, ejer, energia,idconsumos_id) values(?, ?, ?,?)',
+            self.connection.execute('INSERT OR REPLACE INTO lecturas_consumosanos(ts, ejer, energia,idcomsumos_id) values(?, ?, ?,?)',
                 (primary,ejer,energia,sensor) )
             self.connection.commit()
 
@@ -166,8 +166,87 @@ class CurrentCostDB():
             cnt += 1
         return cnt
 
+    def validaAhora(self,pejer,pper=0,pdia=0,phora=0):
+        #Hora, Dia ,Mes y Ano Actual no se toman encuenta para la reconciliación
+        #Limitacion no lanzar proceso a las 00:00 horas
+        hoy  = datetime.datetime.now()
+        dia  = str(hoy.day)
+        mes  = str(hoy.month)
+        ano  = str(hoy.year)
+        hora = str(hoy.hour)
+        if phora=="0" and pdia!="0" and pper!="0" :
+            if dia==pdia and mes==pper and ano==pejer:
+                return False
+        if pdia=="0" and pper!="0" and phora=="0":
+            if  mes==pper and ano==pejer:
+                return False
+        if pper=="0" and pdia=="0" and phora=="0":
+            if pejer==ano:
+                return False
+        if phora==hora and pdia==dia and pper==mes and pejer==ano:
+                return False
+        return True
+
+    #Reconstruye todos los resumenes
+    def ReconciliarData(self, limpiar):
 
 
 
+        if limpiar:
+            ConsumosAnos.objects.all().delete()
+            ConsumosMes.objects.all().delete()
+            ConsumosDias.objects.all().delete()
+            ConsumosHoras.objects.all().delete()
 
+
+        sql_tmp_res   ="select  ejer,per,dia,hora,idcomsumos_id,max(ts) tiempo from lecturas_consumostmp group by ejer,per,dia,hora,idcomsumos_id order by ejer,per,dia,hora"
+        sql_horas     ="select 1 from lecturas_consumoshoras where ejer=? and per=? and dia=? and hora=? and idcomsumos_id=?"
+        sql_horas_res ="select  ejer,per,dia,idcomsumos_id,max(ts) tiempo from lecturas_consumoshoras group by ejer,per,dia,idcomsumos_id order by ejer,per,dia"
+        sql_dias      ="select 1 from lecturas_consumosdias  where ejer=? and per=? and dia=? and idcomsumos_id=? "
+        sql_dias_res  ="select  ejer,per,idcomsumos_id,max(ts) tiempo from lecturas_consumosdias group by ejer,per,idcomsumos_id order by ejer,per"
+        sql_mes       ="select 1 from lecturas_consumosmes where ejer=? and per=? and idcomsumos_id=? "
+        sql_mes_res   ="select ejer,idcomsumos_id,max(ts) tiempo from lecturas_consumosmes  group by ejer,idcomsumos_id order by ejer"
+        sql_ano       ="select 1 from lecturas_consumosanos where ejer=? and idcomsumos_id=?"
+
+        #Reconcilia Horas
+        cursor_tmp = self.connection.execute(sql_tmp_res)
+        for reg in cursor_tmp:
+            if self.validaAhora(str(reg[0]),str(reg[1]),str(reg[2]),str(reg[3])):
+                cursor_horas = self.connection.execute(sql_horas,(reg[0],reg[1],reg[2],reg[3],reg[4]) )
+                existe = self.validaEnergia(cursor_horas)
+                cursor_horas
+                if existe ==0:
+                    primaria = str(reg[5])
+                    self.StoreConsumoHoras(reg[3],primaria,reg[0],reg[1],reg[2],reg[4])
+
+
+        #Reconcilia Dias
+        cursor_horas_res = self.connection.execute(sql_horas_res)
+        for reg in cursor_horas_res:
+            if self.validaAhora(str(reg[0]),str(reg[1]),str(reg[2]),"0"):
+                cursor_dias = self.connection.execute(sql_dias, (reg[0],reg[1],reg[2],reg[3]))
+                existe = self.validaEnergia(cursor_dias)
+                if existe==0:
+                    primaria = str(reg[4])
+                    self.StoreConsumoDias(primaria,reg[0],reg[1],reg[2],reg[3])
+
+        #Reconcilia Mes
+        cursor_dias_res = self.connection.execute(sql_dias_res)
+        for reg in cursor_dias_res:
+            if self.validaAhora(str(reg[0]),str(reg[1]),"0","0"):
+                cursor_mes = self.connection.execute(sql_mes,(reg[0],reg[1],reg[2]))
+                existe = self.validaEnergia(cursor_mes)
+                if existe ==0:
+                    primaria = str(reg[3])
+                    self.StoreConsumoMes(primaria,reg[0],reg[1],reg[2])
+
+        #Reconcilia Año
+        cursor_mes_res = self.connection.execute(sql_mes_res)
+        for reg in cursor_mes_res:
+            if self.validaAhora(str(reg[0]),"0","0","0"):
+                cursor_ano = self.connection.execute(sql_ano,(reg[0],reg[1]))
+                existe = self.validaEnergia(cursor_ano)
+                if existe==0:
+                    primaria = str(reg[2])
+                    self.StoreConsumoAno(primaria,reg[0],reg[1])
 

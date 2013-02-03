@@ -10,6 +10,7 @@ from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
 from maestros.models import Terceros
 from web.ajax import testLectura
+from web.models import Configuracion
 
 
 class Command(BaseCommand):
@@ -168,9 +169,19 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         if options['comunica']:
+            swt=0
             if testLectura() != 1:
-                email= Terceros.objects.filter(tipotercero_id=1)[0].email
-                self.envio("Perdida de comunicacion con el ENVIR",email,'Sin comunicación EnviR, intente reconectar el Envir')
-                lee = leeDatos()
+                try:
+                    email  = Terceros.objects.filter(tipotercero_id=1)[0].email
+                except Terceros.DoesNotExist:
+                    swt=1
+                try:
+                    serial = Configuracion.objects.all()[0].serialmodulo
+                except Configuracion.DoesNotExist:
+                    swt=1
+                if swt==0:
+                    self.envio("Perdida de comunicacion con el ENVIR No. %s" % serial,email,'Sin comunicación EnviR, intente reconectar el Envir')
+                    lee = leeDatos()
+
         if options['alarmas']:
             self.verificar()

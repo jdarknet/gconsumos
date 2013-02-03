@@ -37,7 +37,7 @@ class ConfiguracionForms(models.ModelForm):
     w_gw           = forms.IPAddressField(required=False,label="Puerta de enlace",widget=TextInput(attrs={'type':'text','placeholder':'Puerta de Enlace'}))
     password       = forms.CharField(required=False,max_length=8, widget=TextInput(attrs={'type':'password','class':'error','placeholder':'Password'}))
     essid          = forms.ChoiceField(required=False, choices=(("",""),))
-    w_dhcp         = forms.Field(widget=CheckboxInput(attrs={'type':'checkbox','class':'checky','rel':'confirm-check','checked' : 'checked'}))
+    #w_dhcp         = forms.Field(widget=CheckboxInput(attrs={'type':'checkbox','class':'checky','rel':'confirm-check','checked' : 'checked'}))
 
 class ContratosForms(models.ModelForm):
     class Meta:

@@ -3,6 +3,7 @@ import datetime
 import os
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.files import File
 from django.core.urlresolvers import reverse
 from django.db import connection, IntegrityError
 from django.core.servers.basehttp import FileWrapper
@@ -376,15 +377,18 @@ def verLogs(request):
     response=""
     if 'leer_logs' in request.POST:
          filename =LOGGING['handlers']['log_file']['filename']
-#        file = open(LOGGING['handlers']['log_file']['filename'])
-#        lineas = File(file).readlines()
-#        file.close()
-#        for lin in lineas:
-#            textologs=lin.replace("\n", "&#10")+textologs
+         #file = FileWrapper(file(filename))
+         #file = open(LOGGING['handlers']['log_file']['filename'])
+         #lineas = File(file).readlines()
+         #file.close()
+         #for lin in file:
+                #textologs=lin.replace("\n", "&#10")+textologs
          wrapper = FileWrapper(file(filename))
          response = HttpResponse(wrapper, content_type='text/plain')
          response['Content-Length'] = os.path.getsize(filename)
     return render_to_response("web/secciones/panelcontrol/logs.html", {'textologs' : response },context_instance=RequestContext(request) )
+
+    #return render_to_response("web/secciones/panelcontrol/logs.html", {'textologs' : textologs },context_instance=RequestContext(request) )
 
 
 @login_required(login_url='/')

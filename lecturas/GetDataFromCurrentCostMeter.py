@@ -77,23 +77,23 @@ class leeDatos:
             senso   = datos['sensor']
             hora, min, seg = tiempo.split(":")
             id = ano + mes + dia + tiempo
-            trc.info("Hora Inicio: %s Hora: %s" % (inihora,hora))
             if hora != inihora:
+                trc.info("Hora Inicio: %s Hora: %s" % (inihora,hora))
                 trc.info("Entra en Hora .................................................")
                 self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
                 self.ccdb.StoreConsumoHoras(inihora, id, iniano, inimes, inidia,senso)
                 inihora = hora
-                trc.info("Dia cambio .. Incial %s Fnal %s ") % (inidia,dia)
+                trc.info("Dia cambio .. Incial %s Fnal %s " % (inidia,dia))
                 if inidia != dia:
                     trc.info("Entra en dias .............................................")
-                    self.ccdb.StoreConsumoDias(tiempo, id, iniano, inimes, inidia,senso)
+                    self.ccdb.StoreConsumoDias( id, iniano, inimes, inidia,senso)
                     inidia = dia
                     if inimes != mes:
-                        self.ccdb.StoreConsumoMes(tiempo, id, iniano, inimes,senso)
+                        self.ccdb.StoreConsumoMes( id, iniano, inimes,senso)
                         inimes = mes
                         ##Llam a Insertar Mes
                         if iniano != ano:
-                            self.ccdb.StoreConsumoAno(tiempo, id, iniano,senso)
+                            self.ccdb.StoreConsumoAno( id, iniano,senso)
                             iniano = ano
                             ##Llama a Inserta Ano
                             pass
@@ -171,7 +171,7 @@ class leeDatos:
 
                 if 'hist' not in currentcoststruct['msg']:
                     try:
-                        trc.info("Consumos Watts %s  Sensor : %s " % (currentcoststruct['msg']['ch1']['watts'], int(str(currentcoststruct['msg']['sensor']))) )
+                        #trc.info("Consumos Watts %s  Sensor : %s " % (currentcoststruct['msg']['ch1']['watts'], int(str(currentcoststruct['msg']['sensor']))) )
                         potencia    = currentcoststruct['msg']['ch1']['watts']
                         sensor      = int(str(currentcoststruct['msg']['sensor']))
                         temperatura = currentcoststruct['msg']['tmpr']
