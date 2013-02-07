@@ -13,6 +13,60 @@
    $(document).ready(function()
    {
 
+    $("#ips").toggle(!$('#id_configura-w_dhcp').attr('checked'));
+
+    $('#id_configura-w_dhcp').click(function()
+    {
+
+            $("#ips").toggle(!this.checked);
+
+    });
+
+    var tipo = $('#id_configura-protvolcado').val()
+
+    if(tipo=="email")
+    {
+      $('#email').toggle(true);
+
+    }else
+    {
+        $('#email').toggle(false);
+    }
+    if(tipo in {"ftp":"","ssh":""} )
+    {
+        $('#ftp').toggle(true);
+    }
+    else
+    {
+        $('#ftp').toggle(false);
+
+    }
+
+
+    $('#id_configura-protvolcado').change(function(){
+        var etiq = $(this).val()
+
+        if(etiq=="email")
+        {
+                $('#email').toggle(true);
+
+        }
+        else
+        {
+                $('#email').toggle(false);
+
+        }
+        if(etiq in  {"ftp":"","ssh":""})
+        {
+                $('#ftp').toggle(true);
+         }
+        else
+        {
+                $('#ftp').toggle(false);
+
+        }
+
+    });
 
     var opts = {
         lines: 13, // The number of lines to draw
@@ -85,10 +139,6 @@
             Dajaxice.web.conectarwifi(Dajax.process,{'ip':ip,'mask':mask,'gw':gw,'essid':essid,'passwd':passwd,'dhcp':dhcp});
 
 
-        if (dhcp == 0 )
-        {
-            alert(dhcp);
-        }
 
         }) ;
     });
@@ -126,9 +176,17 @@
                     Volcado Información
                 </div>
                 <div class="padded">
-
-                    <div>{{ configura.ipvolcado.label }}</div>
+                    <div>{{ configura.protvolcado.label }}</div>
                     <div class="append-transparent">
+                        {{ configura.protvolcado }}
+                    </div>
+                    <div>{{ configura.frecuencia.label }}</div>
+                    <div class="append-transparent">
+                        {{ configura.frecuencia }}
+                    </div>
+                    <div id="ftp">
+                        <div>{{ configura.ipvolcado.label }}</div>
+                        <div class="append-transparent">
                         {{ configura.ipvolcado }}
                     </div>
                     <div>{{ configura.uservolcado.label }}</div>
@@ -139,19 +197,13 @@
                     <div class="append-transparent">
                         {{ configura.passvolcado }}
                     </div>
-                    <div>{{ configura.frecuencia.label }}</div>
-                    <div class="append-transparent">
-                            {{ configura.frecuencia }}
                     </div>
-                    <div>{{ configura.protvolcado.label }}</div>
-                    <div class="append-transparent">
-                        {{ configura.protvolcado }}
+                    <div id="email">
+                        <div>{{ configura.emailvolcado.label }}</div>
+                        <div class="append-transparent">
+                            {{ configura.emailvolcado }}
+                        </div>
                     </div>
-                    <div>{{ configura.emailvolcado.label }}</div>
-                    <div class="append-transparent">
-                        {{ configura.emailvolcado }}
-                    </div>
-
 
               </div>
            </div>
@@ -164,18 +216,6 @@
             </div>
             <div class="padded">
 
-                <div>{{ configura.w_ip.label }}</div>
-                <div class="append-transparent">
-                    {{ configura.w_ip }}
-                </div>
-                <div>{{ configura.w_mask.label }}</div>
-                <div class="append-transparent">
-                    {{ configura.w_mask }}
-                </div>
-                <div>{{ configura.w_gw.label }}</div>
-                <div class="append-transparent">
-                    {{ configura.w_gw }}
-                </div>
                 <div class="row-fluid">
                     <div class="span6" id="essid">
                     <div>{{ configura.essid.label }}</div>
@@ -196,11 +236,25 @@
                         </div>
                        </div>
                     </div>
-                 </div>
-                <div>{{ configura.password.label }}</div>
+                    <div>{{ configura.password.label }}</div>
+                        <div class="append-transparent">
+                            {{ configura.password }}
+                        </div>
+                    </div>
+                    <div id="ips">
+                    <div>{{ configura.w_ip.label }}</div>
                     <div class="append-transparent">
-                        {{ configura.password }}
-                 </div>
+                        {{ configura.w_ip }}
+                    </div>
+                    <div>{{ configura.w_mask.label }}</div>
+                    <div class="append-transparent">
+                        {{ configura.w_mask }}
+                    </div>
+                    <div>{{ configura.w_gw.label }}</div>
+                    <div class="append-transparent">
+                        {{ configura.w_gw }}
+                    </div>
+                     </div>
                     <div class="form-actions">
                         <button type="submit"  name="envia_configura" class="button blue">Guardar Cambios</button>
                         <button type="button"  id="busca_wifi" name="busca_wifi" class="button blue">Buscar Redes</button>

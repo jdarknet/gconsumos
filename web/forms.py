@@ -81,10 +81,10 @@ class AlarmasForms(models.ModelForm):
         model= Alarmas
     id           = forms.IntegerField(required=False,  widget=TextInput(attrs= {'class':'hidden'}))
     descripcion  = forms.CharField(max_length=100,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Denominación'}))
-    consigna     = forms.IntegerField(label="Consigna",help_text="En Watts")
+    consigna     = forms.IntegerField(required=False,label="Consigna",help_text="En Watts",initial=0)
     tiempoinicio = forms.TimeField(widget=SelectTimeWidget(attrs={ 'class':'span3'} ),  label="Inicio vigencia")
     tiempofin    = forms.TimeField(widget=SelectTimeWidget(attrs={ 'class':'span3'} ), label= "Fin vigencia"  )
-    idcomsumos    =forms.ModelChoiceField(queryset=PtdMedida.objects.all(), label="Sensor",required=False)
+    idcomsumos    =forms.ModelChoiceField(queryset=PtdMedida.objects.all(), label="Sensor",required=True)
 #    tipo        = forms.(label="Tipo de Consigna",help_text="Selecciones el tipo de alarma a generar")
 
 

@@ -4,6 +4,7 @@
     <script type="text/javascript">
     $(document).ready(function()
     {
+        $('#sensibilidad').hide()
 
         $('#id_mensajes tbody tr').formset({
                     prefix: 'mensajes'
@@ -14,6 +15,36 @@
                 container: $("body"),
                 bootstrapPositionClass: "span6 offset3"
             });
+
+
+        var tipo = $('#id_cabalarma-tipo').val()
+        if(tipo==1)
+        {
+            $('#id_cabalarma-consigna').attr("disabled","disabled");
+            $('#horarios').hide()
+            $('#sensibilidad').show()
+
+        }
+
+        $('#id_cabalarma-tipo').change(function(){
+           var etiq = $(this).val()
+
+           if(etiq=="1")
+           {
+
+               $('#id_cabalarma-consigna').attr("disabled","disabled");
+               $('#horarios').hide()
+               $('#sensibilidad').show()
+           }
+           else
+           {
+               $('#id_cabalarma-consigna').removeAttr('disabled');
+               $('#horarios').show()
+               $('sensibilidad').hide()
+           }
+
+
+        });
 
     });
 
@@ -79,17 +110,31 @@
                     <form method="post" class="fill-up">{% csrf_token %}
                         {{ form_detail.management_form }}
                         <div class="append-transparent">
-                            {{ form_cab.descripcion.label }}
-                            {{ form_cab.descripcion }}
+                            <table class="table table-bordered box">
+                                <thead>
+                                    <th>
+                                    {{ form_cab.descripcion.label }}
+                                    </th>
+                                    <th>
+                                        {{ form_cab.habilitar.label}}
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ form_cab.descripcion }}</td>
+                                        <td>{{ form_cab.habilitar }}</td>
+                                    </tr>
+                                <tbody>
+                             </table>
                         </div>
 
                         <table class="table table-bordered box">
                             <thead>
                                 <th>
-                                    {{ form_cab.consigna.label }}
+                                    {{ form_cab.tipo.label}}
                                 </th>
                                 <th>
-                                    {{ form_cab.tipo.label}}
+                                    {{ form_cab.consigna.label }}
                                 </th>
                                 <th>
                                    {{ form_cab.idcomsumos.label }}
@@ -99,13 +144,13 @@
 
                             <tr id="{{ form.prefix }}-row" >
                             <td class="hide">{{ form_cab.id }}</td>
-                                    <td>{{ form_cab.consigna }}</td>
                                     <td>{{ form_cab.tipo }}</td>
+                                    <td>{{ form_cab.consigna }}</td>
                                     <td>{{ form_cab.idcomsumos }}</td>
                             </tr>
                             </tbody>
                         </table>
-                        <table class="table table-bordered box">
+                        <table class="table table-bordered box" id="horarios">
                             <thead>
                             <th>
                                 {{ form_cab.tiempoinicio.label}} (h/m/s)
@@ -113,16 +158,28 @@
                             <th>
                                 {{ form_cab.tiempofin.label }} (h/m/s)
                             </th>
-                            <th>
-                                {{ form_cab.habilitar.label}}
-                            </th>
+
 
                             </thead>
                             <tbody>
                             <tr >
                                 <td>{{ form_cab.tiempoinicio }}</td>
                                 <td>{{ form_cab.tiempofin }}</td>
-                                <td>{{ form_cab.habilitar }}</td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered box" id="sensibilidad">
+                            <thead>
+                            <th>
+                                {{ form_cab.sensibilidad.label}}
+                            </th>
+
+
+                            </thead>
+                            <tbody>
+                            <tr >
+                                <td>{{ form_cab.sensibilidad }}</td>
                             </tr>
                             </tbody>
                         </table>

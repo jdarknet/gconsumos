@@ -195,7 +195,12 @@ LOGGING = {
             'handlers': ['log_file'],
             'level': 'INFO',
             'propagate': False,
-        }
+        },
+        'lecturas.currentcostdb': {
+            'handlers': ['log_file'],
+            'level': 'INFO',
+            'propagate': False,
+            }
     }
 }
 

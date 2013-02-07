@@ -49,3 +49,20 @@ class ConsumosTmp(models.Model):
     seg = models.IntegerField(null=True, blank=True)
     energia = models.FloatField(null=True, blank=True)
     idcomsumos = models.ForeignKey(PtdMedida, verbose_name="Punto de Medida")
+
+class EstaAcumMes(models.Model):
+    per     = models.IntegerField(null=True, blank=True)
+    hora    = models.IntegerField(null=True, blank=True)
+    energia = models.FloatField(null=True, blank=True)
+    idcomsumos = models.ForeignKey(PtdMedida, verbose_name="Punto de Medida")
+
+class EstaAcumDiaSema(models.Model):
+    diasemana = models.IntegerField(null=True, blank=True)
+    hora      = models.IntegerField(null=True, blank=True)
+    energia   = models.FloatField(null=True, blank=True)
+    idcomsumos = models.ForeignKey(PtdMedida, verbose_name="Punto de Medida")
+
+class EstaAcumHora(models.Model):
+    hora       = models.IntegerField(null=True, blank=True)
+    energia    = models.FloatField(null=True, blank=True)
+    idcomsumos = models.ForeignKey(PtdMedida, verbose_name="Punto de Medida")

@@ -83,7 +83,7 @@ class leeDatos:
                 self.ccdb.StoreConsumoData(tiempo, id, ano, mes, dia, str((promedio / nd)),senso)
                 self.ccdb.StoreConsumoHoras(inihora, id, iniano, inimes, inidia,senso)
                 inihora = hora
-                trc.info("Dia cambio .. Incial %s Fnal %s " % (inidia,dia))
+                trc.info("Dia cambio .. Incial %s Final %s " % (inidia,dia))
                 if inidia != dia:
                     trc.info("Entra en dias .............................................")
                     self.ccdb.StoreConsumoDias( id, iniano, inimes, inidia,senso)

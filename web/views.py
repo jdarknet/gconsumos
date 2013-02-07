@@ -396,6 +396,7 @@ def verHistoricos(request,tipo):
     listadatos=[]
     listgrafico=[]
     datos=[]
+    etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
     template="web/secciones/historico/resumenhistorico.html"
     if 'consulta' in request.POST:
         formconsulta = HistoricoForms(request.POST)
@@ -417,7 +418,7 @@ def verHistoricos(request,tipo):
                     listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],0,0)  , ponCero(row[3]) ]] ) for row in datos ]
                     print listgrafico
                     for dat in datos:
-                        listadatos.append([dat[0],ponCero(dat[3])])
+                        listadatos.append([str(dat[0]),ponCero(dat[3])])
             elif tipo==u'3': #Mes
                 etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
                 datos= consultaTablas('mes',vfecha,int(vsensor.id))
@@ -437,6 +438,7 @@ def verHistoricos(request,tipo):
             print  messages.error(request, "%s " % formconsulta.errors.as_text)
             print "Error"
     else:
+
         if tipo==u'1':
             etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
         elif tipo==u'2':
@@ -445,6 +447,7 @@ def verHistoricos(request,tipo):
             etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
         elif tipo==u'4':
             etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Grafico Anual'}
+
         formconsulta = HistoricoForms()
 
 

@@ -21,6 +21,7 @@
 #  The author of this code can be contacted at Dale.Lane@gmail.com
 #    Any contact about this application is warmly welcomed.
 #
+import logging
 from pysqlite2 import dbapi2 as sqlite
 import datetime, time
 
@@ -32,7 +33,11 @@ import datetime, time
 # 
 # 
 #  Dale Lane (http://dalelane.co.uk/blog)
-from lecturas.models import ConsumosAnos, ConsumosMes, ConsumosDias, ConsumosHoras
+from django.db import transaction
+from lecturas.models import ConsumosAnos, ConsumosMes, ConsumosDias, ConsumosHoras, EstaAcumMes, EstaAcumDiaSema, EstaAcumHora
+
+trc =logging.getLogger('lecturas.currentcostdb')
+
 
 class CurrentCostDB():
 
@@ -136,9 +141,11 @@ class CurrentCostDB():
     def StoreConsumoDias(self,  primary, ejer,per,dia,sensor):
         cursor =self.connection.execute(" " " select sum(energia) energia from lecturas_consumoshoras  where dia=%s and per=%s and ejer=%s and idcomsumos_id=%s" " " % (dia,per,ejer,sensor))
         energia = self.validaEnergia(cursor)
+        trc.info("Energia a grabar en dia %s" % energia)
         if energia > 0:
             diasemana ="%s-%s-%s" % (dia,per,ejer)
             semana = datetime.datetime.strptime(diasemana,"%d-%m-%Y").strftime("%W")
+            trc.info("Graba dia %s-%s-%s " % (dia,per,ejer))
             self.connection.execute('INSERT OR REPLACE INTO lecturas_consumosdias(ts, ejer, per, dia, energia, semana, idcomsumos_id) values(?, ?, ?, ?, ?, ?, ? )',
                 (primary,ejer,per,dia,energia,semana,sensor) )
             self.connection.commit()
@@ -250,3 +257,33 @@ class CurrentCostDB():
                     primaria = str(reg[2])
                     self.StoreConsumoAno(primaria,reg[0],reg[1])
 
+    @transaction.commit_manually
+    def ReconciliarEstaData(self):
+
+
+        EstaAcumMes.objects.all().delete()
+        EstaAcumDiaSema.objects.all().delete()
+        EstaAcumHora.objects.all().delete()
+
+        sql_horas   ="select hora,idcomsumos_id,avg(energia) energia from lecturas_consumoshoras  group by hora,idcomsumos_id"
+        sql_mes     ="select per,hora,idcomsumos_id,avg(energia) energia from lecturas_consumoshoras  group by per,hora,idcomsumos_id"
+        sql_diasem  ="select strftime('%w',(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))) ) diasemana,hora,idcomsumos_id,avg(energia) energia from lecturas_consumoshoras  group by hora,idcomsumos_id,strftime('%w',(ejer||'-'||substr('0'||per,length(per))||'-'||substr('0'||dia,length(dia))) ) order by 1"
+
+
+        cursor_horas = self.connection.execute(sql_horas)
+        for reg in cursor_horas:
+            objhoras = EstaAcumHora(hora=reg[0],idcomsumos_id=reg[1],energia=round(reg[2],0))
+            objhoras.save()
+        transaction.commit()
+
+        cursor_mes = self.connection.execute(sql_mes)
+        for reg in cursor_mes:
+            objmes = EstaAcumMes(per=reg[0],hora=reg[1],idcomsumos_id=reg[2],energia=round(reg[3],0))
+            objmes.save()
+        transaction.commit()
+
+        cursor_diasem = self.connection.execute(sql_diasem)
+        for reg in cursor_diasem:
+            objdia = EstaAcumDiaSema(diasemana=reg[0],hora=reg[1],idcomsumos_id=reg[2],energia=round(reg[3],0))
+            objdia.save()
+        transaction.commit()

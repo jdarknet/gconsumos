@@ -75,7 +75,7 @@ function ponGraficoMesActual(data, etiqueta)
     var maximox = Math.max.apply(Math,ax);
     var options = {
         yaxis: { min: 0, max: maximoy+100 },
-        xaxis: { mode:"time",timeformat:"%d" },
+        xaxis: { mode:"time" },
         colors: ["#EDC240", "#222", "#666", "#BBB"],
         series: {
             lines: {
