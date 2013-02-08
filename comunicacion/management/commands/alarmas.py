@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'julian'
+import ftplib
 from os import path
+import os
 from lecturas.GetDataFromCurrentCostMeter import leeDatos
 from gconsumos import settings
 import datetime
@@ -11,6 +13,7 @@ from maestros.models import Terceros
 from web.ajax import testLectura
 from web.models import Configuracion
 from lecturas.currentcostdb import *
+import paramiko
 
 class Command(BaseCommand):
     hoy  = datetime.datetime.now()
@@ -136,37 +139,61 @@ class Command(BaseCommand):
         archivo.close()
         return True
 
+    def envioSSH(self,archivo,host, usuario,contra):
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect(host,22,username=usuario,password=contra)
+        ftp = ssh.open_sftp()
+        ftp.put(archivo,archivo.split("/")[1])
+
+    def envioFTP(self,archivo,host, usuario,contra):
+        ftp = ftplib.FTP()
+        ftp.connect(host)
+        try:
+            ftp.login(usuario,contra)
+            name= os.path.split(archivo)[1]
+            f=open(archivo,"rb")
+            ftp.storbinary('STOR '+name,f)
+            f.close()
+        finally:
+            ftp.quit()
+
     def volcado(self):
         volcado = Configuracion.objects.all()[0]
         if len(volcado.protvolcado)==0:
             return
         else:
+            extname = str(self.dia)+str(self.mes)+str(self.ano)+str(self.hora)
+            if volcado.frecuencia=="01":
+                archivo="/tmp/horas_%s.csv" % extname
+                if self.volcadoHoras(archivo):
+                    txt ="Volcado de Webloggeer Horaria"
+                else:
+                    return
+            if volcado.frecuencia=="02":
+                archivo="/tmp/diario_%s.csv" % extname
+                if self.volcadoDiario(archivo):
+                    txt ="Volcado de Webloggeer Diario"
+                else:
+                    return
+            if volcado.frecuencia=="03":
+                archivo="/tmp/semanal_%s.csv" % extname
+                if self.volcadoSemanal(archivo):
+                    txt ="Volcado de Webloggeer Semanal"
+                else:
+                    return
+            if volcado.frecuencia=="04":
+                archivo="/tmp/mensual_%s.csv" % extname
+                if self.volcadoMensual(archivo):
+                    txt ="Volcado de Webloggeer Mensual"
+                else:
+                    return
             if volcado.protvolcado=="email":
-                if volcado.frecuencia=="01":
-                    archivo="/tmp/horas.csv"
-                    if self.volcadoHoras(archivo):
-                        txt ="Volcado de Webloggeer Horaria"
-                    else:
-                        return
-                if volcado.frecuencia=="02":
-                    archivo="/tmp/diario.csv"
-                    if self.volcadoDiario(archivo):
-                        txt ="Volcado de Webloggeer Diario"
-                    else:
-                        return
-                if volcado.frecuencia=="03":
-                    archivo="/tmp/semanal.csv"
-                    if self.volcadoSemanal(archivo):
-                        txt ="Volcado de Webloggeer Semanal"
-                    else:
-                        return
-                if volcado.frecuencia=="04":
-                    archivo="/tmp/mensual.csv"
-                    if self.volcadoMensual(archivo):
-                        txt ="Volcado de Webloggeer Mensual"
-                    else:
-                        return
                 self.envio( txt,volcado.emailvolcado,"Envio de datos consumo Weblogger %s " % volcado.serialmodulo,archivo)
+            if volcado.protvolcado=="ssh":
+                self.envioSSH(archivo,volcado.ipvolcado,volcado.uservolcado,volcado.passvolcado)
+            if volcado.protvolcado=="ftp":
+                self.envioFTP(archivo,volcado.ipvolcado,volcado.uservolcado,volcado.passvolcado)
 
 
 
@@ -326,23 +353,20 @@ class Command(BaseCommand):
 
         if options['alarmas']:
             self.verificar()
-
         if options['reconciliar']:
             cdb = CurrentCostDB()
             cdb.InitialiseDB(settings.DATABASE)
             cdb.ReconciliarData(False)
-
         if options['reconstruir']:
             cdb = CurrentCostDB()
             cdb.InitialiseDB(settings.DATABASE)
             cdb.ReconciliarData(True)
-
         if options['estadistica']:
             cdb = CurrentCostDB()
             cdb.InitialiseDB(settings.DATABASE)
             cdb.ReconciliarEstaData()
-
         if options['volcado']:
             self.volcado()
+
 
 

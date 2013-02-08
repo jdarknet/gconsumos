@@ -17,7 +17,7 @@ class Configuracion(models.Model):
     uservolcado    = models.CharField(max_length=20,verbose_name="Usuario",   null=True,blank=True)
     passvolcado    = models.CharField(max_length=20,verbose_name="Passsowd",  null=True,blank=True)
     frecuencia     = models.CharField(max_length=2 ,verbose_name="Frecuencia",null=True,blank=True,choices=(('01','Hora'),('02','Diaria'),('03',"Semanal"),('04','Mensual')))
-    protvolcado    = models.CharField(verbose_name="Protocolo",null=True, blank=True,max_length=10,choices=(('email','Email'),('ftp',"FTP"),('ssh','SFTP')))
+    protvolcado    = models.CharField(verbose_name="Protocolo",null=True, blank=True,max_length=10,choices=(('email','Email'),('ftp',"FTP"),('ssh','SSH')))
     emailvolcado   = models.EmailField(verbose_name="Email Volcado", null=True,blank=True)
     password       = models.CharField(max_length=8, verbose_name="Password",blank=True,null=True)
     fecha          = models.DateField(verbose_name="Fecha Alta",null=True,blank=True)
