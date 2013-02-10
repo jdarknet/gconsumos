@@ -61,7 +61,7 @@ class Generales(models.Model):
 class Alarmas(models.Model):
     descripcion   = models.CharField(max_length=100,verbose_name="Nombre de Alarma")
     consigna      = models.IntegerField(verbose_name="Consigna en Watts",help_text="en Watts",default=0,null=True)
-    tipo          = models.CharField(max_length=1,choices=( ('1','Historico'),('2','Predictivo'),('3','Restrictiva Maxima'),('4','Restrictiva Minima') ),verbose_name="Tipo de Consigna" )
+    tipo          = models.CharField(max_length=1,choices=( ('1','Historico'),('2','---------'),('3','Restrictiva Maxima'),('4','Restrictiva Minima') ),verbose_name="Tipo de Consigna" )
     sensibilidad  = models.CharField(max_length=1,choices=( ('1','Horaria'),('2','Dia Semana'),('3','Mensual') ),default="1",verbose_name="Sensibilidad" )
     tiempoinicio  = models.TimeField(verbose_name="Hora de inicio" , help_text="formato 0-24", default=datetime.date.today())
     tiempofin     = models.TimeField(verbose_name="Hora fin",help_text="formato 0-24",default=datetime.date.today())

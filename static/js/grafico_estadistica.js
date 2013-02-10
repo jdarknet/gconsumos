@@ -193,7 +193,3 @@ function ponGraficoAno(data)
 
 };
 
-
-
-
-

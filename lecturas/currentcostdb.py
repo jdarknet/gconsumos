@@ -196,9 +196,6 @@ class CurrentCostDB():
 
     #Reconstruye todos los resumenes
     def ReconciliarData(self, limpiar):
-
-
-
         if limpiar:
             ConsumosAnos.objects.all().delete()
             ConsumosMes.objects.all().delete()
@@ -259,8 +256,6 @@ class CurrentCostDB():
 
     @transaction.commit_manually
     def ReconciliarEstaData(self):
-
-
         EstaAcumMes.objects.all().delete()
         EstaAcumDiaSema.objects.all().delete()
         EstaAcumHora.objects.all().delete()

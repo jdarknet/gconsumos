@@ -1,152 +1,6 @@
 {% extends "web/secciones/general.html" %}
-{% block head %}
-    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL}}dajax/jquery.dajax.core.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL}}dajaxice/dajaxice.core.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL}}js/spin.js"></script>
-
-
-{% endblock %}
-{% block scripthead %}
-
-
-   $(document).ready(function()
-   {
-
-    $("#ips").toggle(!$('#id_configura-w_dhcp').attr('checked'));
-
-    $('#id_configura-w_dhcp').click(function()
-    {
-
-            $("#ips").toggle(!this.checked);
-
-    });
-
-    var tipo = $('#id_configura-protvolcado').val()
-
-    if(tipo=="email")
-    {
-      $('#email').toggle(true);
-
-    }else
-    {
-        $('#email').toggle(false);
-    }
-    if(tipo in {"ftp":"","ssh":""} )
-    {
-        $('#ftp').toggle(true);
-    }
-    else
-    {
-        $('#ftp').toggle(false);
-
-    }
-
-
-    $('#id_configura-protvolcado').change(function(){
-        var etiq = $(this).val()
-
-        if(etiq=="email")
-        {
-                $('#email').toggle(true);
-
-        }
-        else
-        {
-                $('#email').toggle(false);
-
-        }
-        if(etiq in  {"ftp":"","ssh":""})
-        {
-                $('#ftp').toggle(true);
-         }
-        else
-        {
-                $('#ftp').toggle(false);
-
-        }
-
-    });
-
-    var opts = {
-        lines: 13, // The number of lines to draw
-        length: 7, // The length of each line
-        width: 4, // The line thickness
-        radius: 26, // The radius of the inner circle
-         corners: 1, // Corner roundness (0..1)
-        rotate: 0, // The rotation offset
-        color: '#000', // #rgb or #rrggbb
-        speed: 1, // Rounds per second
-        trail: 60, // Afterglow percentage
-        shadow: false, // Whether to render a shadow
-        hwaccel: false, // Whether to use hardware acceleration
-        className: 'spinner', // The CSS class to assign to the spinner
-        zIndex: 2e9, // The z-index (defaults to 2000000000)
-        top: 'auto', // Top position relative to parent in px
-        left: 'auto' // Left position relative to parent in px
-    };
-
-    $.fn.spin = function(opts, color) {
-                var presets = {
-                "tiny": { lines: 8, length: 2, width: 2, radius: 3 },
-                "small": { lines: 8, length: 4, width: 3, radius: 5 },
-                "large": { lines: 10, length: 8, width: 4, radius: 8 }
-                               };
-                if (Spinner) {
-                    return this.each(function() {
-                            var $this = $(this),
-                                data = $this.data();
-
-                            if (data.spinner) {
-                                data.spinner.stop();
-                                delete data.spinner;
-                            }
-                            if (opts !== false) {
-                                 if (typeof opts === "string") {
-                                        if (opts in presets) {
-                                                opts = presets[opts];
-                            } else {
-                                        opts = {};
-                                    }
-                            if (color) {
-                                    opts.color = color;
-                            }
-                    }
-                    data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
-                        }
-                 });
-                }
-                else {
-                    throw "Spinner class not available.";
-                    }
-        };
-
-     $('#busca_wifi').click( function(e){
-            $('#essid').spin(opts);
-            Dajaxice.web.updatewifis(Dajax.process);
-        }) ;
-
-    $('#conectar_wifi').click( function(e){
-
-
-            $('#essid').spin(opts);
-            var ip     = $('#id_configura-w_ip').val();
-            var mask   = $('#id_configura-w_mask').val();
-            var gw     = $('#id_configura-w_gw').val();
-            var essid  = $('#id_configura-essid').val();
-            var passwd = $('#id_configura-password').val();
-            var dhcp   = $('#id_configura-w_dhcp').val();
-            Dajaxice.web.conectarwifi(Dajax.process,{'ip':ip,'mask':mask,'gw':gw,'essid':essid,'passwd':passwd,'dhcp':dhcp});
-
-
-
-        }) ;
-    });
-
-{% endblock %}
-
 {% block central %}
-    <form id="configuracion" method="post" class="fill-up">{% csrf_token %}
+    <form id="configuracion" action="/general/configuracion/" method="post" class="fill-up">{% csrf_token %}
     <div class="row-fluid">
 
         <div class=span6>
@@ -162,10 +16,12 @@
                         <div>{{ configura.fecha.label }}</div>
                         <div class="append-transparent">
                             {{ configura.fecha }}
+                            {{ configura.fecha.errors }}
                         </div>
                         <div>{{ configura.serialmodulo.label }}</div>
                         <div class="append-transparent">
                             {{ configura.serialmodulo }}
+                            {{ configura.serialmodulo.errors }}
                         </div>
 
 
@@ -188,6 +44,7 @@
                         <div>{{ configura.ipvolcado.label }}</div>
                         <div class="append-transparent">
                         {{ configura.ipvolcado }}
+                        {{ configura.ipvolcado.errors }}
                     </div>
                     <div>{{ configura.uservolcado.label }}</div>
                     <div class="append-transparent">
@@ -202,6 +59,7 @@
                         <div>{{ configura.emailvolcado.label }}</div>
                         <div class="append-transparent">
                             {{ configura.emailvolcado }}
+                            {{ configura.emailvolcado.errors }}
                         </div>
                     </div>
 
@@ -230,9 +88,11 @@
                             <b>DHCP</b>
                             <div class="pull-right">
                                 {{ configura.w_dhcp }}
+{#                                <input name="configura-w_dhcp" rel="confirm-check" type="checkbox" id="id_configura-w_dhcp" class="checky">#}
                                 <label for="id_configura-w_dhcp" class="checky"><span></span></label>
                             </div>
                         </div>
+
                         </div>
                        </div>
                     </div>
@@ -245,30 +105,73 @@
                     <div>{{ configura.w_ip.label }}</div>
                     <div class="append-transparent">
                         {{ configura.w_ip }}
+                        {{ configura.w_ip.errors }}
                     </div>
                     <div>{{ configura.w_mask.label }}</div>
                     <div class="append-transparent">
                         {{ configura.w_mask }}
+                        {{ configura.w_mask.errors }}
                     </div>
                     <div>{{ configura.w_gw.label }}</div>
                     <div class="append-transparent">
                         {{ configura.w_gw }}
+                        {{ configura.w_gw.errors }}
                     </div>
                      </div>
-                    <div class="form-actions">
-                        <button type="submit"  name="envia_configura" class="button blue">Guardar Cambios</button>
-                        <button type="button"  id="busca_wifi" name="busca_wifi" class="button blue">Buscar Redes</button>
-                        <button type="button"  id="conectar_wifi" name="conectar" class="button blue">Conectar</button>
-                        <button type="button" class="button">Cancelar</button>
-                        <div class="pull-right"> </div>
-                    </div>
-
             </div>
         </div>
+                <div class="black-box text">
+                    <div class="tab-header">
+                       Acciones
+                    </div>
+                    <div id="fix-eliminar">
+                       <div class="padded">
+                        <p>
+                            <a rel="action" class='button mini rounded inset light-gray'>Destruir datos</a>
+                        </p>
+                        <div style="display: none;" rel="confirm-action">
+                            <div class="inner-well clearfix">
+                                <div class="pull-left">
+                                    <b> Esta seguro de querer destruir todos los datos , el proceso es irreversible</b>
+                                </div>
+                                <div class="pull-right">
+                                    <input rel="confirm-check" type="checkbox" id="limpiar" class="checky">
+                                    <label for="limpiar" class="checky green"> <span></span></label>
+                                </div>
+                            </div>
+                            <div class="clearfix vpadded">
+                                <div class="pull-left">
+                                    <a href="#" class="button red" rel="confirm-eliminar">Eliminar</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="button gray" rel="confirm-cancel">Cancelar</a>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                    <button type="submit"  name="envia_configura" class="button blue">Guardar Cambios</button>
+                    <button type="button"  id="busca_wifi" name="busca_wifi" class="button blue">Buscar Redes</button>
+                    <button type="button"  id="conectar_wifi" name="conectar" class="button blue">Conectar</button>
+                    <button type="button" class="button">Cancelar</button>
+                    <div class="pull-right"> </div>
+                </div>
+                </div>
+
+
+
+
 
     </div>
 
   </div>
     </form>
 
+{% endblock %}
+{% block foot %}
+<script type="text/javascript" src="{{ STATIC_URL}}dajax/jquery.dajax.core.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL}}dajaxice/dajaxice.core.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL}}js/spin.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL}}js/web/secciones/general/configuracion.js"></script>
 {% endblock %}

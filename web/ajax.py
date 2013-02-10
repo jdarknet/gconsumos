@@ -8,6 +8,7 @@ from django.utils import simplejson
 from gconsumos import settings
 from lecturas.GetDataFromCurrentCostMeter import leeDatos
 import os
+from lecturas.models import ConsumosAnos, ConsumosDias, ConsumosMes, ConsumosHoras, ConsumosTmp
 from maestros.models import DetPeriodosHorarios
 from utils import ponCero, noSemana, tiempoenMil, sentenciaSensores, calculoTotalEnergia
 
@@ -33,7 +34,7 @@ def conectarwifi(request,ip,mask,gw,essid,dhcp,passwd):
         cfgfile.close()
         sleep(2)
         dajax.alert(dhcp)
-        if len(dhcp)==0:
+        if dhcp=="N":
             dajax.alert("Grabamos la ip")
         #lineas = os.popen(settings.PROJECT_ROOT+'/web/wificonnect.sh',"r")
     dajax.script("$('#essid').spin(false);")
@@ -94,7 +95,6 @@ def llenaPeriodos(request,numero,id,valor):
 
     dajax.assign('.field-detperiodo > #id_detallestarifas_set-%s-detperiodo' % numero, 'innerHTML', ''.join(out))
     return dajax.json()
-
 
 
 
@@ -184,3 +184,14 @@ def conectarLectura(request):
         leer = leeDatos()
         valor = 1
     return simplejson.dumps(valor)
+
+
+@dajaxice_register
+def limpiarTablasLecturas(request):
+        dajax = Dajax()
+        obanos = ConsumosAnos.objects.all().delete()
+        obmes  = ConsumosMes.objects.all().delete()
+        obdias = ConsumosDias.objects.all().delete()
+        obhora = ConsumosHoras.objects.all().delete()
+        obtmp  = ConsumosTmp.objects.all().delete()
+        dajax.script("$('#essid').spin(false);")

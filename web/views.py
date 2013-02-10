@@ -14,7 +14,7 @@ from gconsumos.settings import PROJECT_ROOT, LOGGING
 from utils import ponCero, validaEnergia, avalidaEnergia, consultaTablas, tiempoenMil, sentenciaSensores
 from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms, HistoricoForms
 from web.models import Configuracion, Contrato, Generales, Alarmas, Mensajes, PtdMedida
-
+from django.utils import simplejson
 
 data = {'form_detail-TOTAL_FORMS': u'1','form_detail-INITIAL_FORMS': u'0','form_detail-MAX_NUM_FORMS': u'',}
 
@@ -91,9 +91,13 @@ def configuracion(request):
                 id = configura.id
                 configura = Configuracion.objects.get(pk =id)
                 form_configura = ConfiguracionForms(instance=configura,prefix="configura",pessid=configura.essid)
-
+                #response_data = {'form_saved': True}
             else:
-                print form_configura.errors.as_text()
+                #errors = form_configura.errors
+                print form_configura.errors
+                #response_data = {'form_saved': False, 'errors': errors}
+
+           # return HttpResponse(simplejson.dumps(response_data),mimetype="application/json")
 
         else:
             configura = Configuracion.objects.all()
@@ -102,7 +106,7 @@ def configuracion(request):
             else:
                 form_configura = ConfiguracionForms(instance=configura[0],prefix="configura",pessid=configura[0].essid)
 
-
+        print form_configura
         return render_to_response("web/secciones/general/configuracion.html", {'configura' : form_configura},context_instance=RequestContext(request) )
 
 @login_required(login_url='/')
@@ -183,15 +187,14 @@ def alarmasNuevo(request):
                 id = cabecera.id
                 return redirect(reverse('alarmasEdita',kwargs = {'pk':id}))
             else:
-                print form_detail
-                print form_detail.errors
                 request.user.message_set.create(message = form_detail.errors)
         else:
             print form_cab.errors.as_text()
-
+            form_detail         = MensajesFormsSet(prefix="mensajes")
     else:
         form_cab            = AlarmasForms(prefix="cabalarma")
         form_detail         = MensajesFormsSet(prefix="mensajes")
+
     formset_alarma =  Alarmas.objects.all()
     return render_to_response("web/secciones/panelcontrol/alarmas.html", {'listalarm' : formset_alarma,'form_cab' :form_cab , 'form_detail': form_detail },context_instance=RequestContext(request) )
 
@@ -262,7 +265,7 @@ def lecturas(request,tipo):
     hoy    = datetime.datetime.now()
     if tipo=="24":
         template = "web/secciones/lecturas/ultima24horas.html"
-        datos=consultaTablas('24',hoy,sensores=None)
+        datos=consultaTablas('24',hoy,sensores=None,grafica="ultima")
         if datos!=[]:
             listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],row[3],row[4])  , ponCero(row[5]) ]] ) for row in datos ]
             for dat in datos:
@@ -270,14 +273,14 @@ def lecturas(request,tipo):
                 listadatos.append( [str(dat[6]).split(' ')[1],ponCero(dat[5])])
     if tipo=="7":
         template = "web/secciones/lecturas/ultimos7dias.html"
-        datos=consultaTablas('semana', hoy,sensores=None)
+        datos=consultaTablas('semana', hoy,sensores=None,grafica="ultima")
         if datos!=[]:
             listgrafico =[([[ tiempoenMil(row[0],row[1],row[2],0,0), ponCero(row[3]) ]] ) for row in datos ]
             for dat in datos:
                 listadatos.append(dict(dia=dat[0],energia=ponCero(dat[3])))
     if tipo=="30":
         template = "web/secciones/lecturas/ultimomes.html"
-        datos=consultaTablas('mes',hoy,sensores=None)
+        datos=consultaTablas('mes',hoy,sensores=None,grafica="ultima")
         if datos!=[]:
             listgrafico =[([[ tiempoenMil(row[0],row[1],row[2],0,0), ponCero(row[3]) ]] ) for row in datos ]
             for dat in datos:
@@ -406,14 +409,14 @@ def verHistoricos(request,tipo):
             vfecha  =  datetime.datetime(*(vfecha.timetuple()[:6]))
             if tipo==u'1': #Diario
                 etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
-                datos= consultaTablas('24',vfecha,int(vsensor.id))
+                datos= consultaTablas('24',vfecha,int(vsensor.id),None)
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],row[3],row[4])  , ponCero(row[5]) ]] ) for row in datos ]
                     for dat in datos:
                         listadatos.append( [str(dat[6]).split(' ')[1],ponCero(dat[5])])
             elif tipo==u'2': #Semana
                 etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Dia Semana', 'titulograf' : 'Grafico Semanal'}
-                datos= consultaTablas('semana',vfecha,int(vsensor.id))
+                datos= consultaTablas('semana',vfecha,int(vsensor.id),None)
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],0,0)  , ponCero(row[3]) ]] ) for row in datos ]
                     print listgrafico
@@ -421,7 +424,7 @@ def verHistoricos(request,tipo):
                         listadatos.append([str(dat[0]),ponCero(dat[3])])
             elif tipo==u'3': #Mes
                 etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
-                datos= consultaTablas('mes',vfecha,int(vsensor.id))
+                datos= consultaTablas('mes',vfecha,int(vsensor.id),grafica="ultimas")
                 print datos
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],0,0)  , ponCero(row[3]) ]] ) for row in datos ]
@@ -429,7 +432,7 @@ def verHistoricos(request,tipo):
                         listadatos.append([str(dat[0]),ponCero(dat[3])] )
             elif tipo==u'4': #Ano
                 etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Grafico Anual'}
-                datos= consultaTablas('ano',vfecha,int(vsensor.id))
+                datos= consultaTablas('ano',vfecha,int(vsensor.id),None)
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(1,row[0],row[1],0,0)  , ponCero(row[2]) ]] ) for row in datos ]
                     for dat in datos:

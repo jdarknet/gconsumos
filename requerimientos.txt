@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
+Modificaciones sistema operativo
+
 -Permisos directorio de instalacion gconsumos
 -Asignar www-data al grupo dialout (usermod -G dialout www-data)
 -Instalar pip install pynetlinux
 -Instalar apt-get install libcap2-bin
+
 -Modificar /etc/sudoers  con:  www-data ALL=(ALL) NOPASSWD:ALL
 --Instalar en el cron :
 chmod 755  manage.py
@@ -14,3 +17,6 @@ configuración cron
 *    1 * * * /srv/www/gconsumos/manage.py alarmas --reconciliar
 *    2 * * * /srv/www/gconsumos/manage.py alarmas --estadistica
 ****************************************************************
+
+Añadir script a /etc/cron.hourly /etc/cron.dialy /etc/cron.weekly /etc/cron.monthly
+/srv/www/gconsumos/manage.py alarmas --volcado

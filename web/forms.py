@@ -22,6 +22,7 @@ class ConfiguracionForms(models.ModelForm):
         super(models.ModelForm, self).__init__(*args, **kwargs)
         self.fields['fecha'].widget.format = '%d-%m-%Y'
         self.fields['fecha'].input_formats = ['%d-%m-%Y']
+        self.fields['w_dhcp'].widget.attrs['class'] = "checky"
         if len(valor)!=0:
             self.fields['essid'].choices= ([(valor,valor),])
 
@@ -37,17 +38,17 @@ class ConfiguracionForms(models.ModelForm):
     w_gw           = forms.IPAddressField(required=False,label="Puerta de enlace",widget=TextInput(attrs={'type':'text','placeholder':'Puerta de Enlace'}))
     password       = forms.CharField(required=False,max_length=8, widget=TextInput(attrs={'type':'password','class':'error','placeholder':'Password'}))
     essid          = forms.ChoiceField(required=False, choices=(("",""),))
-    #w_dhcp         = forms.Field(widget=CheckboxInput(attrs={'type':'checkbox','class':'checky','rel':'confirm-check','checked' : 'checked'}))
+    w_dhcp         = forms.BooleanField(required=False)
 
 class ContratosForms(models.ModelForm):
     class Meta:
         model = Contrato
 
     id               =  forms.IntegerField(required=False,  widget=TextInput(attrs= {'class':'hidden'}))
-    empresaelectrica =  forms.ModelChoiceField( queryset= Terceros.objects.filter(tipotercero=TiposTerceros.objects.filter(accion=1)[0].id),required=True, help_text=None, label= 'Compañia de Suministro' )
-    actividadeco     =  forms.CharField(max_length=20,label="Actividad Economica",  widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Actividad Economica'}))
-    cups             =  forms.CharField(max_length=25,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'CUPS'}))
-    potencia         =  forms.CharField(max_length=20,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Potencia Contratada'}))
+    empresaelectrica =  forms.ModelChoiceField(queryset= Terceros.objects.filter(tipotercero=TiposTerceros.objects.filter(accion=1)[0].id),required=True, help_text=None, label= 'Compañia de Suministro' )
+    actividadeco     =  forms.CharField(required=True,max_length=20,label="Actividad Economica",  widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Actividad Economica'}))
+    cups             =  forms.CharField(required=True,max_length=25,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'CUPS'}))
+    potencia         =  forms.CharField(required=True,max_length=20,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Potencia Contratada'}))
 
 
 

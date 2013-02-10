@@ -1,50 +1,4 @@
 {% extends "web/secciones/historico.html" %}
-{% block head %}
-    <script type="text/javascript" src="{{ STATIC_URL }}javascripts/jquery172.js"></script>
-
-
-{% endblock %}
-{% block scripthead %}
-    $(document).ready(function()
-    {
-    var pickerOpts = {
-    changeMonth: true,
-    changeYear: true,
-    yearRange: "-2:+1",
-    showOn: "button",
-    buttonText: "Calendario",
-    dateFormat:"d-m-yy"
-    };
-
-    $("#id_fecha").datepicker(pickerOpts);
-
-
-    {% autoescape off %}
-        {%  if etiquetas.titcol1 == "Horas" %}
-            var graf=  ponGraficoDia({{ listgraf }});
-        {% endif %}
-        {%  if etiquetas.titcol1 == "Dia Semana" %}
-            var graf=  ponGraficoSemana({{ listgraf }});
-        {% endif %}
-        {%  if etiquetas.titcol1 == "Dias" %}
-            var graf=  ponGraficoMesActual({{ listgraf }},"#chart1");
-        {% endif %}
-        {%  if etiquetas.titcol1 == "Mes" %}
-            var graf=  ponGraficoAno({{ listgraf }});
-        {% endif %}
-
-        $('#tabla24').dataTable({
-        "aaData":{{ listadatos }},
-        "aaSorting": [[ 0, "desc" ]],
-        "aoColumns":[{"sTitle" : "{{ etiquetas.titcol1 }}" } , {"sTitle": "Energia en Watts"}  ]
-        });
-    {%  endautoescape %}
-
-
-    });
-
-
-{% endblock %}
 
 {% block izquierda %}
     <div class="row-fluid">
@@ -63,6 +17,7 @@
                     <div class="control-group">
                         <div class="control-label">
                             {{ formconsulta.fecha.label }}
+
                         </div>
                         <div class="controls">
                             {{ formconsulta.fecha }}
@@ -101,4 +56,44 @@
     </div>
 
 
+{% endblock %}
+
+{% block scriptfoot %}
+$(document).ready(function()
+{
+{#        var pickerOpts = {#}
+{#        changeMonth: true,#}
+{#        changeYear: true,#}
+{#        yearRange: "-2:+1",#}
+{#        showOn: "button",#}
+{#        buttonText: "Calendario",#}
+{#        dateFormat:"d-m-yy"#}
+{#        };#}
+{##}
+        $("#id_fecha").datepicker({dateFormat:"d-m-yy"});
+
+
+{% autoescape off %}
+    {%  if etiquetas.titcol1 == "Horas" %}
+        var graf=  ponGraficoDia({{ listgraf }});
+    {% endif %}
+    {%  if etiquetas.titcol1 == "Dia Semana" %}
+        var graf=  ponGraficoSemana({{ listgraf }});
+    {% endif %}
+    {%  if etiquetas.titcol1 == "Dias" %}
+        var graf=  ponGraficoMesActual({{ listgraf }},"#chart1");
+    {% endif %}
+    {%  if etiquetas.titcol1 == "Mes" %}
+        var graf=  ponGraficoAno({{ listgraf }});
+    {% endif %}
+
+    $('#tabla24').dataTable({
+    "aaData":{{ listadatos }},
+    "aaSorting": [[ 0, "desc" ]],
+    "aoColumns":[{"sTitle" : "{{ etiquetas.titcol1 }}" } , {"sTitle": "Energia en Watts"}  ]
+    });
+{%  endautoescape %}
+
+
+});
 {% endblock %}

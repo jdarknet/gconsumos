@@ -37,6 +37,10 @@ var Dajaxice = {
         Dajaxice.call('web.comprobarLectura', 'POST', callback_function, argv, custom_settings);
     },
 
+    limpiarTablasLecturas: function(callback_function, argv, custom_settings){
+        Dajaxice.call('web.limpiarTablasLecturas', 'POST', callback_function, argv, custom_settings);
+    },
+
     llenaPeriodos: function(callback_function, argv, custom_settings){
         Dajaxice.call('web.llenaPeriodos', 'POST', callback_function, argv, custom_settings);
     },

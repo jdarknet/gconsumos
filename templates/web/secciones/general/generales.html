@@ -18,6 +18,7 @@
                                 <div>{{ general.nombpropietario.label }}</div>
                                 <div class="append-transparent">
                                     {{ general.nombpropietario}}
+                                    {{ general.nombpropietario.errors }}
                                 </div>
                         </div>
                         <div class="input">
@@ -99,26 +100,32 @@
                 {{ contrato.empresaelectrica.label }}
                 <div class="append-transparent">
                     {{ contrato.empresaelectrica }}
+                    {{ contrato.empresaelectrica.errors }}
                 </div>
                 {{ contrato.actividadeco.label }}
                 <div class="append-transparent">
                     {{ contrato.actividadeco }}
+                    {{ contrato.actividadeco.errors }}
                 </div>
                 {{ contrato.cups.label }}
                 <div class="append-transparent">
                     {{ contrato.cups }}
+                    {{ contrato.cups.errors }}
                 </div>
                 {{ contrato.potencia.label }} (Kw)
                 <div class="append-transparent">
                     {{ contrato.potencia }}
+                    {{ contrato.potencia.errors }}
                 </div>
                 <div>{{ contrato.tfacceso.label }}</div>
                 <div class="append-transparent">
                     {{ contrato.tfacceso }}
+                    {{ contrato.tfacceso.errors }}
                 </div>
                 {{ contrato.numcontador.label }}
                 <div class="append-transparent">
                     {{ contrato.numcontador }}
+                    {{ contrato.numcontador.errors }}
                 </div>
 
 
