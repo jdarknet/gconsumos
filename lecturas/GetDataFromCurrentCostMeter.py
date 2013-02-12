@@ -44,6 +44,7 @@ class leeDatos:
         except:
             trc.error("Fallo al conectar al CurrentCost meter")
             return False
+        return True
 
     def numberEmptyArray(self,array):
         long= len(array)
@@ -112,8 +113,9 @@ class leeDatos:
         trc.info('Connecting to local CurrentCost meter - using device "' + portdet)
         reuseconnection = self.myserialconn.isConnected()
         if reuseconnection == False:
-            self.conecta(portdet)
-
+            excepcion = self.conecta(portdet)
+            if excepcion==False:
+                return False
         currentcoststruct = None
         updatesremaining = 1
         sincap = 0

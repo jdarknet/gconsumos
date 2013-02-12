@@ -349,7 +349,7 @@ class Command(BaseCommand):
                 except Configuracion.DoesNotExist:
                     swt=1
                 if swt==0:
-                    self.envio("Perdida de comunicación con el ENVIR No. %s" % serial,email,"Sin comunicación EnviR, intentando reconectar el Envir",None)
+                    self.envio("Perdida de comunicacion con el ENVIR No. %s" % serial,email,"Sin comunicacion EnviR, intentando reconectar el Envir",None)
                     lee = leeDatos()
 
         if options['alarmas']:
