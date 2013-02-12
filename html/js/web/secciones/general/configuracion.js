@@ -1,4 +1,18 @@
 (function() {
+
+    CallBackTime = (function()
+        {
+            $('#modal').modal();
+            shortly = new Date();
+            shortly.setSeconds(shortly.getSeconds() + 40);
+
+            $('#conteo').countdown({until: shortly, expiryUrl: "http://" + $('#id_configura-w_ip').val() ,
+                description: 'Esperas para conectar a nueva direccion' ,format : 'S' });
+
+            $('#conteo').countdown('option', {until: shortly ,format: 'S'});
+        }
+    )
+
     ConfirmAction = (function() {
 
         function ConfirmAction(container) {
@@ -148,6 +162,7 @@
 
         $("#id_configura-fecha").datepicker({dateFormat:"d-m-yy"});
         new ConfirmAction($("#fix-eliminar"));
+
 
 
     });

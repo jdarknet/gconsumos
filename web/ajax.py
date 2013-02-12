@@ -24,6 +24,7 @@ def conectarwifi(request,ip,mask,gw,essid,dhcp,passwd):
     elif len(essid)==0:
         dajax.alert("Introduzca el nombre de la red inalambrica")
     else:
+        lineasconfig=['auto lo','iface lo inet loopback','iface eth0 inet static','address 192.168.10.100','netmask 255.255.255.0','network 192.168.10.0','gateway 192.168.10.1','allow-hotplug wlan0']
         cfgfile=open("/etc/wpa_supplicant/wpa_supplicant.conf","w")
         cfgfile.write("ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n")
         cfgfile.write("update_config=1\n")
@@ -33,11 +34,30 @@ def conectarwifi(request,ip,mask,gw,essid,dhcp,passwd):
         cfgfile.write("}")
         cfgfile.close()
         sleep(2)
-        dajax.alert(dhcp)
+        cfgnet = open("/etc/network/interfaces","w")
+        for lineas in lineasconfig:
+            cfgnet.write(lineas+"\n")
         if dhcp=="N":
-            dajax.alert("Grabamos la ip")
-        #lineas = os.popen(settings.PROJECT_ROOT+'/web/wificonnect.sh',"r")
-    dajax.script("$('#essid').spin(false);")
+            cfgnet.write('iface wlan0 inet manual\n')
+            cfgnet.write("  wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf\n")
+            cfgnet.write('iface wlan0 inet static\n')
+            cfgnet.write("  address %s\n" % ip )
+            cfgnet.write("  netmask %s\n" % mask)
+            cfgnet.write("  network %s\n" % ((ip.rsplit('.',1)[0])+".0"))
+            cfgnet.write("  broadcast %s\n" % ((ip.rsplit('.',1)[0])+".255"))
+            cfgnet.write("  gateway %s\n" % gw)
+
+        else:
+            cfgnet.write('iface wlan0 inet manual\n')
+            cfgnet.write("      wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf\n")
+            cfgnet.write("iface wlan0 inet dhcp\n")
+        cfgnet.close()
+        dajax.script("$('#essid').spin(false);")
+        dajax.script('CallBackTime();')
+        #dajax.alert("Si tiene cable de red conectado, desconectar, se procede a reiniciar el Weblogger")
+        #salida = os.popen("/usr/bin/sudo /etc/init.d/networking restart","r")
+        salida = os.popen("/usr/bin/sudo reboot","r")
+
     return dajax.json()
 
 

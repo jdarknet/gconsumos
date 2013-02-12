@@ -1,4 +1,11 @@
 {% extends "web/secciones/general.html" %}
+
+{% block tiutlomodal %}
+<label>Reinicianod Weblogger</label>
+{% endblock %}
+{% block modal %}
+ <span id="conteo" class="countdown hasCountdown"> </span>
+{% endblock %}
 {% block central %}
     <form id="configuracion" action="/general/configuracion/" method="post" class="fill-up">{% csrf_token %}
     <div class="row-fluid">
@@ -170,8 +177,10 @@
 
 {% endblock %}
 {% block foot %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stylesheets/jquery.countdown.css">
 <script type="text/javascript" src="{{ STATIC_URL}}dajax/jquery.dajax.core.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL}}dajaxice/dajaxice.core.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL}}js/spin.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL}}js/jquery.countdown.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL}}js/web/secciones/general/configuracion.js"></script>
 {% endblock %}

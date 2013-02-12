@@ -7,6 +7,11 @@ Modificaciones sistema operativo
 -Instalar apt-get install libcap2-bin
 
 -Modificar /etc/sudoers  con:  www-data ALL=(ALL) NOPASSWD:ALL
+chgrp www-data /etc/network/interfaces
+chmod 665 /etc/network/interfaces
+chgrp www-data /etc/wpa_supplicant/wpa_supplicant.conf
+chmod 665 /etc/wpa_supplicant/wpa_supplicant.conf
+
 --Instalar en el cron :
 chmod 755  manage.py
 configuración cron
