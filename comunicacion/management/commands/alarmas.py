@@ -159,36 +159,42 @@ class Command(BaseCommand):
         finally:
             ftp.quit()
 
-    def volcado(self):
+    def volcado(self, proceso):
         volcado = Configuracion.objects.all()[0]
+        print "Variables frecuencia %s proceso %s " % (volcado.frecuencia,proceso)
         if len(volcado.protvolcado)==0:
             return
         else:
             extname = str(self.dia)+str(self.mes)+str(self.ano)+str(self.hora)
-            if volcado.frecuencia=="01":
+            if volcado.frecuencia=="01" and proceso=="H":
                 archivo="/tmp/horas_%s.csv" % extname
                 if self.volcadoHoras(archivo):
                     txt ="Volcado de Webloggeer Horaria"
                 else:
                     return
-            if volcado.frecuencia=="02":
+
+            elif volcado.frecuencia=="02" and proceso=="D":
                 archivo="/tmp/diario_%s.csv" % extname
                 if self.volcadoDiario(archivo):
                     txt ="Volcado de Webloggeer Diario"
                 else:
                     return
-            if volcado.frecuencia=="03":
+
+            elif volcado.frecuencia=="03" and proceso=="S":
                 archivo="/tmp/semanal_%s.csv" % extname
                 if self.volcadoSemanal(archivo):
                     txt ="Volcado de Webloggeer Semanal"
                 else:
                     return
-            if volcado.frecuencia=="04":
+
+            elif volcado.frecuencia=="04" and proceso=="M":
                 archivo="/tmp/mensual_%s.csv" % extname
                 if self.volcadoMensual(archivo):
                     txt ="Volcado de Webloggeer Mensual"
                 else:
                     return
+            else:
+                return
             if volcado.protvolcado=="email":
                 self.envio( txt,volcado.emailvolcado,"Envio de datos consumo Weblogger %s " % volcado.serialmodulo,archivo)
             if volcado.protvolcado=="ssh":
@@ -326,9 +332,24 @@ class Command(BaseCommand):
             dest='estadistica',
             default=False,
             help='Limpia y reconstruye resumenes datos'),
-        make_option('--volcado',
+        make_option('--volcadoH',
             action='store_true',
-            dest='volcado',
+            dest='volcadoH',
+            default=False,
+            help='Comprueba que el volcado esta habilitado'),
+        make_option('--volcadoD',
+            action='store_true',
+            dest='volcadoD',
+            default=False,
+            help='Comprueba que el volcado esta habilitado'),
+        make_option('--volcadoS',
+            action='store_true',
+            dest='volcadoS',
+            default=False,
+            help='Comprueba que el volcado esta habilitado'),
+        make_option('--volcadoM',
+            action='store_true',
+            dest='volcadoM',
             default=False,
             help='Comprueba que el volcado esta habilitado'),
 
@@ -366,8 +387,14 @@ class Command(BaseCommand):
             cdb = CurrentCostDB()
             cdb.InitialiseDB(settings.DATABASE)
             cdb.ReconciliarEstaData()
-        if options['volcado']:
-            self.volcado()
+        if options['volcadoH']:
+            self.volcado('H')
+        if options['volcadoD']:
+            self.volcado('D')
+        if options['volcadoS']:
+            self.volcado('S')
+        if options['volcadoM']:
+            self.volcado('M')
 
 
 

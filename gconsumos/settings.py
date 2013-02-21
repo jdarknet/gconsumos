@@ -71,6 +71,9 @@ STATIC_ROOT = PROJECT_ROOT+"/static/"
 STATIC_URL = '/static/'
 
 
+FILE_UPLOAD_HANDLERS = ("django.core.files.uploadhandler.MemoryFileUploadHandler",
+                        "django.core.files.uploadhandler.TemporaryFileUploadHandler",)
+
 # Additional locations of static files
 STATICFILES_DIRS = ( PROJECT_ROOT+"/html",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".

@@ -7,9 +7,9 @@
             shortly.setSeconds(shortly.getSeconds() + 40);
 
             $('#conteo').countdown({until: shortly, expiryUrl: "http://" + $('#id_configura-w_ip').val() ,
-                description: 'Esperas para conectar a nueva direccion' ,format : 'S' });
+                description: 'Esperar para conectar a la  nueva direccion' ,format : 'MS' });
 
-            $('#conteo').countdown('option', {until: shortly ,format: 'S'});
+            $('#conteo').countdown('option', {until: shortly ,format: 'MS'});
         }
     )
 
@@ -161,6 +161,7 @@
 
 
         $("#id_configura-fecha").datepicker({dateFormat:"d-m-yy"});
+        $("#id_fecha").datepicker({dateFormat:"d-m-yy"});
         new ConfirmAction($("#fix-eliminar"));
 
 

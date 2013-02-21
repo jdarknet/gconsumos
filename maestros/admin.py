@@ -4,8 +4,8 @@ __author__ = 'julian'
 from maestros.models import *
 from django.contrib import admin
 
-admin.site.register(TiposCurvas)
-admin.site.register(TiposInstalacion)
+#admin.site.register(TiposCurvas)
+#admin.site.register(TiposInstalacion)
 admin.site.register(TiposTerceros)
 admin.site.register(Paises)
 admin.site.register(Provincias)

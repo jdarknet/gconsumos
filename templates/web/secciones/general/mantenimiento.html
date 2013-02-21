@@ -1,0 +1,113 @@
+{% extends "web/secciones/general.html" %}
+
+{% block tiutlomodal %}
+    <label>Reinicianod Weblogger</label>
+{% endblock %}
+{% block modal %}
+    <span id="conteo" class="countdown hasCountdown"> </span>
+{% endblock %}
+{% block central %}
+
+        <div class="row-fluid  offset2 ">
+
+            <div class="span6" >
+                <div class="box">
+                    <form id="configuracion" action="/general/mantenimiento/" method="post" class="fill-up">{% csrf_token %}
+                    <div class="tab-header">
+                        Ajustar Fecha y Hora
+                    </div>
+                    <div class="padded">
+                        <div>{{ fechahora.fecha.label }}</div>
+                        <div class="append-transparent">
+                            {{ fechahora.fecha }}
+                            {{ fechahora.fecha.errors }}
+                        </div>
+                        <div>{{ fechahora.tiempo.label }}</div>
+                        <div class="append-transparent">
+                            {{ fechahora.tiempo }}
+                            {{ fechahora.tiempo.errors }}
+                        </div>
+
+
+                    </div>
+                    <div class="form-actions">
+                            <button type="submit"  name="envia_horafecha" class="button blue">Guardar Cambios</button>
+                            <button type="button" class="button">Cancelar</button>
+                            <div class="pull-right"> </div>
+                    </div>
+                    </form>
+                </div>
+
+                <div class="box">
+                    <form id="configuracion" action="/general/mantenimiento/" method="post" form enctype="multipart/form-data"  class="fill-up">{% csrf_token %}
+                    <div class="tab-header">
+                        Actualizar Sistema
+                    </div>
+                    <div class="padded">
+                        <div><label> Seleccione Archivo</label></div>
+                        <div class="append-transparent">
+                            {{ actualiza.archivo }}
+                            {{ actualiza.archivo.errors }}
+                        </div>
+
+
+                    </div>
+                        <div class="form-actions">
+                            <button type="submit"  id="envia_archivo" name="envia_archivo" class="button blue">Aplicar Cambios</button>
+                            <button type="button" class="button">Cancelar</button>
+                            <div class="pull-right"> </div>
+                        </div>
+                        </form>
+                </div>
+                <div class="black-box text">
+                    <div class="tab-header">
+                        Acciones
+                    </div>
+                    <div id="fix-eliminar">
+                        <div class="padded">
+                            <p>
+                                <a rel="action" class='button mini rounded inset light-gray'>Destruir datos</a>
+                            </p>
+                            <div style="display: none;" rel="confirm-action">
+                                <div class="inner-well clearfix">
+                                    <div class="pull-left">
+                                        <b> Esta seguro de querer destruir todos los datos , el proceso es irreversible</b>
+                                    </div>
+                                    <div class="pull-right">
+                                        <input rel="confirm-check" type="checkbox" id="limpiar" class="checky">
+                                        <label for="limpiar" class="checky green"> <span></span></label>
+                                    </div>
+                                </div>
+                                <div class="clearfix vpadded">
+                                    <div class="pull-left">
+                                        <a href="#" class="button red" rel="confirm-eliminar">Eliminar</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="button gray" rel="confirm-cancel">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+{% endblock %}
+{% block foot %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}stylesheets/jquery.countdown.css">
+    <script type="text/javascript" src="{{ STATIC_URL}}dajax/jquery.dajax.core.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL}}dajaxice/dajaxice.core.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL}}js/spin.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL}}js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL}}js/web/secciones/general/mantenimiento.js"></script>
+{% endblock %}

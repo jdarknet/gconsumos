@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 import os
+from time import sleep
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.files import File
@@ -11,8 +12,8 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext, Context
 from gconsumos.settings import PROJECT_ROOT, LOGGING
-from utils import ponCero, validaEnergia, avalidaEnergia, consultaTablas, tiempoenMil, sentenciaSensores
-from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms, HistoricoForms
+from utils import ponCero, validaEnergia, avalidaEnergia, consultaTablas, tiempoenMil, sentenciaSensores, ajustaHorayFecha
+from web.forms import  ContratosForms, GeneralesForms, AlarmasForms, MensajesFormsSet, PtsMedidasForms, ConfiguracionForms, HistoricoForms, ConfiguraTiempo, ActualizaSistema
 from web.models import Configuracion, Contrato, Generales, Alarmas, Mensajes, PtdMedida
 from django.utils import simplejson
 
@@ -88,10 +89,9 @@ def configuracion(request):
 
             if form_configura.is_valid():
                 configura = form_configura.save()
-                id = configura.id
+                id        = configura.id
                 configura = Configuracion.objects.get(pk =id)
                 form_configura = ConfiguracionForms(instance=configura,prefix="configura",pessid=configura.essid)
-                #response_data = {'form_saved': True}
             else:
                 #errors = form_configura.errors
                 print form_configura.errors
@@ -106,8 +106,50 @@ def configuracion(request):
             else:
                 form_configura = ConfiguracionForms(instance=configura[0],prefix="configura",pessid=configura[0].essid)
 
-        print form_configura
-        return render_to_response("web/secciones/general/configuracion.html", {'configura' : form_configura},context_instance=RequestContext(request) )
+
+        return render_to_response("web/secciones/general/configuracion.html", {'configura' : form_configura, },context_instance=RequestContext(request) )
+
+
+def handle_uploaded_file(f,nombrearchivo):
+    with open(nombrearchivo, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+@login_required(login_url='/')
+def mantenimiento(request):
+    if 'envia_horafecha' in request.POST:
+        #Coloca en hora y fecha el rasberry
+        fecha   = request.POST['fecha']
+        hora    = request.POST['tiempo_hour']
+        minu    = request.POST['tiempo_minute']
+        seg     = request.POST['tiempo_second']
+        dia,mes,ano = fecha.split('-')
+        ajustaHorayFecha(ano, mes, dia, hora, minu, seg)
+    else:
+        form_configtiempo = ConfiguraTiempo()
+
+    if 'envia_archivo' in request.POST:
+        formfile = ActualizaSistema(request.POST,request.FILES)
+        if formfile.is_valid():
+            salida= os.popen("/bin/rm -fr /srv/www/actualiza/*","r")
+            sleep(5)
+            nombrearchvio = '/srv/www/actualiza/gc_%s.tgz' %  datetime.datetime.now().strftime("%d_%m_%Y_%H_%M")
+            handle_uploaded_file(request.FILES['archivo'],nombrearchvio)
+            sleep(5)
+            print "/bin/tar -xvf %s -C /srv/www" % nombrearchvio
+            salida = os.popen("/bin/tar -xf %s -C /srv/www" % nombrearchvio,"r")
+            #salida = os.popen(["tar","xf","-"], cwd="/srv/www",stdin=nombrearchvio)
+
+        else:
+            print formfile.errors
+    else:
+        formfile          = ActualizaSistema()
+
+
+    return render_to_response("web/secciones/general/mantenimiento.html", {'fechahora' : form_configtiempo,'actualiza':formfile },context_instance=RequestContext(request) )
+
+
+
 
 @login_required(login_url='/')
 def generales(request):

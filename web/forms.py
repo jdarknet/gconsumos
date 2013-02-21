@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import datetime
+from os.path import splitext
 
 from maestros.models import Terceros, TiposTerceros
 from web.librerias import SelectTimeWidget
@@ -11,6 +13,9 @@ from web.models import Configuracion, Contrato, Generales, Alarmas, Mensajes, Pt
 
 
 
+#class ConfiguraTiempo(forms.Forms):
+#    fecha          = forms.DateField(required=False,label="Fecha",help_text="Formato d-m-yyyy")
+#    tiempo         = forms.TimeField(widget=SelectTimeWidget(attrs={ 'class':'span3'} ),  label="Tiempo")
 
 class ConfiguracionForms(models.ModelForm):
     class Meta:
@@ -102,3 +107,42 @@ class HistoricoForms(forms.Form):
 
     sensores = forms.ModelChoiceField( required=True,queryset=PtdMedida.objects.all(), label="Selecciona Sensores")
     fecha    = forms.DateField(required=True,label="Fecha")
+
+
+class ConfiguraTiempo(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super(forms.Form, self).__init__(*args, **kwargs)
+        self.fields['fecha'].widget.format = '%d-%m-%Y'
+        self.fields['fecha'].input_formats = ['%d-%m-%Y']
+        self.fields['fecha'].initial = datetime.datetime.today()
+        self.fields['tiempo'].widget.format = '%H:%M:%S'
+        self.fields['tiempo'].input_formats = ['%H:%M%S']
+        self.fields['tiempo'].initial = datetime.datetime.now()
+
+    fecha          = forms.DateField(required=False,label="Fecha",help_text="Formato d-m-yyyy")
+    tiempo         = forms.TimeField(widget=SelectTimeWidget(attrs={ 'class':'span3'} ),  label="Tiempo")
+
+class ArchivoValidationError(forms.ValidationError):
+    def __init__(self):
+        super(ArchivoValidationError, self).__init__((u'Solo archivos de actualización ') )
+
+
+class ArchivoField(forms.FileField):
+    valid_content_types = ('application/x-compressed-tar',)
+    valid_file_extensions = ('tgz')
+    def __init__(self, *args, **kwargs):
+        super(ArchivoField, self).__init__(*args, **kwargs)
+        self.label = unicode('Archivo')
+        self.helptext = unicode('Selecccione el archivo de actualización')
+
+    def clean(self,data,initial=None):
+        f = super(ArchivoField, self).clean(data, initial)
+        ext = splitext(f.name)[1][1:].lower()
+        if ext in ArchivoField.valid_file_extensions:
+            return f
+        raise ArchivoValidationError()
+
+
+class ActualizaSistema(forms.Form):
+    archivo  = ArchivoField()
+

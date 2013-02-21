@@ -2,6 +2,7 @@
 import calendar
 import datetime
 from decimal import Decimal
+import os
 from django.db import connection
 from maestros.models import DetallesTarifas, DetPeriodosHorarios
 from web.models import PtdMedida, Generales, Contrato
@@ -145,3 +146,9 @@ def calculoTotalEnergia(tipo,dia,mes,ano):
 def list_get_egfp(L,i,v=None):
     try: return L[i]
     except IndexError: return v
+
+
+def ajustaHorayFecha(ano, mes, dia, hora, minuto, seg):
+    fecha = ('sudo date -s "%s/%s/%s %s:%s:%s" ') % ( ano, mes, dia, hora, minuto, seg)
+    os.system(fecha)
+    return True

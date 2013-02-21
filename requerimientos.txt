@@ -25,3 +25,6 @@ configuración cron
 
 Añadir script a /etc/cron.hourly /etc/cron.dialy /etc/cron.weekly /etc/cron.monthly
 /srv/www/gconsumos/manage.py alarmas --volcado
+
+
+find ./gconsumos -regextype posix-egrep -regex '.*(py|html|js|css|sh)$' -print | tar cvfz gconsumos.tgz --files-from=-

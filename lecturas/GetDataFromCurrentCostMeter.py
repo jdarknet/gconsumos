@@ -167,9 +167,10 @@ class leeDatos:
                 ano = str(datetime.datetime.now().year)
                 if inicio == 0:
                     #Sincroniza fecha del Sistema con Envir
-                    fecha = ('sudo date -s "%s/%s/%s %s:%s:%s" ') % ( ano, mes, dia, hora, minuto, seg)
-                    os.system(fecha)
-                    inicio = time.time()
+                    if hora!="00":
+                        fecha = ('sudo date -s "%s/%s/%s %s:%s:%s" ') % ( ano, mes, dia, hora, minuto, seg)
+                        os.system(fecha)
+                        inicio = time.time()
 
                 if 'hist' not in currentcoststruct['msg']:
                     try:
