@@ -28,3 +28,9 @@ Añadir script a /etc/cron.hourly /etc/cron.dialy /etc/cron.weekly /etc/cron.mon
 
 
 find ./gconsumos -regextype posix-egrep -regex '.*(py|html|js|css|sh)$' -print | tar cvfz gconsumos.tgz --files-from=-
+
+#Hacer migracion sout
+function mig() {
+    python manage.py schemamigration "$@" --auto;
+    python manage.py migrate "$@";
+}

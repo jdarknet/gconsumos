@@ -136,9 +136,11 @@ def mantenimiento(request):
             nombrearchvio = '/srv/www/actualiza/gc_%s.tgz' %  datetime.datetime.now().strftime("%d_%m_%Y_%H_%M")
             handle_uploaded_file(request.FILES['archivo'],nombrearchvio)
             sleep(5)
-            print "/bin/tar -xvf %s -C /srv/www" % nombrearchvio
             salida = os.popen("/bin/tar -xf %s -C /srv/www" % nombrearchvio,"r")
-            #salida = os.popen(["tar","xf","-"], cwd="/srv/www",stdin=nombrearchvio)
+            sleep(10)
+            salida = os.popen("/srv/www/gconsumos/migracion.sh","r")
+            sleep(5)
+            salida = os.popen("/usr/bin/sudo reboot","r")
 
         else:
             print formfile.errors
@@ -160,7 +162,7 @@ def generales(request):
             form_general = GeneralesForms(request.POST,prefix="general")
         else:
             general = Generales.objects.get(pk=id)
-            form_general = GeneralesForms(request.POST,prefix="general",instance=objeto)
+            form_general = GeneralesForms(request.POST,prefix="general",instance=general)
         if form_general.is_valid():
             ogeneral =form_general.save()
             form_general = GeneralesForms(instance=ogeneral, prefix="general")
@@ -441,7 +443,7 @@ def verHistoricos(request,tipo):
     listadatos=[]
     listgrafico=[]
     datos=[]
-    etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
+    etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Gráfico Diario'}
     template="web/secciones/historico/resumenhistorico.html"
     if 'consulta' in request.POST:
         formconsulta = HistoricoForms(request.POST)
@@ -450,14 +452,14 @@ def verHistoricos(request,tipo):
             vfecha  = formconsulta.cleaned_data['fecha']
             vfecha  =  datetime.datetime(*(vfecha.timetuple()[:6]))
             if tipo==u'1': #Diario
-                etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
+                etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Gráfico Diario'}
                 datos= consultaTablas('24',vfecha,int(vsensor.id),None)
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],row[3],row[4])  , ponCero(row[5]) ]] ) for row in datos ]
                     for dat in datos:
                         listadatos.append( [str(dat[6]).split(' ')[1],ponCero(dat[5])])
             elif tipo==u'2': #Semana
-                etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Dia Semana', 'titulograf' : 'Grafico Semanal'}
+                etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Día Semana', 'titulograf' : 'Gráfico Semanal'}
                 datos= consultaTablas('semana',vfecha,int(vsensor.id),None)
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(row[0],row[1],row[2],0,0)  , ponCero(row[3]) ]] ) for row in datos ]
@@ -465,7 +467,7 @@ def verHistoricos(request,tipo):
                     for dat in datos:
                         listadatos.append([str(dat[0]),ponCero(dat[3])])
             elif tipo==u'3': #Mes
-                etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
+                etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Gráfico Mensuales'}
                 datos= consultaTablas('mes',vfecha,int(vsensor.id),grafica="ultimas")
                 print datos
                 if datos!=[]:
@@ -473,7 +475,7 @@ def verHistoricos(request,tipo):
                     for dat in datos:
                         listadatos.append([str(dat[0]),ponCero(dat[3])] )
             elif tipo==u'4': #Ano
-                etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Grafico Anual'}
+                etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Gráfico Anual'}
                 datos= consultaTablas('ano',vfecha,int(vsensor.id),None)
                 if datos!=[]:
                     listgrafico =[([  [  tiempoenMil(1,row[0],row[1],0,0)  , ponCero(row[2]) ]] ) for row in datos ]
@@ -485,13 +487,13 @@ def verHistoricos(request,tipo):
     else:
 
         if tipo==u'1':
-            etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Grafico Diario'}
+            etiquetas = { 'titulotab': 'Datos Diarios', 'titcol1': 'Horas', 'titulograf' : 'Gráfico Diario'}
         elif tipo==u'2':
-            etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Dia Semana', 'titulograf' : 'Grafico Semanal'}
+            etiquetas = { 'titulotab': 'Datos Semanales', 'titcol1': 'Dáa Semana', 'titulograf' : 'Gráfico Semanal'}
         elif tipo==u'3':
-            etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Grafico Mensuales'}
+            etiquetas = { 'titulotab': 'Datos Mensuales', 'titcol1': 'Dias', 'titulograf' : 'Gráfico Mensuales'}
         elif tipo==u'4':
-            etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Grafico Anual'}
+            etiquetas = { 'titulotab': 'Datos Anuales', 'titcol1': 'Mes', 'titulograf' : 'Gráfico Anual'}
 
         formconsulta = HistoricoForms()
 

@@ -23,19 +23,16 @@
                         </div>
                         <div class="input">
                                 <div>{{ general.tipousuario.label }}</div>
-
                                 <div class="append-transparent">
                                     {{ general.tipousuario }}
-
                                 </div>
-
                         </div>
                         <div class="input">
                                 <div>{{ general.mediaconsumo.label }}</div>
                                 <div class="note pull-left">{{ general.mediaconsumo.help_text }}</div>
                                 <div class="append-transparent">
                                     {{ general.mediaconsumo }}
-
+                                    {{ general.mediaconsumo.errors }}
                                 </div>
 
                         </div>
@@ -90,7 +87,7 @@
 
     <div class="box">
         <div class="tab-header">
-            Datos Contrato Energia
+            Datos Contrato Energía
         </div>
         <div class="padded">
             <form method="post" class="fill-up">{% csrf_token %}
@@ -100,7 +97,7 @@
                 {{ contrato.empresaelectrica.label }}
                 <div class="append-transparent">
                     {{ contrato.empresaelectrica }}
-                    {{ contrato.empresaelectrica.errors }}
+                    {{ contrato.empresaelectrica.errors}}
                 </div>
                 {{ contrato.actividadeco.label }}
                 <div class="append-transparent">

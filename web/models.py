@@ -19,7 +19,7 @@ class Configuracion(models.Model):
     frecuencia     = models.CharField(max_length=2 ,verbose_name="Frecuencia",null=True,blank=True,choices=(('01','Hora'),('02','Diaria'),('03',"Semanal"),('04','Mensual')))
     protvolcado    = models.CharField(verbose_name="Protocolo",null=True, blank=True,max_length=10,choices=(('email','Email'),('ftp',"FTP"),('ssh','SSH')))
     emailvolcado   = models.EmailField(verbose_name="Email Volcado", null=True,blank=True)
-    password       = models.CharField(max_length=8, verbose_name="Password",blank=True,null=True)
+    password       = models.CharField(max_length=20, verbose_name="Password",blank=True,null=True)
     fecha          = models.DateField(verbose_name="Fecha Alta",null=True,blank=True)
 
 
@@ -39,17 +39,17 @@ class PtdMedida(models.Model):
 
 class Contrato(models.Model):
     empresaelectrica = models.ForeignKey(Terceros,verbose_name="Electrica")
-    actividadeco     = models.CharField(max_length=20,verbose_name="Actividad Economica")
-    cups             = models.CharField(max_length=25,verbose_name="CUPS" )
-    potencia         = models.DecimalField(max_digits=10,decimal_places=2,verbose_name="Potencia")
+    actividadeco     = models.CharField(max_length=20,verbose_name="Actividad Economica",blank=True,null=True)
+    cups             = models.CharField(max_length=25,verbose_name="CUPS" ,blank=True,null=True)
+    potencia         = models.DecimalField(max_digits=10,decimal_places=2,verbose_name="Potencia",blank=True,null=True)
     tfacceso         = models.ForeignKey(TarifasdeAcceso,verbose_name="Tarifas de Acceso") #Tarifas de acceso precios
-    numcontador     =  models.CharField(max_length=25,verbose_name="Numero Contador")
+    numcontador     =  models.CharField(max_length=25,verbose_name="Numero Contador", blank=True,null=True)
 
 
 class Generales(models.Model):
     nombpropietario     = models.ForeignKey(Terceros,verbose_name="Propietario")
     mediaconsumo        = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Media Consumo",help_text="Media en Watts")
-    tipousuario         = models.CharField(max_length=1,choices=( ('1','Domestico'),('2','Comercial'),('3','Industrial') ),verbose_name="Usuario",help_text="Tipo de consumo" )
+    tipousuario         = models.CharField(blank=True,max_length=1,choices=( ('1','Domestico'),('2','Comercial'),('3','Industrial') ),verbose_name="Usuario",help_text="Tipo de consumo" )
     diasfestivos        = models.BooleanField(verbose_name="Dias Festivos", help_text="La actividad no es la habitual en esos días" )
     calefaccion         = models.BooleanField(verbose_name="Calefacción",blank=True)
     aireacondicionado   = models.BooleanField(verbose_name="Aire Acondicionado",blank=True)
@@ -82,7 +82,6 @@ class Mensajes(models.Model):
     alarma         = models.ForeignKey(Alarmas,verbose_name='Alarmas')
     cuerpomensaje  = models.TextField(verbose_name="Mensaje")
     email_destino1 = models.EmailField(verbose_name="Email Destino")
-
 
 
 

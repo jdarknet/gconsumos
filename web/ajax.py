@@ -80,6 +80,7 @@ def updatewifis(request):
         essid.append(linea.split("---"))
     out=[]
     for ess in essid:
+        print ess[0]
         out.append("<option value='%s'>%s</option>" % (ess[0],ess[0]))
 
     dajax.assign('#id_configura-essid', 'innerHTML', ''.join(out))
@@ -208,10 +209,14 @@ def conectarLectura(request):
 
 @dajaxice_register
 def limpiarTablasLecturas(request):
-        dajax = Dajax()
-        obanos = ConsumosAnos.objects.all().delete()
-        obmes  = ConsumosMes.objects.all().delete()
-        obdias = ConsumosDias.objects.all().delete()
-        obhora = ConsumosHoras.objects.all().delete()
+        dajax  = Dajax()
         obtmp  = ConsumosTmp.objects.all().delete()
+        sleep(1)
+        obanos = ConsumosAnos.objects.all().delete()
+        sleep(1)
+        obmes  = ConsumosMes.objects.all().delete()
+        sleep(1)
+        obdias = ConsumosDias.objects.all().delete()
+        sleep(1)
+        obhora = ConsumosHoras.objects.all().delete()
         dajax.script("$('#essid').spin(false);")

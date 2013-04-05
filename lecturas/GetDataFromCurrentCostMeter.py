@@ -23,23 +23,15 @@ class leeDatos:
         if self.myserialconn.isConnected():
             self.myserialconn.disconnect()
         self.ccdb.InitialiseDB(settings.PROJECT_ROOT+"/datos/datos.ccd")
-        self.getDataFromCurrentCostMeter("/dev/ttyUSB0")
+        #self.getDataFromCurrentCostMeter("/dev/ttyUSB0")
+        #Conexion por cable
+        self.getDataFromCurrentCostMeter("/dev/ttyAMA0")
 
     def conecta(self,portdet):
         try:
-            # connect to the CurrentCost meter
-            #
-            # we *hope* that the serialconn class will automatically handle what
-            # connection settings (other than COM port number) are required for the
-            # model of CurrentCost meter we are using
-            #
-            # the serialconn class does not handle serial exceptions - we need to
-            # catch and handle these ourselves
-            # (the only exception to this is that it will close the connection
-            #  in the event of an error, so we do not need to do this explicitly)
             self.myserialconn.connect(portdet)
         except serial.SerialException, msg:
-            trc.error("Fallo al conectar al CurrentCost meter")
+            trc.error("Fallo al conectar al CurrentCost meter %s" % msg)
             return False
         except:
             trc.error("Fallo al conectar al CurrentCost meter")
@@ -130,15 +122,12 @@ class leeDatos:
                 try:
                     line = self.myserialconn.readUpdate()
                 except serial.SerialException, err:
-                    trc.error('Failed to receive data from CurrentCost meter')
+                    trc.error('Error: %s ' % err)
                     return False
                 except Exception, msg:
-                    trc.error('Failed to receive data from CurrentCost meter')
+                    trc.error('Error: %s ' % msg)
                     return False
 
-
-
-            # try to parse the XML
 
             currentcoststruct = self.myparser.parseCurrentCostXML(line)
 

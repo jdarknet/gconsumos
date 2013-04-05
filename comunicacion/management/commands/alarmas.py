@@ -45,7 +45,10 @@ class Command(BaseCommand):
         if attach is not None:
             message.attach(attach)
         mailer = mailer.Mailer('localhost')
-        mailer.send(message)
+        try:
+            mailer.send(message)
+        except:
+            print " Sin conexión a Internet"
 
 
     def buscarUno(self,sql):

@@ -41,7 +41,7 @@ class ConfiguracionForms(models.ModelForm):
     w_ip           = forms.IPAddressField(required=False,label="IP",widget=TextInput(attrs={'type':'text','placeholder':'IP'}))
     w_mask         = forms.IPAddressField(required=False,label="Mascara",widget=TextInput(attrs={'type':'text','placeholder':'MASK'}))
     w_gw           = forms.IPAddressField(required=False,label="Puerta de enlace",widget=TextInput(attrs={'type':'text','placeholder':'Puerta de Enlace'}))
-    password       = forms.CharField(required=False,max_length=8, widget=TextInput(attrs={'type':'password','class':'error','placeholder':'Password'}))
+    password       = forms.CharField(required=False,max_length=20, widget=TextInput(attrs={'type':'password','class':'error','placeholder':'Password'}))
     essid          = forms.ChoiceField(required=False, choices=(("",""),))
     w_dhcp         = forms.BooleanField(required=False)
 
@@ -51,8 +51,8 @@ class ContratosForms(models.ModelForm):
 
     id               =  forms.IntegerField(required=False,  widget=TextInput(attrs= {'class':'hidden'}))
     empresaelectrica =  forms.ModelChoiceField(queryset= Terceros.objects.filter(tipotercero=TiposTerceros.objects.filter(accion=1)[0].id),required=True, help_text=None, label= 'Compañia de Suministro' )
-    actividadeco     =  forms.CharField(required=True,max_length=20,label="Actividad Economica",  widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Actividad Economica'}))
-    cups             =  forms.CharField(required=True,max_length=25,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'CUPS'}))
+    actividadeco     =  forms.CharField(required=False,max_length=20,label="Actividad Economica",  widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Actividad Economica'}))
+    cups             =  forms.CharField(required=False,max_length=25,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'CUPS'}))
     potencia         =  forms.CharField(required=True,max_length=20,widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Potencia Contratada'}))
 
 
@@ -68,8 +68,8 @@ class GeneralesForms(models.ModelForm):
             self.fields[campos].widget.attrs['class']='normal-check'
 
     id               =  forms.IntegerField(required=False,  widget=TextInput(attrs= {'class':'hidden'}))
-    nombpropietario  =  forms.ModelChoiceField( queryset= Terceros.objects.filter(tipotercero=TiposTerceros.objects.filter(accion=4)[0].id),required=True, help_text=None, label= 'Nombre Propietario' )
-    mediaconsumo     =  forms.DecimalField(max_digits=10, decimal_places=2, widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Media Consumo'}),label="Media de Consumo",help_text="Media en Watts")
+    nombpropietario  =  forms.ModelChoiceField(queryset= Terceros.objects.filter(tipotercero=TiposTerceros.objects.filter(accion=4)[0].id),required=True, help_text=None, label= 'Nombre Propietario' )
+    mediaconsumo     =  forms.DecimalField(initial=0,max_digits=10, decimal_places=2, widget=TextInput(attrs={'type':'text','class':'error','placeholder':'Media Consumo'}),label="Media de Consumo",help_text="Media en Watts")
     diasfestivos     =  forms.CheckboxInput()
 
 
